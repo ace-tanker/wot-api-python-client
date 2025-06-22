@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr, field_validator
-from typing import List, Optional
+from typing import Any, List, Optional
 from typing_extensions import Annotated
 from wot_api_client.models.activateclanreserve200_response import Activateclanreserve200Response
 from wot_api_client.models.get_stronghold_claninfo200_response import GetStrongholdClaninfo200Response
@@ -45,11 +45,11 @@ class StrongholdsApi:
     @validate_call
     def activateclanreserve(
         self,
-        access_token: StrictStr,
-        reserve_level: StrictInt,
-        reserve_type: StrictStr,
-        fields: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        language: Optional[StrictStr] = None,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
+        reserve_level: Annotated[StrictInt, Field(description="Level of clan Reserve to be activated")],
+        reserve_type: Annotated[StrictStr, Field(description="Type of clan Reserve to be activated")],
+        fields: Annotated[Optional[Any], Field(description="Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
+        language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,15 +67,15 @@ class StrongholdsApi:
 
         This method activates an available clan Reserve. A clan Reserve can be activated only by a clan member with the required permission.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
-        :param reserve_level: (required)
+        :param reserve_level: Level of clan Reserve to be activated (required)
         :type reserve_level: int
-        :param reserve_type: (required)
+        :param reserve_type: Type of clan Reserve to be activated (required)
         :type reserve_type: str
-        :param fields:
-        :type fields: List[str]
-        :param language:
+        :param fields: Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
+        :type fields: object
+        :param language: Localization language.
         :type language: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -128,11 +128,11 @@ class StrongholdsApi:
     @validate_call
     def activateclanreserve_with_http_info(
         self,
-        access_token: StrictStr,
-        reserve_level: StrictInt,
-        reserve_type: StrictStr,
-        fields: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        language: Optional[StrictStr] = None,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
+        reserve_level: Annotated[StrictInt, Field(description="Level of clan Reserve to be activated")],
+        reserve_type: Annotated[StrictStr, Field(description="Type of clan Reserve to be activated")],
+        fields: Annotated[Optional[Any], Field(description="Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
+        language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -150,15 +150,15 @@ class StrongholdsApi:
 
         This method activates an available clan Reserve. A clan Reserve can be activated only by a clan member with the required permission.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
-        :param reserve_level: (required)
+        :param reserve_level: Level of clan Reserve to be activated (required)
         :type reserve_level: int
-        :param reserve_type: (required)
+        :param reserve_type: Type of clan Reserve to be activated (required)
         :type reserve_type: str
-        :param fields:
-        :type fields: List[str]
-        :param language:
+        :param fields: Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
+        :type fields: object
+        :param language: Localization language.
         :type language: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -211,11 +211,11 @@ class StrongholdsApi:
     @validate_call
     def activateclanreserve_without_preload_content(
         self,
-        access_token: StrictStr,
-        reserve_level: StrictInt,
-        reserve_type: StrictStr,
-        fields: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        language: Optional[StrictStr] = None,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
+        reserve_level: Annotated[StrictInt, Field(description="Level of clan Reserve to be activated")],
+        reserve_type: Annotated[StrictStr, Field(description="Type of clan Reserve to be activated")],
+        fields: Annotated[Optional[Any], Field(description="Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
+        language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -233,15 +233,15 @@ class StrongholdsApi:
 
         This method activates an available clan Reserve. A clan Reserve can be activated only by a clan member with the required permission.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
-        :param reserve_level: (required)
+        :param reserve_level: Level of clan Reserve to be activated (required)
         :type reserve_level: int
-        :param reserve_type: (required)
+        :param reserve_type: Type of clan Reserve to be activated (required)
         :type reserve_type: str
-        :param fields:
-        :type fields: List[str]
-        :param language:
+        :param fields: Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
+        :type fields: object
+        :param language: Localization language.
         :type language: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -303,7 +303,6 @@ class StrongholdsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'fields': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -380,7 +379,7 @@ class StrongholdsApi:
     @validate_call
     def get_stronghold_claninfo(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -400,7 +399,7 @@ class StrongholdsApi:
 
         Method returns general information and the battle statistics of clans in the Stronghold mode. Please note that information about the number of battles fought as well as the number of defeats and victories is updated once every 24 hours.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -455,7 +454,7 @@ class StrongholdsApi:
     @validate_call
     def get_stronghold_claninfo_with_http_info(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -475,7 +474,7 @@ class StrongholdsApi:
 
         Method returns general information and the battle statistics of clans in the Stronghold mode. Please note that information about the number of battles fought as well as the number of defeats and victories is updated once every 24 hours.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -530,7 +529,7 @@ class StrongholdsApi:
     @validate_call
     def get_stronghold_claninfo_without_preload_content(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -550,7 +549,7 @@ class StrongholdsApi:
 
         Method returns general information and the battle statistics of clans in the Stronghold mode. Please note that information about the number of battles fought as well as the number of defeats and victories is updated once every 24 hours.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -679,7 +678,7 @@ class StrongholdsApi:
     @validate_call
     def get_stronghold_clanreserves(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -699,7 +698,7 @@ class StrongholdsApi:
 
         Method returns information about available Reserves and their current status.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -754,7 +753,7 @@ class StrongholdsApi:
     @validate_call
     def get_stronghold_clanreserves_with_http_info(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -774,7 +773,7 @@ class StrongholdsApi:
 
         Method returns information about available Reserves and their current status.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -829,7 +828,7 @@ class StrongholdsApi:
     @validate_call
     def get_stronghold_clanreserves_without_preload_content(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -849,7 +848,7 @@ class StrongholdsApi:
 
         Method returns information about available Reserves and their current status.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]

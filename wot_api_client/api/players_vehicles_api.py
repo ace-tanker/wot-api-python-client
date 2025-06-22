@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr, field_validator
-from typing import List, Optional
+from typing import Any, List, Optional
 from typing_extensions import Annotated
 from wot_api_client.models.get_tanks_achievements200_response import GetTanksAchievements200Response
 from wot_api_client.models.get_tanks_mastery200_response import GetTanksMastery200Response
@@ -45,11 +45,11 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_achievements(
         self,
-        account_id: StrictInt,
-        access_token: Optional[StrictStr] = None,
+        account_id: Annotated[StrictInt, Field(description="Player account ID")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_garage: Optional[StrictStr] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        in_garage: Annotated[Optional[StrictStr], Field(description="Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,15 +67,15 @@ class PlayersVehiclesApi:
 
         Method returns list of achievements on all player's vehicles.  Achievement properties define the **achievements** field values:   * 1-4 for Mastery Badges and Stage Achievements (type: \"class\");  * maximum value of Achievement series (type: \"series\");  * number of achievements earned from sections: Battle Hero, Epic Achievements, Group Achievements, Special Achievements, etc. (type: \"repeatable, single, custom\"). 
 
-        :param account_id: (required)
+        :param account_id: Player account ID (required)
         :type account_id: int
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_garage:
+        :param in_garage: Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.
         :type in_garage: str
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -128,11 +128,11 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_achievements_with_http_info(
         self,
-        account_id: StrictInt,
-        access_token: Optional[StrictStr] = None,
+        account_id: Annotated[StrictInt, Field(description="Player account ID")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_garage: Optional[StrictStr] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        in_garage: Annotated[Optional[StrictStr], Field(description="Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -150,15 +150,15 @@ class PlayersVehiclesApi:
 
         Method returns list of achievements on all player's vehicles.  Achievement properties define the **achievements** field values:   * 1-4 for Mastery Badges and Stage Achievements (type: \"class\");  * maximum value of Achievement series (type: \"series\");  * number of achievements earned from sections: Battle Hero, Epic Achievements, Group Achievements, Special Achievements, etc. (type: \"repeatable, single, custom\"). 
 
-        :param account_id: (required)
+        :param account_id: Player account ID (required)
         :type account_id: int
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_garage:
+        :param in_garage: Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.
         :type in_garage: str
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -211,11 +211,11 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_achievements_without_preload_content(
         self,
-        account_id: StrictInt,
-        access_token: Optional[StrictStr] = None,
+        account_id: Annotated[StrictInt, Field(description="Player account ID")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_garage: Optional[StrictStr] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        in_garage: Annotated[Optional[StrictStr], Field(description="Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -233,15 +233,15 @@ class PlayersVehiclesApi:
 
         Method returns list of achievements on all player's vehicles.  Achievement properties define the **achievements** field values:   * 1-4 for Mastery Badges and Stage Achievements (type: \"class\");  * maximum value of Achievement series (type: \"series\");  * number of achievements earned from sections: Battle Hero, Epic Achievements, Group Achievements, Special Achievements, etc. (type: \"repeatable, single, custom\"). 
 
-        :param account_id: (required)
+        :param account_id: Player account ID (required)
         :type account_id: int
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_garage:
+        :param in_garage: Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.
         :type in_garage: str
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -378,10 +378,10 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_mastery(
         self,
-        distribution: StrictStr,
-        percentile: Annotated[List[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(min_length=1, max_length=10)],
+        distribution: Annotated[StrictStr, Field(description="Type of data.")],
+        percentile: Annotated[List[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(min_length=1, max_length=10, description="A list of percentiles to be included in the response.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -399,13 +399,13 @@ class PlayersVehiclesApi:
 
         The method returns percentiles of the distribution of average damage or experience values for each piece of equipment
 
-        :param distribution: (required)
+        :param distribution: Type of data. (required)
         :type distribution: str
-        :param percentile: (required)
+        :param percentile: A list of percentiles to be included in the response. (required)
         :type percentile: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -457,10 +457,10 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_mastery_with_http_info(
         self,
-        distribution: StrictStr,
-        percentile: Annotated[List[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(min_length=1, max_length=10)],
+        distribution: Annotated[StrictStr, Field(description="Type of data.")],
+        percentile: Annotated[List[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(min_length=1, max_length=10, description="A list of percentiles to be included in the response.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -478,13 +478,13 @@ class PlayersVehiclesApi:
 
         The method returns percentiles of the distribution of average damage or experience values for each piece of equipment
 
-        :param distribution: (required)
+        :param distribution: Type of data. (required)
         :type distribution: str
-        :param percentile: (required)
+        :param percentile: A list of percentiles to be included in the response. (required)
         :type percentile: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -536,10 +536,10 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_mastery_without_preload_content(
         self,
-        distribution: StrictStr,
-        percentile: Annotated[List[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(min_length=1, max_length=10)],
+        distribution: Annotated[StrictStr, Field(description="Type of data.")],
+        percentile: Annotated[List[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(min_length=1, max_length=10, description="A list of percentiles to be included in the response.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -557,13 +557,13 @@ class PlayersVehiclesApi:
 
         The method returns percentiles of the distribution of average damage or experience values for each piece of equipment
 
-        :param distribution: (required)
+        :param distribution: Type of data. (required)
         :type distribution: str
-        :param percentile: (required)
+        :param percentile: A list of percentiles to be included in the response. (required)
         :type percentile: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -695,12 +695,12 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_stats(
         self,
-        account_id: StrictInt,
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        account_id: Annotated[StrictInt, Field(description="Player account ID")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_garage: Optional[StrictStr] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        in_garage: Annotated[Optional[StrictStr], Field(description="Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -718,17 +718,17 @@ class PlayersVehiclesApi:
 
         Method returns overall statistics, Tank Company statistics, and clan statistics per each vehicle for each user.
 
-        :param account_id: (required)
+        :param account_id: Player account ID (required)
         :type account_id: int
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_garage:
+        :param in_garage: Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.
         :type in_garage: str
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -782,12 +782,12 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_stats_with_http_info(
         self,
-        account_id: StrictInt,
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        account_id: Annotated[StrictInt, Field(description="Player account ID")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_garage: Optional[StrictStr] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        in_garage: Annotated[Optional[StrictStr], Field(description="Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -805,17 +805,17 @@ class PlayersVehiclesApi:
 
         Method returns overall statistics, Tank Company statistics, and clan statistics per each vehicle for each user.
 
-        :param account_id: (required)
+        :param account_id: Player account ID (required)
         :type account_id: int
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_garage:
+        :param in_garage: Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.
         :type in_garage: str
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -869,12 +869,12 @@ class PlayersVehiclesApi:
     @validate_call
     def get_tanks_stats_without_preload_content(
         self,
-        account_id: StrictInt,
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        account_id: Annotated[StrictInt, Field(description="Player account ID")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_garage: Optional[StrictStr] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        in_garage: Annotated[Optional[StrictStr], Field(description="Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -892,17 +892,17 @@ class PlayersVehiclesApi:
 
         Method returns overall statistics, Tank Company statistics, and clan statistics per each vehicle for each user.
 
-        :param account_id: (required)
+        :param account_id: Player account ID (required)
         :type account_id: int
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_garage:
+        :param in_garage: Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id.
         :type in_garage: str
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -966,7 +966,6 @@ class PlayersVehiclesApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'extra': 'csv',
             'fields': 'csv',
             'tank_id': 'csv',
         }

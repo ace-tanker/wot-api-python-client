@@ -47,7 +47,7 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_clans(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Clan IDs.")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
@@ -67,7 +67,7 @@ class ClanRatingsApi:
 
         Method returns clan ratings by specified IDs.
 
-        :param clan_id: (required)
+        :param clan_id: Clan IDs. (required)
         :type clan_id: List[int]
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
@@ -122,7 +122,7 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_clans_with_http_info(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Clan IDs.")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
@@ -142,7 +142,7 @@ class ClanRatingsApi:
 
         Method returns clan ratings by specified IDs.
 
-        :param clan_id: (required)
+        :param clan_id: Clan IDs. (required)
         :type clan_id: List[int]
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
@@ -197,7 +197,7 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_clans_without_preload_content(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Clan IDs.")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
@@ -217,7 +217,7 @@ class ClanRatingsApi:
 
         Method returns clan ratings by specified IDs.
 
-        :param clan_id: (required)
+        :param clan_id: Clan IDs. (required)
         :type clan_id: List[int]
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
@@ -346,7 +346,7 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_dates(
         self,
-        limit: Optional[Annotated[int, Field(le=365, strict=True)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=365, strict=True)]], Field(description="Number of returned entries.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -364,7 +364,7 @@ class ClanRatingsApi:
 
         Method returns dates with available rating data.
 
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -413,7 +413,7 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_dates_with_http_info(
         self,
-        limit: Optional[Annotated[int, Field(le=365, strict=True)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=365, strict=True)]], Field(description="Number of returned entries.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -431,7 +431,7 @@ class ClanRatingsApi:
 
         Method returns dates with available rating data.
 
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -480,7 +480,7 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_dates_without_preload_content(
         self,
-        limit: Optional[Annotated[int, Field(le=365, strict=True)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=365, strict=True)]], Field(description="Number of returned entries.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -498,7 +498,7 @@ class ClanRatingsApi:
 
         Method returns dates with available rating data.
 
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -609,11 +609,11 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_neighbors(
         self,
-        clan_id: StrictInt,
-        rank_field: StrictStr,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID")],
+        rank_field: Annotated[StrictStr, Field(description="Rating category")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=50, strict=True)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=50, strict=True)]], Field(description="Number of returned entries.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -631,15 +631,15 @@ class ClanRatingsApi:
 
         Method returns list of adjacent positions in specified clan rating.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID (required)
         :type clan_id: int
-        :param rank_field: (required)
+        :param rank_field: Rating category (required)
         :type rank_field: str
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -692,11 +692,11 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_neighbors_with_http_info(
         self,
-        clan_id: StrictInt,
-        rank_field: StrictStr,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID")],
+        rank_field: Annotated[StrictStr, Field(description="Rating category")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=50, strict=True)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=50, strict=True)]], Field(description="Number of returned entries.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -714,15 +714,15 @@ class ClanRatingsApi:
 
         Method returns list of adjacent positions in specified clan rating.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID (required)
         :type clan_id: int
-        :param rank_field: (required)
+        :param rank_field: Rating category (required)
         :type rank_field: str
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -775,11 +775,11 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_neighbors_without_preload_content(
         self,
-        clan_id: StrictInt,
-        rank_field: StrictStr,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID")],
+        rank_field: Annotated[StrictStr, Field(description="Rating category")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=50, strict=True)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=50, strict=True)]], Field(description="Number of returned entries.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -797,15 +797,15 @@ class ClanRatingsApi:
 
         Method returns list of adjacent positions in specified clan rating.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID (required)
         :type clan_id: int
-        :param rank_field: (required)
+        :param rank_field: Rating category (required)
         :type rank_field: str
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -941,11 +941,11 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_top(
         self,
-        rank_field: StrictStr,
+        rank_field: Annotated[StrictStr, Field(description="Rating category")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=1000, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -963,15 +963,15 @@ class ClanRatingsApi:
 
         Method returns the list of top clans by specified parameters.
 
-        :param rank_field: (required)
+        :param rank_field: Rating category (required)
         :type rank_field: str
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1024,11 +1024,11 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_top_with_http_info(
         self,
-        rank_field: StrictStr,
+        rank_field: Annotated[StrictStr, Field(description="Rating category")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=1000, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1046,15 +1046,15 @@ class ClanRatingsApi:
 
         Method returns the list of top clans by specified parameters.
 
-        :param rank_field: (required)
+        :param rank_field: Rating category (required)
         :type rank_field: str
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1107,11 +1107,11 @@ class ClanRatingsApi:
     @validate_call
     def get_clanratings_top_without_preload_content(
         self,
-        rank_field: StrictStr,
+        rank_field: Annotated[StrictStr, Field(description="Rating category")],
         var_date: Annotated[Optional[Any], Field(description="Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=1000, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1129,15 +1129,15 @@ class ClanRatingsApi:
 
         Method returns the list of top clans by specified parameters.
 
-        :param rank_field: (required)
+        :param rank_field: Rating category (required)
         :type rank_field: str
         :param var_date: Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00
         :type var_date: GetClanratingsClansDateParameter
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

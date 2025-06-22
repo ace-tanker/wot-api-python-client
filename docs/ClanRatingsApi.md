@@ -49,7 +49,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClanRatingsApi(api_client)
-    clan_id = [56] # List[int] | 
+    clan_id = [56] # List[int] | Clan IDs.
     var_date = wot_api_client.GetClanratingsClansDateParameter() # GetClanratingsClansDateParameter | Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00 (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
@@ -69,7 +69,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | [**List[int]**](int.md)|  | 
+ **clan_id** | [**List[int]**](int.md)| Clan IDs. | 
  **var_date** | [**GetClanratingsClansDateParameter**](.md)| Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00 | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
@@ -132,7 +132,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClanRatingsApi(api_client)
-    limit = 7 # int |  (optional) (default to 7)
+    limit = 7 # int | Number of returned entries. (optional) (default to 7)
 
     try:
         # Dates with available ratings
@@ -150,7 +150,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**|  | [optional] [default to 7]
+ **limit** | **int**| Number of returned entries. | [optional] [default to 7]
 
 ### Return type
 
@@ -211,11 +211,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClanRatingsApi(api_client)
-    clan_id = 56 # int | 
-    rank_field = 'rank_field_example' # str | 
+    clan_id = 56 # int | Clan ID
+    rank_field = 'rank_field_example' # str | Rating category
     var_date = wot_api_client.GetClanratingsClansDateParameter() # GetClanratingsClansDateParameter | Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00 (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 5 # int |  (optional) (default to 5)
+    limit = 5 # int | Number of returned entries. (optional) (default to 5)
 
     try:
         # Adjacent positions in clan rating
@@ -233,11 +233,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | **int**|  | 
- **rank_field** | **str**|  | 
+ **clan_id** | **int**| Clan ID | 
+ **rank_field** | **str**| Rating category | 
  **var_date** | [**GetClanratingsClansDateParameter**](.md)| Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00 | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 5]
+ **limit** | **int**| Number of returned entries. | [optional] [default to 5]
 
 ### Return type
 
@@ -298,11 +298,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClanRatingsApi(api_client)
-    rank_field = 'rank_field_example' # str | 
+    rank_field = 'rank_field_example' # str | Rating category
     var_date = wot_api_client.GetClanratingsClansDateParameter() # GetClanratingsClansDateParameter | Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00 (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 10 # int |  (optional) (default to 10)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 10 # int | Number of returned entries. (optional) (default to 10)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Top Clans
@@ -320,11 +320,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rank_field** | **str**|  | 
+ **rank_field** | **str**| Rating category | 
  **var_date** | [**GetClanratingsClansDateParameter**](.md)| Ratings calculation date. Date in UNIX timestamp or ISO 8601 format. E.g.: 1376542800 or 2013-08-15T00:00:00 | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 10]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Number of returned entries. | [optional] [default to 10]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 

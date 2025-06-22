@@ -50,7 +50,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClansApi(api_client)
-    account_id = [56] # List[int] | 
+    account_id = [56] # List[int] | Account ID.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
 
@@ -70,7 +70,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | [**List[int]**](int.md)|  | 
+ **account_id** | [**List[int]**](int.md)| Account ID. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
 
@@ -214,12 +214,12 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClansApi(api_client)
-    clan_id = [56] # List[int] | 
-    access_token = 'access_token_example' # str |  (optional)
-    extra = ['extra_example'] # List[str] |  (optional)
+    clan_id = [56] # List[int] | Clan ID.
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
+    extra = None # object | Extra fields that will be added to the response. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    members_key = 'members_key_example' # str |  (optional)
+    members_key = 'members_key_example' # str | This parameter changes members field type. (optional)
 
     try:
         # Clan details
@@ -237,12 +237,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | [**List[int]**](int.md)|  | 
- **access_token** | **str**|  | [optional] 
- **extra** | [**List[str]**](str.md)|  | [optional] 
+ **clan_id** | [**List[int]**](int.md)| Clan ID. | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
+ **extra** | [**object**](.md)| Extra fields that will be added to the response. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **members_key** | **str**|  | [optional] 
+ **members_key** | **str**| This parameter changes members field type. | [optional] 
 
 ### Return type
 
@@ -305,9 +305,9 @@ with wot_api_client.ApiClient(configuration) as api_client:
     api_instance = wot_api_client.ClansApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    page_no = 1 # int |  (optional) (default to 1)
-    search = 'search_example' # str |  (optional)
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    page_no = 1 # int | Page number. (optional) (default to 1)
+    search = 'search_example' # str | Part of name or tag for clan search. Minimum 2 characters (optional)
 
     try:
         # Clans
@@ -327,9 +327,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **page_no** | **int**|  | [optional] [default to 1]
- **search** | **str**|  | [optional] 
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
+ **search** | **str**| Part of name or tag for clan search. Minimum 2 characters | [optional] 
 
 ### Return type
 
@@ -390,7 +390,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClansApi(api_client)
-    account_id = 56 # int | 
+    account_id = 56 # int | Account ID.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
 
@@ -410,7 +410,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**|  | 
+ **account_id** | **int**| Account ID. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
 
@@ -473,7 +473,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.ClansApi(api_client)
-    access_token = 'access_token_example' # str | 
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -492,7 +492,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_token** | **str**|  | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type

@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr, field_validator
-from typing import List, Optional
+from typing import Any, List, Optional
 from typing_extensions import Annotated
 from wot_api_client.models.get_account_achievements200_response import GetAccountAchievements200Response
 from wot_api_client.models.get_account_info200_response import GetAccountInfo200Response
@@ -46,7 +46,7 @@ class AccountsApi:
     @validate_call
     def get_account_achievements(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -65,7 +65,7 @@ class AccountsApi:
 
         Method returns players' achievement details.  Achievement properties define the **achievements** field values:   * 1-4 for Mastery Badges and Stage Achievements (type: \"class\");  * maximum value of Achievement series (type: \"series\");  * number of achievements earned from sections: Battle Hero, Epic Achievements, Group Achievements, Special Achievements, etc. (type: \"repeatable, single, custom\"). 
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -117,7 +117,7 @@ class AccountsApi:
     @validate_call
     def get_account_achievements_with_http_info(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -136,7 +136,7 @@ class AccountsApi:
 
         Method returns players' achievement details.  Achievement properties define the **achievements** field values:   * 1-4 for Mastery Badges and Stage Achievements (type: \"class\");  * maximum value of Achievement series (type: \"series\");  * number of achievements earned from sections: Battle Hero, Epic Achievements, Group Achievements, Special Achievements, etc. (type: \"repeatable, single, custom\"). 
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -188,7 +188,7 @@ class AccountsApi:
     @validate_call
     def get_account_achievements_without_preload_content(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -207,7 +207,7 @@ class AccountsApi:
 
         Method returns players' achievement details.  Achievement properties define the **achievements** field values:   * 1-4 for Mastery Badges and Stage Achievements (type: \"class\");  * maximum value of Achievement series (type: \"series\");  * number of achievements earned from sections: Battle Hero, Epic Achievements, Group Achievements, Special Achievements, etc. (type: \"repeatable, single, custom\"). 
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -328,9 +328,9 @@ class AccountsApi:
     @validate_call
     def get_account_info(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -349,12 +349,12 @@ class AccountsApi:
 
         Method returns player details.
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -407,9 +407,9 @@ class AccountsApi:
     @validate_call
     def get_account_info_with_http_info(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -428,12 +428,12 @@ class AccountsApi:
 
         Method returns player details.
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -486,9 +486,9 @@ class AccountsApi:
     @validate_call
     def get_account_info_without_preload_content(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -507,12 +507,12 @@ class AccountsApi:
 
         Method returns player details.
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -574,7 +574,6 @@ class AccountsApi:
 
         _collection_formats: Dict[str, str] = {
             'account_id': 'csv',
-            'extra': 'csv',
             'fields': 'csv',
         }
 
@@ -645,10 +644,10 @@ class AccountsApi:
     @validate_call
     def get_account_list(
         self,
-        search: StrictStr,
+        search: Annotated[StrictStr, Field(description="Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        type: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        type: Annotated[Optional[StrictStr], Field(description="Search type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -666,13 +665,13 @@ class AccountsApi:
 
         Method returns partial list of players. The list is filtered by initial characters of user name and sorted alphabetically.
 
-        :param search: (required)
+        :param search: Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24. (required)
         :type search: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param type:
+        :param type: Search type.
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -724,10 +723,10 @@ class AccountsApi:
     @validate_call
     def get_account_list_with_http_info(
         self,
-        search: StrictStr,
+        search: Annotated[StrictStr, Field(description="Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        type: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        type: Annotated[Optional[StrictStr], Field(description="Search type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -745,13 +744,13 @@ class AccountsApi:
 
         Method returns partial list of players. The list is filtered by initial characters of user name and sorted alphabetically.
 
-        :param search: (required)
+        :param search: Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24. (required)
         :type search: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param type:
+        :param type: Search type.
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -803,10 +802,10 @@ class AccountsApi:
     @validate_call
     def get_account_list_without_preload_content(
         self,
-        search: StrictStr,
+        search: Annotated[StrictStr, Field(description="Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        type: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        type: Annotated[Optional[StrictStr], Field(description="Search type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -824,13 +823,13 @@ class AccountsApi:
 
         Method returns partial list of players. The list is filtered by initial characters of user name and sorted alphabetically.
 
-        :param search: (required)
+        :param search: Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24. (required)
         :type search: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param type:
+        :param type: Search type.
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -960,10 +959,10 @@ class AccountsApi:
     @validate_call
     def get_account_tanks(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -981,13 +980,13 @@ class AccountsApi:
 
         Method returns details on player's vehicles.
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1039,10 +1038,10 @@ class AccountsApi:
     @validate_call
     def get_account_tanks_with_http_info(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1060,13 +1059,13 @@ class AccountsApi:
 
         Method returns details on player's vehicles.
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1118,10 +1117,10 @@ class AccountsApi:
     @validate_call
     def get_account_tanks_without_preload_content(
         self,
-        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
+        account_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Player account ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Player's vehicle ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1139,13 +1138,13 @@ class AccountsApi:
 
         Method returns details on player's vehicles.
 
-        :param account_id: (required)
+        :param account_id: Player account ID. (required)
         :type account_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param tank_id:
+        :param tank_id: Player's vehicle ID.
         :type tank_id: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

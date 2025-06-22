@@ -383,7 +383,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
     api_instance = wot_api_client.TankopediaApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    role = ['role_example'] # List[str] |  (optional)
+    role = None # object | Сrew qualification ID. (optional)
 
     try:
         # Crew qualifications
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **role** | [**List[str]**](str.md)|  | [optional] 
+ **role** | [**object**](.md)| Сrew qualification ID. | [optional] 
 
 ### Return type
 
@@ -466,8 +466,8 @@ with wot_api_client.ApiClient(configuration) as api_client:
     api_instance = wot_api_client.TankopediaApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    role = 'role_example' # str |  (optional)
-    skill = ['skill_example'] # List[str] |  (optional)
+    role = 'role_example' # str | Сrew qualification ID (optional)
+    skill = None # object | Skill ID. (optional)
 
     try:
         # Crew skills
@@ -487,8 +487,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **role** | **str**|  | [optional] 
- **skill** | [**List[str]**](str.md)|  | [optional] 
+ **role** | **str**| Сrew qualification ID | [optional] 
+ **skill** | [**object**](.md)| Skill ID. | [optional] 
 
 ### Return type
 
@@ -630,14 +630,14 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.TankopediaApi(api_client)
-    extra = ['extra_example'] # List[str] |  (optional)
+    extra = None # object | Extra fields that will be added to the response. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    module_id = [56] # List[int] |  (optional)
-    nation = ['nation_example'] # List[str] |  (optional)
-    page_no = 56 # int |  (optional)
-    type = ['type_example'] # List[str] |  (optional)
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    module_id = [56] # List[int] | Module ID. (optional)
+    nation = None # object | Nation. (optional)
+    page_no = 56 # int | Result page number (optional)
+    type = None # object | Module type. (optional)
 
     try:
         # Modules
@@ -655,14 +655,14 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extra** | [**List[str]**](str.md)|  | [optional] 
+ **extra** | [**object**](.md)| Extra fields that will be added to the response. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **module_id** | [**List[int]**](int.md)|  | [optional] 
- **nation** | [**List[str]**](str.md)|  | [optional] 
- **page_no** | **int**|  | [optional] 
- **type** | [**List[str]**](str.md)|  | [optional] 
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **module_id** | [**List[int]**](int.md)| Module ID. | [optional] 
+ **nation** | [**object**](.md)| Nation. | [optional] 
+ **page_no** | **int**| Result page number | [optional] 
+ **type** | [**object**](.md)| Module type. | [optional] 
 
 ### Return type
 
@@ -723,12 +723,12 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.TankopediaApi(api_client)
-    campaign_id = [56] # List[int] |  (optional)
+    campaign_id = [56] # List[int] | Campaign ID. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    operation_id = [56] # List[int] |  (optional)
-    set_id = [56] # List[int] |  (optional)
-    tag = ['tag_example'] # List[str] |  (optional)
+    operation_id = [56] # List[int] | Operation ID. (optional)
+    set_id = [56] # List[int] | Mission branch ID. (optional)
+    tag = None # object | Mission tag. (optional)
 
     try:
         # Personal Missions
@@ -746,12 +746,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | [**List[int]**](int.md)|  | [optional] 
+ **campaign_id** | [**List[int]**](int.md)| Campaign ID. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **operation_id** | [**List[int]**](int.md)|  | [optional] 
- **set_id** | [**List[int]**](int.md)|  | [optional] 
- **tag** | [**List[str]**](str.md)|  | [optional] 
+ **operation_id** | [**List[int]**](int.md)| Operation ID. | [optional] 
+ **set_id** | [**List[int]**](int.md)| Mission branch ID. | [optional] 
+ **tag** | [**object**](.md)| Mission tag. | [optional] 
 
 ### Return type
 
@@ -814,10 +814,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
     api_instance = wot_api_client.TankopediaApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    page_no = 56 # int |  (optional)
-    provision_id = [56] # List[int] |  (optional)
-    type = ["equipment","optionalDevice"] # List[str] |  (optional) (default to ["equipment","optionalDevice"])
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    page_no = 56 # int | Result page number (optional)
+    provision_id = [56] # List[int] | Equipment or consumables ID. (optional)
+    type = None # object | Type. (optional)
 
     try:
         # Equipment and Consumables
@@ -837,10 +837,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **page_no** | **int**|  | [optional] 
- **provision_id** | [**List[int]**](int.md)|  | [optional] 
- **type** | [**List[str]**](str.md)|  | [optional] [default to [&quot;equipment&quot;,&quot;optionalDevice&quot;]]
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **page_no** | **int**| Result page number | [optional] 
+ **provision_id** | [**List[int]**](int.md)| Equipment or consumables ID. | [optional] 
+ **type** | [**object**](.md)| Type. | [optional] 
 
 ### Return type
 
@@ -901,15 +901,15 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.TankopediaApi(api_client)
-    tank_id = 56 # int | 
-    engine_id = 56 # int |  (optional)
+    tank_id = 56 # int | Vehicle ID
+    engine_id = 56 # int | Engine ID. If module is not specified, standard module is used by default. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    gun_id = 56 # int |  (optional)
+    gun_id = 56 # int | Gun ID. If module is not specified, standard module is used by default. (optional)
     language = 'language_example' # str | Localization language. (optional)
-    profile_id = 'profile_id_example' # str |  (optional)
-    radio_id = 56 # int |  (optional)
-    suspension_id = 56 # int |  (optional)
-    turret_id = 56 # int |  (optional)
+    profile_id = 'profile_id_example' # str | Configuration ID. If specified, parameters of IDs of separate modules are ignored. (optional)
+    radio_id = 56 # int | Radio ID. If module is not specified, standard module is used by default. (optional)
+    suspension_id = 56 # int | Suspension ID. If module is not specified, standard module is used by default. (optional)
+    turret_id = 56 # int | Turret ID. If module is not specified, standard module is used by default. (optional)
 
     try:
         # Vehicle characteristics
@@ -927,15 +927,15 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tank_id** | **int**|  | 
- **engine_id** | **int**|  | [optional] 
+ **tank_id** | **int**| Vehicle ID | 
+ **engine_id** | **int**| Engine ID. If module is not specified, standard module is used by default. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **gun_id** | **int**|  | [optional] 
+ **gun_id** | **int**| Gun ID. If module is not specified, standard module is used by default. | [optional] 
  **language** | **str**| Localization language. | [optional] 
- **profile_id** | **str**|  | [optional] 
- **radio_id** | **int**|  | [optional] 
- **suspension_id** | **int**|  | [optional] 
- **turret_id** | **int**|  | [optional] 
+ **profile_id** | **str**| Configuration ID. If specified, parameters of IDs of separate modules are ignored. | [optional] 
+ **radio_id** | **int**| Radio ID. If module is not specified, standard module is used by default. | [optional] 
+ **suspension_id** | **int**| Suspension ID. If module is not specified, standard module is used by default. | [optional] 
+ **turret_id** | **int**| Turret ID. If module is not specified, standard module is used by default. | [optional] 
 
 ### Return type
 
@@ -996,10 +996,10 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.TankopediaApi(api_client)
-    tank_id = 56 # int | 
+    tank_id = 56 # int | Vehicle ID
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    order_by = 'order_by_example' # str |  (optional)
+    order_by = 'order_by_example' # str | Sorting. (optional)
 
     try:
         # Vehicle configurations
@@ -1017,10 +1017,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tank_id** | **int**|  | 
+ **tank_id** | **int**| Vehicle ID | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **order_by** | **str**|  | [optional] 
+ **order_by** | **str**| Sorting. | [optional] 
 
 ### Return type
 
@@ -1083,12 +1083,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
     api_instance = wot_api_client.TankopediaApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    nation = ['nation_example'] # List[str] |  (optional)
-    page_no = 56 # int |  (optional)
-    tank_id = [56] # List[int] |  (optional)
-    tier = [56] # List[int] |  (optional)
-    type = ['type_example'] # List[str] |  (optional)
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    nation = None # object | Nation. (optional)
+    page_no = 56 # int | Result page number (optional)
+    tank_id = [56] # List[int] | Vehicle ID. (optional)
+    tier = [56] # List[int] | Tier. (optional)
+    type = None # object | Vehicle type. (optional)
 
     try:
         # Vehicles
@@ -1108,12 +1108,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **nation** | [**List[str]**](str.md)|  | [optional] 
- **page_no** | **int**|  | [optional] 
- **tank_id** | [**List[int]**](int.md)|  | [optional] 
- **tier** | [**List[int]**](int.md)|  | [optional] 
- **type** | [**List[str]**](str.md)|  | [optional] 
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **nation** | [**object**](.md)| Nation. | [optional] 
+ **page_no** | **int**| Result page number | [optional] 
+ **tank_id** | [**List[int]**](int.md)| Vehicle ID. | [optional] 
+ **tier** | [**List[int]**](int.md)| Tier. | [optional] 
+ **type** | [**object**](.md)| Vehicle type. | [optional] 
 
 ### Return type
 

@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr, field_validator
-from typing import List, Optional
+from typing import Any, List, Optional
 from typing_extensions import Annotated
 from wot_api_client.models.get_globalmap_clanbattles200_response import GetGlobalmapClanbattles200Response
 from wot_api_client.models.get_globalmap_claninfo200_response import GetGlobalmapClaninfo200Response
@@ -59,11 +59,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_clanbattles(
         self,
-        clan_id: StrictInt,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -81,15 +81,15 @@ class GlobalMapApi:
 
         Method returns list of clan's battles on the Global Map.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -142,11 +142,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_clanbattles_with_http_info(
         self,
-        clan_id: StrictInt,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -164,15 +164,15 @@ class GlobalMapApi:
 
         Method returns list of clan's battles on the Global Map.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -225,11 +225,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_clanbattles_without_preload_content(
         self,
-        clan_id: StrictInt,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -247,15 +247,15 @@ class GlobalMapApi:
 
         Method returns list of clan's battles on the Global Map.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -391,8 +391,8 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_claninfo(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
-        access_token: Optional[StrictStr] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -411,9 +411,9 @@ class GlobalMapApi:
 
         Method returns clan data on the Global Map.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -466,8 +466,8 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_claninfo_with_http_info(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
-        access_token: Optional[StrictStr] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -486,9 +486,9 @@ class GlobalMapApi:
 
         Method returns clan data on the Global Map.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -541,8 +541,8 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_claninfo_without_preload_content(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
-        access_token: Optional[StrictStr] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -561,9 +561,9 @@ class GlobalMapApi:
 
         Method returns clan data on the Global Map.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -690,8 +690,8 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_clanprovinces(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
-        access_token: Optional[StrictStr] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
         _request_timeout: Union[
@@ -711,9 +711,9 @@ class GlobalMapApi:
 
         Method returns lists of clans provinces.
 
-        :param clan_id: (required)
+        :param clan_id: List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -769,8 +769,8 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_clanprovinces_with_http_info(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
-        access_token: Optional[StrictStr] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
         _request_timeout: Union[
@@ -790,9 +790,9 @@ class GlobalMapApi:
 
         Method returns lists of clans provinces.
 
-        :param clan_id: (required)
+        :param clan_id: List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -848,8 +848,8 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_clanprovinces_without_preload_content(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10)],
-        access_token: Optional[StrictStr] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=10, description="List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
         _request_timeout: Union[
@@ -869,9 +869,9 @@ class GlobalMapApi:
 
         Method returns lists of clans provinces.
 
-        :param clan_id: (required)
+        :param clan_id: List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1006,10 +1006,10 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountinfo(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: Annotated[List[StrictStr], Field(min_length=1, max_length=10)],
-        clan_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[Any, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
+        clan_id: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -1028,13 +1028,13 @@ class GlobalMapApi:
 
         Method returns player's statistics for a specific event
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
-        :type front_id: List[str]
-        :param clan_id:
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
+        :type front_id: object
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
         :type clan_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1089,10 +1089,10 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountinfo_with_http_info(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: Annotated[List[StrictStr], Field(min_length=1, max_length=10)],
-        clan_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[Any, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
+        clan_id: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -1111,13 +1111,13 @@ class GlobalMapApi:
 
         Method returns player's statistics for a specific event
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
-        :type front_id: List[str]
-        :param clan_id:
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
+        :type front_id: object
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
         :type clan_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1172,10 +1172,10 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountinfo_without_preload_content(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: Annotated[List[StrictStr], Field(min_length=1, max_length=10)],
-        clan_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[Any, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
+        clan_id: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -1194,13 +1194,13 @@ class GlobalMapApi:
 
         Method returns player's statistics for a specific event
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
-        :type front_id: List[str]
-        :param clan_id:
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
+        :type front_id: object
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
         :type clan_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1264,7 +1264,6 @@ class GlobalMapApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'front_id': 'csv',
             'fields': 'csv',
         }
 
@@ -1339,13 +1338,13 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountratingneighbors(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: StrictStr,
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=10)]] = None,
-        neighbours_count: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=10)]], Field(description="Clans limit.")] = None,
+        neighbours_count: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="How many neighbors to show next to the account.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1363,19 +1362,19 @@ class GlobalMapApi:
 
         Method returns adjacent position in account event rating.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param neighbours_count:
+        :param neighbours_count: How many neighbors to show next to the account.
         :type neighbours_count: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1430,13 +1429,13 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountratingneighbors_with_http_info(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: StrictStr,
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=10)]] = None,
-        neighbours_count: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=10)]], Field(description="Clans limit.")] = None,
+        neighbours_count: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="How many neighbors to show next to the account.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1454,19 +1453,19 @@ class GlobalMapApi:
 
         Method returns adjacent position in account event rating.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param neighbours_count:
+        :param neighbours_count: How many neighbors to show next to the account.
         :type neighbours_count: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1521,13 +1520,13 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountratingneighbors_without_preload_content(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: StrictStr,
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=10)]] = None,
-        neighbours_count: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=10)]], Field(description="Clans limit.")] = None,
+        neighbours_count: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="How many neighbors to show next to the account.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1545,19 +1544,19 @@ class GlobalMapApi:
 
         Method returns adjacent position in account event rating.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param neighbours_count:
+        :param neighbours_count: How many neighbors to show next to the account.
         :type neighbours_count: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1705,12 +1704,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountratings(
         self,
-        event_id: StrictStr,
-        front_id: StrictStr,
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_rating: Optional[StrictInt] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=10)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        in_rating: Annotated[Optional[StrictInt], Field(description="Get data only for accounts with rating.")] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=10)]], Field(description="Accounts limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1728,17 +1727,17 @@ class GlobalMapApi:
 
         Method returns account event rating.
 
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_rating:
+        :param in_rating: Get data only for accounts with rating.
         :type in_rating: int
-        :param limit:
+        :param limit: Accounts limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1792,12 +1791,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountratings_with_http_info(
         self,
-        event_id: StrictStr,
-        front_id: StrictStr,
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_rating: Optional[StrictInt] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=10)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        in_rating: Annotated[Optional[StrictInt], Field(description="Get data only for accounts with rating.")] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=10)]], Field(description="Accounts limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1815,17 +1814,17 @@ class GlobalMapApi:
 
         Method returns account event rating.
 
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_rating:
+        :param in_rating: Get data only for accounts with rating.
         :type in_rating: int
-        :param limit:
+        :param limit: Accounts limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1879,12 +1878,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventaccountratings_without_preload_content(
         self,
-        event_id: StrictStr,
-        front_id: StrictStr,
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        in_rating: Optional[StrictInt] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=10)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        in_rating: Annotated[Optional[StrictInt], Field(description="Get data only for accounts with rating.")] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=10)]], Field(description="Accounts limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1902,17 +1901,17 @@ class GlobalMapApi:
 
         Method returns account event rating.
 
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param in_rating:
+        :param in_rating: Get data only for accounts with rating.
         :type in_rating: int
-        :param limit:
+        :param limit: Accounts limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2054,9 +2053,9 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventclaninfo(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: Annotated[List[StrictStr], Field(min_length=1, max_length=10)],
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[Any, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -2075,12 +2074,12 @@ class GlobalMapApi:
 
         Method returns clan's statistics for a specific event.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
-        :type front_id: List[str]
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
+        :type front_id: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -2133,9 +2132,9 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventclaninfo_with_http_info(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: Annotated[List[StrictStr], Field(min_length=1, max_length=10)],
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[Any, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -2154,12 +2153,12 @@ class GlobalMapApi:
 
         Method returns clan's statistics for a specific event.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
-        :type front_id: List[str]
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
+        :type front_id: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -2212,9 +2211,9 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventclaninfo_without_preload_content(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: Annotated[List[StrictStr], Field(min_length=1, max_length=10)],
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[Any, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -2233,12 +2232,12 @@ class GlobalMapApi:
 
         Method returns clan's statistics for a specific event.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
-        :type front_id: List[str]
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
+        :type front_id: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -2299,7 +2298,6 @@ class GlobalMapApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'front_id': 'csv',
             'fields': 'csv',
         }
 
@@ -2370,12 +2368,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventclantasks(
         self,
-        clan_id: StrictInt,
-        event_id: StrictStr,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page size.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2393,17 +2391,17 @@ class GlobalMapApi:
 
         Method returns clan's missions for a specific event.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page size.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2457,12 +2455,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventclantasks_with_http_info(
         self,
-        clan_id: StrictInt,
-        event_id: StrictStr,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page size.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2480,17 +2478,17 @@ class GlobalMapApi:
 
         Method returns clan's missions for a specific event.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page size.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2544,12 +2542,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventclantasks_without_preload_content(
         self,
-        clan_id: StrictInt,
-        event_id: StrictStr,
+        clan_id: Annotated[StrictInt, Field(description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page size.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2567,17 +2565,17 @@ class GlobalMapApi:
 
         Method returns clan's missions for a specific event.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page size.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2719,11 +2717,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventrating(
         self,
-        event_id: StrictStr,
-        front_id: StrictStr,
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(description="Clans limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2741,15 +2739,15 @@ class GlobalMapApi:
 
         Method returns event clan rating
 
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2802,11 +2800,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventrating_with_http_info(
         self,
-        event_id: StrictStr,
-        front_id: StrictStr,
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(description="Clans limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2824,15 +2822,15 @@ class GlobalMapApi:
 
         Method returns event clan rating
 
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2885,11 +2883,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventrating_without_preload_content(
         self,
-        event_id: StrictStr,
-        front_id: StrictStr,
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(description="Clans limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2907,15 +2905,15 @@ class GlobalMapApi:
 
         Method returns event clan rating
 
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3051,11 +3049,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventratingneighbors(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: StrictStr,
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="Neighbors limit.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3073,15 +3071,15 @@ class GlobalMapApi:
 
         Method returns list of adjacent positions in event clan rating
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Neighbors limit.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3134,11 +3132,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventratingneighbors_with_http_info(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: StrictStr,
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="Neighbors limit.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3156,15 +3154,15 @@ class GlobalMapApi:
 
         Method returns list of adjacent positions in event clan rating
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Neighbors limit.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3217,11 +3215,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_eventratingneighbors_without_preload_content(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        event_id: StrictStr,
-        front_id: StrictStr,
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        event_id: Annotated[StrictStr, Field(description="Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.")],
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="Neighbors limit.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3239,15 +3237,15 @@ class GlobalMapApi:
 
         Method returns list of adjacent positions in event clan rating
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param event_id: (required)
+        :param event_id: Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. (required)
         :type event_id: str
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Neighbors limit.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3383,12 +3381,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_events(
         self,
-        event_id: Optional[StrictStr] = None,
+        event_id: Annotated[Optional[StrictStr], Field(description="Event ID")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        status: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Response with events filtered by status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3406,17 +3404,17 @@ class GlobalMapApi:
 
         Method returns events information.
 
-        :param event_id:
+        :param event_id: Event ID
         :type event_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param status:
+        :param status: Response with events filtered by status.
         :type status: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3470,12 +3468,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_events_with_http_info(
         self,
-        event_id: Optional[StrictStr] = None,
+        event_id: Annotated[Optional[StrictStr], Field(description="Event ID")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        status: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Response with events filtered by status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3493,17 +3491,17 @@ class GlobalMapApi:
 
         Method returns events information.
 
-        :param event_id:
+        :param event_id: Event ID
         :type event_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param status:
+        :param status: Response with events filtered by status.
         :type status: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3557,12 +3555,12 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_events_without_preload_content(
         self,
-        event_id: Optional[StrictStr] = None,
+        event_id: Annotated[Optional[StrictStr], Field(description="Event ID")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        status: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Response with events filtered by status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3580,17 +3578,17 @@ class GlobalMapApi:
 
         Method returns events information.
 
-        :param event_id:
+        :param event_id: Event ID
         :type event_id: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param status:
+        :param status: Response with events filtered by status.
         :type status: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3733,10 +3731,10 @@ class GlobalMapApi:
     def get_globalmap_fronts(
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        front_id: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        front_id: Annotated[Optional[Any], Field(description="List of Front IDs, to specify what fronts need to be returned.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3756,13 +3754,13 @@ class GlobalMapApi:
 
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param front_id:
-        :type front_id: List[str]
+        :param front_id: List of Front IDs, to specify what fronts need to be returned.
+        :type front_id: object
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3816,10 +3814,10 @@ class GlobalMapApi:
     def get_globalmap_fronts_with_http_info(
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        front_id: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        front_id: Annotated[Optional[Any], Field(description="List of Front IDs, to specify what fronts need to be returned.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3839,13 +3837,13 @@ class GlobalMapApi:
 
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param front_id:
-        :type front_id: List[str]
+        :param front_id: List of Front IDs, to specify what fronts need to be returned.
+        :type front_id: object
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3899,10 +3897,10 @@ class GlobalMapApi:
     def get_globalmap_fronts_without_preload_content(
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        front_id: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        front_id: Annotated[Optional[Any], Field(description="List of Front IDs, to specify what fronts need to be returned.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3922,13 +3920,13 @@ class GlobalMapApi:
 
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param front_id:
-        :type front_id: List[str]
+        :param front_id: List of Front IDs, to specify what fronts need to be returned.
+        :type front_id: object
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3991,7 +3989,6 @@ class GlobalMapApi:
 
         _collection_formats: Dict[str, str] = {
             'fields': 'csv',
-            'front_id': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -4329,18 +4326,18 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_provinces(
         self,
-        front_id: StrictStr,
-        arena_id: Optional[StrictStr] = None,
-        daily_revenue_gte: Optional[StrictInt] = None,
-        daily_revenue_lte: Optional[StrictInt] = None,
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
+        arena_id: Annotated[Optional[StrictStr], Field(description="Map ID")] = None,
+        daily_revenue_gte: Annotated[Optional[StrictInt], Field(description="Search for provinces with daily income equal to or more than the value")] = None,
+        daily_revenue_lte: Annotated[Optional[StrictInt], Field(description="Search for provinces with daily income equal to or less than the value")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        landing_type: Optional[StrictStr] = None,
+        landing_type: Annotated[Optional[StrictStr], Field(description="Search for provinces by landing type.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        order_by: Optional[StrictStr] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        prime_hour: Optional[Annotated[int, Field(le=23, strict=True)]] = None,
-        province_id: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        order_by: Annotated[Optional[StrictStr], Field(description="Sorting.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        prime_hour: Annotated[Optional[Annotated[int, Field(le=23, strict=True)]], Field(description="Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23.")] = None,
+        province_id: Annotated[Optional[Any], Field(description="Filter by the list of province IDs.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4358,30 +4355,30 @@ class GlobalMapApi:
 
         Method returns information about the Global Map provinces.
 
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
-        :param arena_id:
+        :param arena_id: Map ID
         :type arena_id: str
-        :param daily_revenue_gte:
+        :param daily_revenue_gte: Search for provinces with daily income equal to or more than the value
         :type daily_revenue_gte: int
-        :param daily_revenue_lte:
+        :param daily_revenue_lte: Search for provinces with daily income equal to or less than the value
         :type daily_revenue_lte: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param landing_type:
+        :param landing_type: Search for provinces by landing type.
         :type landing_type: str
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param order_by:
+        :param order_by: Sorting.
         :type order_by: str
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param prime_hour:
+        :param prime_hour: Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23.
         :type prime_hour: int
-        :param province_id:
-        :type province_id: List[str]
+        :param province_id: Filter by the list of province IDs.
+        :type province_id: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4440,18 +4437,18 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_provinces_with_http_info(
         self,
-        front_id: StrictStr,
-        arena_id: Optional[StrictStr] = None,
-        daily_revenue_gte: Optional[StrictInt] = None,
-        daily_revenue_lte: Optional[StrictInt] = None,
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
+        arena_id: Annotated[Optional[StrictStr], Field(description="Map ID")] = None,
+        daily_revenue_gte: Annotated[Optional[StrictInt], Field(description="Search for provinces with daily income equal to or more than the value")] = None,
+        daily_revenue_lte: Annotated[Optional[StrictInt], Field(description="Search for provinces with daily income equal to or less than the value")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        landing_type: Optional[StrictStr] = None,
+        landing_type: Annotated[Optional[StrictStr], Field(description="Search for provinces by landing type.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        order_by: Optional[StrictStr] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        prime_hour: Optional[Annotated[int, Field(le=23, strict=True)]] = None,
-        province_id: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        order_by: Annotated[Optional[StrictStr], Field(description="Sorting.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        prime_hour: Annotated[Optional[Annotated[int, Field(le=23, strict=True)]], Field(description="Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23.")] = None,
+        province_id: Annotated[Optional[Any], Field(description="Filter by the list of province IDs.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4469,30 +4466,30 @@ class GlobalMapApi:
 
         Method returns information about the Global Map provinces.
 
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
-        :param arena_id:
+        :param arena_id: Map ID
         :type arena_id: str
-        :param daily_revenue_gte:
+        :param daily_revenue_gte: Search for provinces with daily income equal to or more than the value
         :type daily_revenue_gte: int
-        :param daily_revenue_lte:
+        :param daily_revenue_lte: Search for provinces with daily income equal to or less than the value
         :type daily_revenue_lte: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param landing_type:
+        :param landing_type: Search for provinces by landing type.
         :type landing_type: str
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param order_by:
+        :param order_by: Sorting.
         :type order_by: str
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param prime_hour:
+        :param prime_hour: Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23.
         :type prime_hour: int
-        :param province_id:
-        :type province_id: List[str]
+        :param province_id: Filter by the list of province IDs.
+        :type province_id: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4551,18 +4548,18 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_provinces_without_preload_content(
         self,
-        front_id: StrictStr,
-        arena_id: Optional[StrictStr] = None,
-        daily_revenue_gte: Optional[StrictInt] = None,
-        daily_revenue_lte: Optional[StrictInt] = None,
+        front_id: Annotated[StrictStr, Field(description="Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.")],
+        arena_id: Annotated[Optional[StrictStr], Field(description="Map ID")] = None,
+        daily_revenue_gte: Annotated[Optional[StrictInt], Field(description="Search for provinces with daily income equal to or more than the value")] = None,
+        daily_revenue_lte: Annotated[Optional[StrictInt], Field(description="Search for provinces with daily income equal to or less than the value")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        landing_type: Optional[StrictStr] = None,
+        landing_type: Annotated[Optional[StrictStr], Field(description="Search for provinces by landing type.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        order_by: Optional[StrictStr] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        prime_hour: Optional[Annotated[int, Field(le=23, strict=True)]] = None,
-        province_id: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        order_by: Annotated[Optional[StrictStr], Field(description="Sorting.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        prime_hour: Annotated[Optional[Annotated[int, Field(le=23, strict=True)]], Field(description="Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23.")] = None,
+        province_id: Annotated[Optional[Any], Field(description="Filter by the list of province IDs.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4580,30 +4577,30 @@ class GlobalMapApi:
 
         Method returns information about the Global Map provinces.
 
-        :param front_id: (required)
+        :param front_id: Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. (required)
         :type front_id: str
-        :param arena_id:
+        :param arena_id: Map ID
         :type arena_id: str
-        :param daily_revenue_gte:
+        :param daily_revenue_gte: Search for provinces with daily income equal to or more than the value
         :type daily_revenue_gte: int
-        :param daily_revenue_lte:
+        :param daily_revenue_lte: Search for provinces with daily income equal to or less than the value
         :type daily_revenue_lte: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param landing_type:
+        :param landing_type: Search for provinces by landing type.
         :type landing_type: str
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param order_by:
+        :param order_by: Sorting.
         :type order_by: str
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param prime_hour:
+        :param prime_hour: Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23.
         :type prime_hour: int
-        :param province_id:
-        :type province_id: List[str]
+        :param province_id: Filter by the list of province IDs.
+        :type province_id: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4679,7 +4676,6 @@ class GlobalMapApi:
 
         _collection_formats: Dict[str, str] = {
             'fields': 'csv',
-            'province_id': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -4781,9 +4777,9 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonaccountinfo(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        season_id: StrictStr,
-        vehicle_level: Annotated[List[StrictStr], Field(min_length=1, max_length=100)],
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[Any, Field(description="List of vehicle Tiers.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -4802,12 +4798,12 @@ class GlobalMapApi:
 
         Method returns player's statistics for a specific season.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
-        :type vehicle_level: List[str]
+        :param vehicle_level: List of vehicle Tiers. (required)
+        :type vehicle_level: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -4860,9 +4856,9 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonaccountinfo_with_http_info(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        season_id: StrictStr,
-        vehicle_level: Annotated[List[StrictStr], Field(min_length=1, max_length=100)],
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[Any, Field(description="List of vehicle Tiers.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -4881,12 +4877,12 @@ class GlobalMapApi:
 
         Method returns player's statistics for a specific season.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
-        :type vehicle_level: List[str]
+        :param vehicle_level: List of vehicle Tiers. (required)
+        :type vehicle_level: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -4939,9 +4935,9 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonaccountinfo_without_preload_content(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
-        season_id: StrictStr,
-        vehicle_level: Annotated[List[StrictStr], Field(min_length=1, max_length=100)],
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[Any, Field(description="List of vehicle Tiers.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -4960,12 +4956,12 @@ class GlobalMapApi:
 
         Method returns player's statistics for a specific season.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
-        :type vehicle_level: List[str]
+        :param vehicle_level: List of vehicle Tiers. (required)
+        :type vehicle_level: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param _request_timeout: timeout setting for this request. If one
@@ -5026,7 +5022,6 @@ class GlobalMapApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'vehicle_level': 'csv',
             'fields': 'csv',
         }
 
@@ -5097,11 +5092,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonrating(
         self,
-        season_id: StrictStr,
-        vehicle_level: StrictStr,
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[StrictStr, Field(description="Vehicle Tier.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(description="Clans limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5119,15 +5114,15 @@ class GlobalMapApi:
 
         Method returns season clan rating.
 
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
+        :param vehicle_level: Vehicle Tier. (required)
         :type vehicle_level: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5180,11 +5175,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonrating_with_http_info(
         self,
-        season_id: StrictStr,
-        vehicle_level: StrictStr,
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[StrictStr, Field(description="Vehicle Tier.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(description="Clans limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5202,15 +5197,15 @@ class GlobalMapApi:
 
         Method returns season clan rating.
 
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
+        :param vehicle_level: Vehicle Tier. (required)
         :type vehicle_level: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5263,11 +5258,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonrating_without_preload_content(
         self,
-        season_id: StrictStr,
-        vehicle_level: StrictStr,
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[StrictStr, Field(description="Vehicle Tier.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True, ge=1)]], Field(description="Clans limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5285,15 +5280,15 @@ class GlobalMapApi:
 
         Method returns season clan rating.
 
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
+        :param vehicle_level: Vehicle Tier. (required)
         :type vehicle_level: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Clans limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5429,11 +5424,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonratingneighbors(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        season_id: StrictStr,
-        vehicle_level: StrictStr,
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[StrictStr, Field(description="Vehicle Tier.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="Neighbors limit.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5451,15 +5446,15 @@ class GlobalMapApi:
 
         Method returns list of adjacent positions in season clan rating.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
+        :param vehicle_level: Vehicle Tier. (required)
         :type vehicle_level: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Neighbors limit.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5512,11 +5507,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonratingneighbors_with_http_info(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        season_id: StrictStr,
-        vehicle_level: StrictStr,
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[StrictStr, Field(description="Vehicle Tier.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="Neighbors limit.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5534,15 +5529,15 @@ class GlobalMapApi:
 
         Method returns list of adjacent positions in season clan rating.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
+        :param vehicle_level: Vehicle Tier. (required)
         :type vehicle_level: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Neighbors limit.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5595,11 +5590,11 @@ class GlobalMapApi:
     @validate_call
     def get_globalmap_seasonratingneighbors_without_preload_content(
         self,
-        clan_id: Annotated[int, Field(strict=True, ge=1)],
-        season_id: StrictStr,
-        vehicle_level: StrictStr,
+        clan_id: Annotated[int, Field(strict=True, ge=1, description="Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.")],
+        season_id: Annotated[StrictStr, Field(description="Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.")],
+        vehicle_level: Annotated[StrictStr, Field(description="Vehicle Tier.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        limit: Optional[Annotated[int, Field(le=99, strict=True, ge=1)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=99, strict=True, ge=1)]], Field(description="Neighbors limit.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5617,15 +5612,15 @@ class GlobalMapApi:
 
         Method returns list of adjacent positions in season clan rating.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (required)
         :type clan_id: int
-        :param season_id: (required)
+        :param season_id: Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. (required)
         :type season_id: str
-        :param vehicle_level: (required)
+        :param vehicle_level: Vehicle Tier. (required)
         :type vehicle_level: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param limit:
+        :param limit: Neighbors limit.
         :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5763,10 +5758,10 @@ class GlobalMapApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        season_id: Optional[StrictStr] = None,
-        status: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        season_id: Annotated[Optional[StrictStr], Field(description="Season ID")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Response with seasons filtered by status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5788,13 +5783,13 @@ class GlobalMapApi:
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param season_id:
+        :param season_id: Season ID
         :type season_id: str
-        :param status:
+        :param status: Response with seasons filtered by status.
         :type status: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5850,10 +5845,10 @@ class GlobalMapApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        season_id: Optional[StrictStr] = None,
-        status: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        season_id: Annotated[Optional[StrictStr], Field(description="Season ID")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Response with seasons filtered by status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5875,13 +5870,13 @@ class GlobalMapApi:
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param season_id:
+        :param season_id: Season ID
         :type season_id: str
-        :param status:
+        :param status: Response with seasons filtered by status.
         :type status: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5937,10 +5932,10 @@ class GlobalMapApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language.")] = None,
-        limit: Optional[Annotated[int, Field(le=20, strict=True, ge=1)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        season_id: Optional[StrictStr] = None,
-        status: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=20, strict=True, ge=1)]], Field(description="Page limit.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        season_id: Annotated[Optional[StrictStr], Field(description="Season ID")] = None,
+        status: Annotated[Optional[StrictStr], Field(description="Response with seasons filtered by status.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5962,13 +5957,13 @@ class GlobalMapApi:
         :type fields: List[str]
         :param language: Language.
         :type language: str
-        :param limit:
+        :param limit: Page limit.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param season_id:
+        :param season_id: Season ID
         :type season_id: str
-        :param status:
+        :param status: Response with seasons filtered by status.
         :type status: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

@@ -45,10 +45,10 @@ class AuthenticationApi:
     @validate_call
     def get_auth_login(
         self,
-        display: Optional[StrictStr] = None,
-        expires_at: Optional[StrictInt] = None,
-        nofollow: Optional[Annotated[int, Field(le=1, strict=True, ge=0)]] = None,
-        redirect_uri: Optional[StrictStr] = None,
+        display: Annotated[Optional[StrictStr], Field(description="Layout for mobile applications.")] = None,
+        expires_at: Annotated[Optional[StrictInt], Field(description="**Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.")] = None,
+        nofollow: Annotated[Optional[Annotated[int, Field(le=1, strict=True, ge=0)]], Field(description="If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response.")] = None,
+        redirect_uri: Annotated[Optional[StrictStr], Field(description="URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,13 +66,13 @@ class AuthenticationApi:
 
         Method authenticates user based on Wargaming.net ID (OpenID) which is used in World of Tanks, World of Tanks Blitz, World of Warships, World of Warplanes, and WarGag.ru. To log in, player must enter email and password used for creating account, or use a social network profile. Authentication is not available for iOS Game Center users in the following cases: *  the account is not linked to a social network account, or *  email and password are not specified in the profile.  Information on authorization status is sent to URL specified in **redirect_uri** parameter.  If authentication is successful, the following parameters are sent to **redirect_uri**:  *  **status: ok** — successful authentication *  **access_token** — access token is passed in to all methods that require authentication *  **expires_at** — expiration date of **access_token** *  **account_id** — user ID *  **nickname** — user name.  If authentication fails, the following parameters are sent to **redirect_uri**:  *  **status: error** — authentication error *  **code** — error code *  **message** — error message.
 
-        :param display:
+        :param display: Layout for mobile applications.
         :type display: str
-        :param expires_at:
+        :param expires_at: **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.
         :type expires_at: int
-        :param nofollow:
+        :param nofollow: If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response.
         :type nofollow: int
-        :param redirect_uri:
+        :param redirect_uri: URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/)
         :type redirect_uri: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -124,10 +124,10 @@ class AuthenticationApi:
     @validate_call
     def get_auth_login_with_http_info(
         self,
-        display: Optional[StrictStr] = None,
-        expires_at: Optional[StrictInt] = None,
-        nofollow: Optional[Annotated[int, Field(le=1, strict=True, ge=0)]] = None,
-        redirect_uri: Optional[StrictStr] = None,
+        display: Annotated[Optional[StrictStr], Field(description="Layout for mobile applications.")] = None,
+        expires_at: Annotated[Optional[StrictInt], Field(description="**Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.")] = None,
+        nofollow: Annotated[Optional[Annotated[int, Field(le=1, strict=True, ge=0)]], Field(description="If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response.")] = None,
+        redirect_uri: Annotated[Optional[StrictStr], Field(description="URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -145,13 +145,13 @@ class AuthenticationApi:
 
         Method authenticates user based on Wargaming.net ID (OpenID) which is used in World of Tanks, World of Tanks Blitz, World of Warships, World of Warplanes, and WarGag.ru. To log in, player must enter email and password used for creating account, or use a social network profile. Authentication is not available for iOS Game Center users in the following cases: *  the account is not linked to a social network account, or *  email and password are not specified in the profile.  Information on authorization status is sent to URL specified in **redirect_uri** parameter.  If authentication is successful, the following parameters are sent to **redirect_uri**:  *  **status: ok** — successful authentication *  **access_token** — access token is passed in to all methods that require authentication *  **expires_at** — expiration date of **access_token** *  **account_id** — user ID *  **nickname** — user name.  If authentication fails, the following parameters are sent to **redirect_uri**:  *  **status: error** — authentication error *  **code** — error code *  **message** — error message.
 
-        :param display:
+        :param display: Layout for mobile applications.
         :type display: str
-        :param expires_at:
+        :param expires_at: **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.
         :type expires_at: int
-        :param nofollow:
+        :param nofollow: If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response.
         :type nofollow: int
-        :param redirect_uri:
+        :param redirect_uri: URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/)
         :type redirect_uri: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -203,10 +203,10 @@ class AuthenticationApi:
     @validate_call
     def get_auth_login_without_preload_content(
         self,
-        display: Optional[StrictStr] = None,
-        expires_at: Optional[StrictInt] = None,
-        nofollow: Optional[Annotated[int, Field(le=1, strict=True, ge=0)]] = None,
-        redirect_uri: Optional[StrictStr] = None,
+        display: Annotated[Optional[StrictStr], Field(description="Layout for mobile applications.")] = None,
+        expires_at: Annotated[Optional[StrictInt], Field(description="**Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.")] = None,
+        nofollow: Annotated[Optional[Annotated[int, Field(le=1, strict=True, ge=0)]], Field(description="If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response.")] = None,
+        redirect_uri: Annotated[Optional[StrictStr], Field(description="URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -224,13 +224,13 @@ class AuthenticationApi:
 
         Method authenticates user based on Wargaming.net ID (OpenID) which is used in World of Tanks, World of Tanks Blitz, World of Warships, World of Warplanes, and WarGag.ru. To log in, player must enter email and password used for creating account, or use a social network profile. Authentication is not available for iOS Game Center users in the following cases: *  the account is not linked to a social network account, or *  email and password are not specified in the profile.  Information on authorization status is sent to URL specified in **redirect_uri** parameter.  If authentication is successful, the following parameters are sent to **redirect_uri**:  *  **status: ok** — successful authentication *  **access_token** — access token is passed in to all methods that require authentication *  **expires_at** — expiration date of **access_token** *  **account_id** — user ID *  **nickname** — user name.  If authentication fails, the following parameters are sent to **redirect_uri**:  *  **status: error** — authentication error *  **code** — error code *  **message** — error message.
 
-        :param display:
+        :param display: Layout for mobile applications.
         :type display: str
-        :param expires_at:
+        :param expires_at: **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.
         :type expires_at: int
-        :param nofollow:
+        :param nofollow: If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response.
         :type nofollow: int
-        :param redirect_uri:
+        :param redirect_uri: URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/)
         :type redirect_uri: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -359,7 +359,7 @@ class AuthenticationApi:
     @validate_call
     def logout(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -377,7 +377,7 @@ class AuthenticationApi:
 
         Method deletes user's **access_token**.  After this method is called, **access_token** becomes invalid.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -426,7 +426,7 @@ class AuthenticationApi:
     @validate_call
     def logout_with_http_info(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -444,7 +444,7 @@ class AuthenticationApi:
 
         Method deletes user's **access_token**.  After this method is called, **access_token** becomes invalid.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -493,7 +493,7 @@ class AuthenticationApi:
     @validate_call
     def logout_without_preload_content(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -511,7 +511,7 @@ class AuthenticationApi:
 
         Method deletes user's **access_token**.  After this method is called, **access_token** becomes invalid.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -633,8 +633,8 @@ class AuthenticationApi:
     @validate_call
     def prolongate(
         self,
-        access_token: StrictStr,
-        expires_at: Optional[StrictInt] = None,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
+        expires_at: Annotated[Optional[StrictInt], Field(description="**Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -652,9 +652,9 @@ class AuthenticationApi:
 
         Method generates new **access_token** based on the current token.  This method is used when the player is still using the application but the current **access_token** is about to expire.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
-        :param expires_at:
+        :param expires_at: **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.
         :type expires_at: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -704,8 +704,8 @@ class AuthenticationApi:
     @validate_call
     def prolongate_with_http_info(
         self,
-        access_token: StrictStr,
-        expires_at: Optional[StrictInt] = None,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
+        expires_at: Annotated[Optional[StrictInt], Field(description="**Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -723,9 +723,9 @@ class AuthenticationApi:
 
         Method generates new **access_token** based on the current token.  This method is used when the player is still using the application but the current **access_token** is about to expire.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
-        :param expires_at:
+        :param expires_at: **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.
         :type expires_at: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -775,8 +775,8 @@ class AuthenticationApi:
     @validate_call
     def prolongate_without_preload_content(
         self,
-        access_token: StrictStr,
-        expires_at: Optional[StrictInt] = None,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
+        expires_at: Annotated[Optional[StrictInt], Field(description="**Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -794,9 +794,9 @@ class AuthenticationApi:
 
         Method generates new **access_token** based on the current token.  This method is used when the player is still using the application but the current **access_token** is about to expire.
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
-        :param expires_at:
+        :param expires_at: **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time.
         :type expires_at: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

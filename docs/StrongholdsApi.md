@@ -47,11 +47,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.StrongholdsApi(api_client)
-    access_token = 'access_token_example' # str | 
-    reserve_level = 56 # int | 
-    reserve_type = 'reserve_type_example' # str | 
-    fields = ['fields_example'] # List[str] |  (optional)
-    language = en # str |  (optional) (default to en)
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
+    reserve_level = 56 # int | Level of clan Reserve to be activated
+    reserve_type = 'reserve_type_example' # str | Type of clan Reserve to be activated
+    fields = None # object | Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional)
+    language = en # str | Localization language. (optional) (default to en)
 
     try:
         # Activate available clan Reserve
@@ -69,11 +69,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_token** | **str**|  | 
- **reserve_level** | **int**|  | 
- **reserve_type** | **str**|  | 
- **fields** | [**List[str]**](str.md)|  | [optional] 
- **language** | **str**|  | [optional] [default to en]
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | 
+ **reserve_level** | **int**| Level of clan Reserve to be activated | 
+ **reserve_type** | **str**| Type of clan Reserve to be activated | 
+ **fields** | [**object**](object.md)| Response field. The fields are separated with commas. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] 
+ **language** | **str**| Localization language. | [optional] [default to en]
 
 ### Return type
 
@@ -134,7 +134,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.StrongholdsApi(api_client)
-    clan_id = [56] # List[int] | 
+    clan_id = [56] # List[int] | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
 
@@ -154,7 +154,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | [**List[int]**](int.md)|  | 
+ **clan_id** | [**List[int]**](int.md)| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
 
@@ -217,7 +217,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.StrongholdsApi(api_client)
-    access_token = 'access_token_example' # str | 
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Localization language. (optional)
 
@@ -237,7 +237,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_token** | **str**|  | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Localization language. | [optional] 
 

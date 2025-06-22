@@ -79,7 +79,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AccountsApi(api_client)
-    account_id = [56] # List[int] | 
+    account_id = [56] # List[int] | Player account ID.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:

@@ -55,7 +55,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AccountsApi(api_client)
-    account_id = [56] # List[int] | 
+    account_id = [56] # List[int] | Player account ID.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -74,7 +74,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | [**List[int]**](int.md)|  | 
+ **account_id** | [**List[int]**](int.md)| Player account ID. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type
@@ -136,9 +136,9 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AccountsApi(api_client)
-    account_id = [56] # List[int] | 
-    access_token = 'access_token_example' # str |  (optional)
-    extra = ['extra_example'] # List[str] |  (optional)
+    account_id = [56] # List[int] | Player account ID.
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
+    extra = None # object | Extra fields that will be added to the response. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -157,9 +157,9 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | [**List[int]**](int.md)|  | 
- **access_token** | **str**|  | [optional] 
- **extra** | [**List[str]**](str.md)|  | [optional] 
+ **account_id** | [**List[int]**](int.md)| Player account ID. | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
+ **extra** | [**object**](.md)| Extra fields that will be added to the response. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type
@@ -221,10 +221,10 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AccountsApi(api_client)
-    search = 'search_example' # str | 
+    search = 'search_example' # str | Player name search string. Parameter \"type\" defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 56 # int |  (optional)
-    type = startswith # str |  (optional) (default to startswith)
+    limit = 56 # int | Number of returned entries. (optional)
+    type = startswith # str | Search type. (optional) (default to startswith)
 
     try:
         # Players
@@ -242,10 +242,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search** | **str**|  | 
+ **search** | **str**| Player name search string. Parameter \&quot;type\&quot; defines minimum length and type of search. Using the exact search type, you can enter several names, separated with commas. Maximum length: 24. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] 
- **type** | **str**|  | [optional] [default to startswith]
+ **limit** | **int**| Number of returned entries. | [optional] 
+ **type** | **str**| Search type. | [optional] [default to startswith]
 
 ### Return type
 
@@ -306,10 +306,10 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AccountsApi(api_client)
-    account_id = [56] # List[int] | 
-    access_token = 'access_token_example' # str |  (optional)
+    account_id = [56] # List[int] | Player account ID.
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    tank_id = [56] # List[int] |  (optional)
+    tank_id = [56] # List[int] | Player's vehicle ID. (optional)
 
     try:
         # Player's vehicles
@@ -327,10 +327,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | [**List[int]**](int.md)|  | 
- **access_token** | **str**|  | [optional] 
+ **account_id** | [**List[int]**](int.md)| Player account ID. | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **tank_id** | [**List[int]**](int.md)|  | [optional] 
+ **tank_id** | [**List[int]**](int.md)| Player&#39;s vehicle ID. | [optional] 
 
 ### Return type
 

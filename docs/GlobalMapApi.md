@@ -62,11 +62,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = 56 # int | 
+    clan_id = 56 # int | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Clan's battles
@@ -84,11 +84,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | **int**|  | 
+ **clan_id** | **int**| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -149,8 +149,8 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = [56] # List[int] | 
-    access_token = 'access_token_example' # str |  (optional)
+    clan_id = [56] # List[int] | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -169,8 +169,8 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | [**List[int]**](int.md)|  | 
- **access_token** | **str**|  | [optional] 
+ **clan_id** | [**List[int]**](int.md)| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type
@@ -232,8 +232,8 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = [56] # List[int] | 
-    access_token = 'access_token_example' # str |  (optional)
+    clan_id = [56] # List[int] | List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Language. (optional)
 
@@ -253,8 +253,8 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | [**List[int]**](int.md)|  | 
- **access_token** | **str**|  | [optional] 
+ **clan_id** | [**List[int]**](int.md)| List of clan IDs. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Language. | [optional] 
 
@@ -317,10 +317,10 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    account_id = 56 # int | 
-    event_id = 'event_id_example' # str | 
-    front_id = ['front_id_example'] # List[str] | 
-    clan_id = 56 # int |  (optional)
+    account_id = 56 # int | Account ID.
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
+    front_id = None # object | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
+    clan_id = 56 # int | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -339,10 +339,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**|  | 
- **event_id** | **str**|  | 
- **front_id** | [**List[str]**](str.md)|  | 
- **clan_id** | **int**|  | [optional] 
+ **account_id** | **int**| Account ID. | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
+ **front_id** | [**object**](.md)| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
+ **clan_id** | **int**| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type
@@ -404,13 +404,13 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    account_id = 56 # int | 
-    event_id = 'event_id_example' # str | 
-    front_id = 'front_id_example' # str | 
+    account_id = 56 # int | Account ID.
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
+    front_id = 'front_id_example' # str | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 20 # int |  (optional) (default to 20)
-    neighbours_count = 3 # int |  (optional) (default to 3)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 20 # int | Clans limit. (optional) (default to 20)
+    neighbours_count = 3 # int | How many neighbors to show next to the account. (optional) (default to 3)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Adjacent positions in event account rating
@@ -428,13 +428,13 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**|  | 
- **event_id** | **str**|  | 
- **front_id** | **str**|  | 
+ **account_id** | **int**| Account ID. | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
+ **front_id** | **str**| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 20]
- **neighbours_count** | **int**|  | [optional] [default to 3]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Clans limit. | [optional] [default to 20]
+ **neighbours_count** | **int**| How many neighbors to show next to the account. | [optional] [default to 3]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -495,12 +495,12 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    event_id = 'event_id_example' # str | 
-    front_id = 'front_id_example' # str | 
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
+    front_id = 'front_id_example' # str | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    in_rating = 0 # int |  (optional) (default to 0)
-    limit = 20 # int |  (optional) (default to 20)
-    page_no = 1 # int |  (optional) (default to 1)
+    in_rating = 0 # int | Get data only for accounts with rating. (optional) (default to 0)
+    limit = 20 # int | Accounts limit. (optional) (default to 20)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Event account rating
@@ -518,12 +518,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **str**|  | 
- **front_id** | **str**|  | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
+ **front_id** | **str**| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **in_rating** | **int**|  | [optional] [default to 0]
- **limit** | **int**|  | [optional] [default to 20]
- **page_no** | **int**|  | [optional] [default to 1]
+ **in_rating** | **int**| Get data only for accounts with rating. | [optional] [default to 0]
+ **limit** | **int**| Accounts limit. | [optional] [default to 20]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -584,9 +584,9 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = 56 # int | 
-    event_id = 'event_id_example' # str | 
-    front_id = ['front_id_example'] # List[str] | 
+    clan_id = 56 # int | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
+    front_id = None # object | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -605,9 +605,9 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | **int**|  | 
- **event_id** | **str**|  | 
- **front_id** | [**List[str]**](str.md)|  | 
+ **clan_id** | **int**| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
+ **front_id** | [**object**](.md)| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type
@@ -669,12 +669,12 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = 56 # int | 
-    event_id = 'event_id_example' # str | 
+    clan_id = 56 # int | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Language. (optional)
-    limit = 5 # int |  (optional) (default to 5)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 5 # int | Page size. (optional) (default to 5)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Clan event missions
@@ -692,12 +692,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | **int**|  | 
- **event_id** | **str**|  | 
+ **clan_id** | **int**| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Language. | [optional] 
- **limit** | **int**|  | [optional] [default to 5]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Page size. | [optional] [default to 5]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -758,11 +758,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    event_id = 'event_id_example' # str | 
-    front_id = 'front_id_example' # str | 
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
+    front_id = 'front_id_example' # str | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 10 # int |  (optional) (default to 10)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 10 # int | Clans limit. (optional) (default to 10)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Event clan ratings
@@ -780,11 +780,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **str**|  | 
- **front_id** | **str**|  | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
+ **front_id** | **str**| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 10]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Clans limit. | [optional] [default to 10]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -845,11 +845,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = 56 # int | 
-    event_id = 'event_id_example' # str | 
-    front_id = 'front_id_example' # str | 
+    clan_id = 56 # int | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
+    event_id = 'event_id_example' # str | Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method.
+    front_id = 'front_id_example' # str | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 10 # int |  (optional) (default to 10)
+    limit = 10 # int | Neighbors limit. (optional) (default to 10)
 
     try:
         # Adjacent position in event clan rating
@@ -867,11 +867,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | **int**|  | 
- **event_id** | **str**|  | 
- **front_id** | **str**|  | 
+ **clan_id** | **int**| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
+ **event_id** | **str**| Event ID. To get an event ID, use the [Events](https://developers.wargaming.net/reference/all/wot/globalmap/events) method. | 
+ **front_id** | **str**| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 10]
+ **limit** | **int**| Neighbors limit. | [optional] [default to 10]
 
 ### Return type
 
@@ -932,12 +932,12 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    event_id = 'event_id_example' # str |  (optional)
+    event_id = 'event_id_example' # str | Event ID (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Language. (optional)
-    limit = 5 # int |  (optional) (default to 5)
-    page_no = 1 # int |  (optional) (default to 1)
-    status = 'status_example' # str |  (optional)
+    limit = 5 # int | Page limit. (optional) (default to 5)
+    page_no = 1 # int | Page number. (optional) (default to 1)
+    status = 'status_example' # str | Response with events filtered by status. (optional)
 
     try:
         # Events
@@ -955,12 +955,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_id** | **str**|  | [optional] 
+ **event_id** | **str**| Event ID | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Language. | [optional] 
- **limit** | **int**|  | [optional] [default to 5]
- **page_no** | **int**|  | [optional] [default to 1]
- **status** | **str**|  | [optional] 
+ **limit** | **int**| Page limit. | [optional] [default to 5]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
+ **status** | **str**| Response with events filtered by status. | [optional] 
 
 ### Return type
 
@@ -1022,10 +1022,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    front_id = ['front_id_example'] # List[str] |  (optional)
+    front_id = None # object | List of Front IDs, to specify what fronts need to be returned. (optional)
     language = 'language_example' # str | Language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Fronts
@@ -1044,10 +1044,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **front_id** | [**List[str]**](str.md)|  | [optional] 
+ **front_id** | [**object**](.md)| List of Front IDs, to specify what fronts need to be returned. | [optional] 
  **language** | **str**| Language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -1187,18 +1187,18 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    front_id = 'front_id_example' # str | 
-    arena_id = 'arena_id_example' # str |  (optional)
-    daily_revenue_gte = 56 # int |  (optional)
-    daily_revenue_lte = 56 # int |  (optional)
+    front_id = 'front_id_example' # str | Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method.
+    arena_id = 'arena_id_example' # str | Map ID (optional)
+    daily_revenue_gte = 56 # int | Search for provinces with daily income equal to or more than the value (optional)
+    daily_revenue_lte = 56 # int | Search for provinces with daily income equal to or less than the value (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    landing_type = 'landing_type_example' # str |  (optional)
+    landing_type = 'landing_type_example' # str | Search for provinces by landing type. (optional)
     language = 'language_example' # str | Language. (optional)
-    limit = 100 # int |  (optional) (default to 100)
-    order_by = 'order_by_example' # str |  (optional)
-    page_no = 1 # int |  (optional) (default to 1)
-    prime_hour = 56 # int |  (optional)
-    province_id = ['province_id_example'] # List[str] |  (optional)
+    limit = 100 # int | Number of returned entries. (optional) (default to 100)
+    order_by = 'order_by_example' # str | Sorting. (optional)
+    page_no = 1 # int | Page number. (optional) (default to 1)
+    prime_hour = 56 # int | Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23. (optional)
+    province_id = None # object | Filter by the list of province IDs. (optional)
 
     try:
         # Provinces
@@ -1216,18 +1216,18 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **front_id** | **str**|  | 
- **arena_id** | **str**|  | [optional] 
- **daily_revenue_gte** | **int**|  | [optional] 
- **daily_revenue_lte** | **int**|  | [optional] 
+ **front_id** | **str**| Front ID. To get a front ID, use the [Fronts](https://developers.wargaming.net/reference/all/wot/globalmap/fronts) method. | 
+ **arena_id** | **str**| Map ID | [optional] 
+ **daily_revenue_gte** | **int**| Search for provinces with daily income equal to or more than the value | [optional] 
+ **daily_revenue_lte** | **int**| Search for provinces with daily income equal to or less than the value | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **landing_type** | **str**|  | [optional] 
+ **landing_type** | **str**| Search for provinces by landing type. | [optional] 
  **language** | **str**| Language. | [optional] 
- **limit** | **int**|  | [optional] [default to 100]
- **order_by** | **str**|  | [optional] 
- **page_no** | **int**|  | [optional] [default to 1]
- **prime_hour** | **int**|  | [optional] 
- **province_id** | [**List[str]**](str.md)|  | [optional] 
+ **limit** | **int**| Number of returned entries. | [optional] [default to 100]
+ **order_by** | **str**| Sorting. | [optional] 
+ **page_no** | **int**| Page number. | [optional] [default to 1]
+ **prime_hour** | **int**| Search for provinces with the value of Prime Time start hour. Values available: from 0 to 23. | [optional] 
+ **province_id** | [**object**](.md)| Filter by the list of province IDs. | [optional] 
 
 ### Return type
 
@@ -1288,9 +1288,9 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    account_id = 56 # int | 
-    season_id = 'season_id_example' # str | 
-    vehicle_level = ['vehicle_level_example'] # List[str] | 
+    account_id = 56 # int | Account ID.
+    season_id = 'season_id_example' # str | Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.
+    vehicle_level = None # object | List of vehicle Tiers.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
 
     try:
@@ -1309,9 +1309,9 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**|  | 
- **season_id** | **str**|  | 
- **vehicle_level** | [**List[str]**](str.md)|  | 
+ **account_id** | **int**| Account ID. | 
+ **season_id** | **str**| Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. | 
+ **vehicle_level** | [**object**](.md)| List of vehicle Tiers. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
 
 ### Return type
@@ -1373,11 +1373,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    season_id = 'season_id_example' # str | 
-    vehicle_level = 'vehicle_level_example' # str | 
+    season_id = 'season_id_example' # str | Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.
+    vehicle_level = 'vehicle_level_example' # str | Vehicle Tier.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 10 # int |  (optional) (default to 10)
-    page_no = 1 # int |  (optional) (default to 1)
+    limit = 10 # int | Clans limit. (optional) (default to 10)
+    page_no = 1 # int | Page number. (optional) (default to 1)
 
     try:
         # Season rating
@@ -1395,11 +1395,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season_id** | **str**|  | 
- **vehicle_level** | **str**|  | 
+ **season_id** | **str**| Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. | 
+ **vehicle_level** | **str**| Vehicle Tier. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 10]
- **page_no** | **int**|  | [optional] [default to 1]
+ **limit** | **int**| Clans limit. | [optional] [default to 10]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
 
 ### Return type
 
@@ -1460,11 +1460,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.GlobalMapApi(api_client)
-    clan_id = 56 # int | 
-    season_id = 'season_id_example' # str | 
-    vehicle_level = 'vehicle_level_example' # str | 
+    clan_id = 56 # int | Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method.
+    season_id = 'season_id_example' # str | Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method.
+    vehicle_level = 'vehicle_level_example' # str | Vehicle Tier.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    limit = 10 # int |  (optional) (default to 10)
+    limit = 10 # int | Neighbors limit. (optional) (default to 10)
 
     try:
         # Adjacent positions in season clan rating
@@ -1482,11 +1482,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clan_id** | **int**|  | 
- **season_id** | **str**|  | 
- **vehicle_level** | **str**|  | 
+ **clan_id** | **int**| Clan ID. To get a clan ID, use the [Clans](https://developers.wargaming.net/reference/all/wgn/clans/list) method. | 
+ **season_id** | **str**| Season ID. To get a season ID, use the [Seasons](https://developers.wargaming.net/reference/all/wot/globalmap/seasons) method. | 
+ **vehicle_level** | **str**| Vehicle Tier. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **limit** | **int**|  | [optional] [default to 10]
+ **limit** | **int**| Neighbors limit. | [optional] [default to 10]
 
 ### Return type
 
@@ -1549,10 +1549,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
     api_instance = wot_api_client.GlobalMapApi(api_client)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
     language = 'language_example' # str | Language. (optional)
-    limit = 5 # int |  (optional) (default to 5)
-    page_no = 1 # int |  (optional) (default to 1)
-    season_id = 'season_id_example' # str |  (optional)
-    status = 'status_example' # str |  (optional)
+    limit = 5 # int | Page limit. (optional) (default to 5)
+    page_no = 1 # int | Page number. (optional) (default to 1)
+    season_id = 'season_id_example' # str | Season ID (optional)
+    status = 'status_example' # str | Response with seasons filtered by status. (optional)
 
     try:
         # Seasons
@@ -1572,10 +1572,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
  **language** | **str**| Language. | [optional] 
- **limit** | **int**|  | [optional] [default to 5]
- **page_no** | **int**|  | [optional] [default to 1]
- **season_id** | **str**|  | [optional] 
- **status** | **str**|  | [optional] 
+ **limit** | **int**| Page limit. | [optional] [default to 5]
+ **page_no** | **int**| Page number. | [optional] [default to 1]
+ **season_id** | **str**| Season ID | [optional] 
+ **status** | **str**| Response with seasons filtered by status. | [optional] 
 
 ### Return type
 

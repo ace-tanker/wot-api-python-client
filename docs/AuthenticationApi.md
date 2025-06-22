@@ -66,10 +66,10 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AuthenticationApi(api_client)
-    display = 'display_example' # str |  (optional)
-    expires_at = 56 # int |  (optional)
-    nofollow = 0 # int |  (optional) (default to 0)
-    redirect_uri = 'redirect_uri_example' # str |  (optional)
+    display = 'display_example' # str | Layout for mobile applications. (optional)
+    expires_at = 56 # int | **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time. (optional)
+    nofollow = 0 # int | If parameter **nofollow=1** is passed in, the user is not redirected. URL is returned in response. (optional) (default to 0)
+    redirect_uri = 'redirect_uri_example' # str | URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/) (optional)
 
     try:
         # OpenID login
@@ -87,10 +87,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **display** | **str**|  | [optional] 
- **expires_at** | **int**|  | [optional] 
- **nofollow** | **int**|  | [optional] [default to 0]
- **redirect_uri** | **str**|  | [optional] 
+ **display** | **str**| Layout for mobile applications. | [optional] 
+ **expires_at** | **int**| **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time. | [optional] 
+ **nofollow** | **int**| If parameter **nofollow&#x3D;1** is passed in, the user is not redirected. URL is returned in response. | [optional] [default to 0]
+ **redirect_uri** | **str**| URL where user is redirected after authentication.  By default: [{API_HOST}/blank/](https://{API_HOST}/blank/) | [optional] 
 
 ### Return type
 
@@ -153,7 +153,7 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AuthenticationApi(api_client)
-    access_token = 'access_token_example' # str | 
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
 
     try:
         # Log out
@@ -171,7 +171,7 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_token** | **str**|  | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | 
 
 ### Return type
 
@@ -234,8 +234,8 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.AuthenticationApi(api_client)
-    access_token = 'access_token_example' # str | 
-    expires_at = 56 # int |  (optional)
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
+    expires_at = 56 # int | **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time. (optional)
 
     try:
         # Access Token extension
@@ -253,8 +253,8 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_token** | **str**|  | 
- **expires_at** | **int**|  | [optional] 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | 
+ **expires_at** | **int**| **Access_token** expiration time in UNIX. Delta can also be specified in seconds.  Expiration time and delta must not exceed two weeks from the current time. | [optional] 
 
 ### Return type
 

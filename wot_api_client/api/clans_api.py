@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr, field_validator
-from typing import List, Optional
+from typing import Any, List, Optional
 from typing_extensions import Annotated
 from wot_api_client.models.get_clans_accountinfo200_response import GetClansAccountinfo200Response
 from wot_api_client.models.get_clans_glossary200_response import GetClansGlossary200Response
@@ -48,7 +48,7 @@ class ClansApi:
     @validate_call
     def get_clans_accountinfo(
         self,
-        account_id: Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=100)],
+        account_id: Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=100, description="Account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -68,7 +68,7 @@ class ClansApi:
 
         Method returns detailed clan member information and brief clan details.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -123,7 +123,7 @@ class ClansApi:
     @validate_call
     def get_clans_accountinfo_with_http_info(
         self,
-        account_id: Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=100)],
+        account_id: Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=100, description="Account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -143,7 +143,7 @@ class ClansApi:
 
         Method returns detailed clan member information and brief clan details.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -198,7 +198,7 @@ class ClansApi:
     @validate_call
     def get_clans_accountinfo_without_preload_content(
         self,
-        account_id: Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=100)],
+        account_id: Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=100, description="Account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -218,7 +218,7 @@ class ClansApi:
 
         Method returns detailed clan member information and brief clan details.
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -628,12 +628,12 @@ class ClansApi:
     @validate_call
     def get_clans_info(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Clan ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        members_key: Optional[StrictStr] = None,
+        members_key: Annotated[Optional[StrictStr], Field(description="This parameter changes members field type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -651,17 +651,17 @@ class ClansApi:
 
         Method returns detailed clan information.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param members_key:
+        :param members_key: This parameter changes members field type.
         :type members_key: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -715,12 +715,12 @@ class ClansApi:
     @validate_call
     def get_clans_info_with_http_info(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Clan ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        members_key: Optional[StrictStr] = None,
+        members_key: Annotated[Optional[StrictStr], Field(description="This parameter changes members field type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -738,17 +738,17 @@ class ClansApi:
 
         Method returns detailed clan information.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param members_key:
+        :param members_key: This parameter changes members field type.
         :type members_key: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -802,12 +802,12 @@ class ClansApi:
     @validate_call
     def get_clans_info_without_preload_content(
         self,
-        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100)],
-        access_token: Optional[StrictStr] = None,
-        extra: Optional[List[StrictStr]] = None,
+        clan_id: Annotated[List[StrictInt], Field(min_length=1, max_length=100, description="Clan ID.")],
+        access_token: Annotated[Optional[StrictStr], Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        members_key: Optional[StrictStr] = None,
+        members_key: Annotated[Optional[StrictStr], Field(description="This parameter changes members field type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -825,17 +825,17 @@ class ClansApi:
 
         Method returns detailed clan information.
 
-        :param clan_id: (required)
+        :param clan_id: Clan ID. (required)
         :type clan_id: List[int]
-        :param access_token:
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period
         :type access_token: str
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param members_key:
+        :param members_key: This parameter changes members field type.
         :type members_key: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -900,7 +900,6 @@ class ClansApi:
 
         _collection_formats: Dict[str, str] = {
             'clan_id': 'csv',
-            'extra': 'csv',
             'fields': 'csv',
         }
 
@@ -981,9 +980,9 @@ class ClansApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        search: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Part of name or tag for clan search. Minimum 2 characters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1005,11 +1004,11 @@ class ClansApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param search:
+        :param search: Part of name or tag for clan search. Minimum 2 characters
         :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1064,9 +1063,9 @@ class ClansApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        search: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Part of name or tag for clan search. Minimum 2 characters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1088,11 +1087,11 @@ class ClansApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param search:
+        :param search: Part of name or tag for clan search. Minimum 2 characters
         :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1147,9 +1146,9 @@ class ClansApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[Annotated[int, Field(strict=True, ge=1)]] = None,
-        search: Optional[StrictStr] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Page number.")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Part of name or tag for clan search. Minimum 2 characters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1171,11 +1170,11 @@ class ClansApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Page number.
         :type page_no: int
-        :param search:
+        :param search: Part of name or tag for clan search. Minimum 2 characters
         :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1311,7 +1310,7 @@ class ClansApi:
     @validate_call
     def get_clans_memberhistory(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -1331,7 +1330,7 @@ class ClansApi:
 
         Method returns information about player's clan history. Data on 10 last clan memberships are presented in the response.<p/>This method will be removed. Use method <a href=\"/reference/all/wot/clans/memberhistory/\">Player's clan history (World of Tanks)</a>
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1386,7 +1385,7 @@ class ClansApi:
     @validate_call
     def get_clans_memberhistory_with_http_info(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -1406,7 +1405,7 @@ class ClansApi:
 
         Method returns information about player's clan history. Data on 10 last clan memberships are presented in the response.<p/>This method will be removed. Use method <a href=\"/reference/all/wot/clans/memberhistory/\">Player's clan history (World of Tanks)</a>
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1461,7 +1460,7 @@ class ClansApi:
     @validate_call
     def get_clans_memberhistory_without_preload_content(
         self,
-        account_id: Annotated[int, Field(strict=True, ge=1)],
+        account_id: Annotated[int, Field(strict=True, ge=1, description="Account ID.")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
         _request_timeout: Union[
@@ -1481,7 +1480,7 @@ class ClansApi:
 
         Method returns information about player's clan history. Data on 10 last clan memberships are presented in the response.<p/>This method will be removed. Use method <a href=\"/reference/all/wot/clans/memberhistory/\">Player's clan history (World of Tanks)</a>
 
-        :param account_id: (required)
+        :param account_id: Account ID. (required)
         :type account_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1609,7 +1608,7 @@ class ClansApi:
     @validate_call
     def get_clans_messageboard(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -1628,7 +1627,7 @@ class ClansApi:
 
         Method returns messages of clan message board.<p/>This method will be removed. Use method <a href=\"/reference/all/wot/clans/messageboard/\">Message board (World of Tanks)</a>
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1680,7 +1679,7 @@ class ClansApi:
     @validate_call
     def get_clans_messageboard_with_http_info(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -1699,7 +1698,7 @@ class ClansApi:
 
         Method returns messages of clan message board.<p/>This method will be removed. Use method <a href=\"/reference/all/wot/clans/messageboard/\">Message board (World of Tanks)</a>
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
@@ -1751,7 +1750,7 @@ class ClansApi:
     @validate_call
     def get_clans_messageboard_without_preload_content(
         self,
-        access_token: StrictStr,
+        access_token: Annotated[StrictStr, Field(description="[Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         _request_timeout: Union[
             None,
@@ -1770,7 +1769,7 @@ class ClansApi:
 
         Method returns messages of clan message board.<p/>This method will be removed. Use method <a href=\"/reference/all/wot/clans/messageboard/\">Message board (World of Tanks)</a>
 
-        :param access_token: (required)
+        :param access_token: [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (required)
         :type access_token: str
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]

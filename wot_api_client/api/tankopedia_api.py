@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr, field_validator
-from typing import List, Optional
+from typing import Any, List, Optional
 from typing_extensions import Annotated
 from wot_api_client.models.get_encyclopedia_achievements200_response import GetEncyclopediaAchievements200Response
 from wot_api_client.models.get_encyclopedia_arenas200_response import GetEncyclopediaArenas200Response
@@ -1181,7 +1181,7 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        role: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        role: Annotated[Optional[Any], Field(description="Сrew qualification ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1203,8 +1203,8 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param role:
-        :type role: List[str]
+        :param role: Сrew qualification ID.
+        :type role: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1256,7 +1256,7 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        role: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        role: Annotated[Optional[Any], Field(description="Сrew qualification ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1278,8 +1278,8 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param role:
-        :type role: List[str]
+        :param role: Сrew qualification ID.
+        :type role: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1331,7 +1331,7 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        role: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        role: Annotated[Optional[Any], Field(description="Сrew qualification ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1353,8 +1353,8 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param role:
-        :type role: List[str]
+        :param role: Сrew qualification ID.
+        :type role: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1412,7 +1412,6 @@ class TankopediaApi:
 
         _collection_formats: Dict[str, str] = {
             'fields': 'csv',
-            'role': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -1480,8 +1479,8 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        role: Optional[StrictStr] = None,
-        skill: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        role: Annotated[Optional[StrictStr], Field(description="Сrew qualification ID")] = None,
+        skill: Annotated[Optional[Any], Field(description="Skill ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1503,10 +1502,10 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param role:
+        :param role: Сrew qualification ID
         :type role: str
-        :param skill:
-        :type skill: List[str]
+        :param skill: Skill ID.
+        :type skill: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1559,8 +1558,8 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        role: Optional[StrictStr] = None,
-        skill: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        role: Annotated[Optional[StrictStr], Field(description="Сrew qualification ID")] = None,
+        skill: Annotated[Optional[Any], Field(description="Skill ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1582,10 +1581,10 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param role:
+        :param role: Сrew qualification ID
         :type role: str
-        :param skill:
-        :type skill: List[str]
+        :param skill: Skill ID.
+        :type skill: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1638,8 +1637,8 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        role: Optional[StrictStr] = None,
-        skill: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        role: Annotated[Optional[StrictStr], Field(description="Сrew qualification ID")] = None,
+        skill: Annotated[Optional[Any], Field(description="Skill ID.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1661,10 +1660,10 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param role:
+        :param role: Сrew qualification ID
         :type role: str
-        :param skill:
-        :type skill: List[str]
+        :param skill: Skill ID.
+        :type skill: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1724,7 +1723,6 @@ class TankopediaApi:
 
         _collection_formats: Dict[str, str] = {
             'fields': 'csv',
-            'skill': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2075,14 +2073,14 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_modules(
         self,
-        extra: Optional[List[StrictStr]] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        module_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        nation: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        page_no: Optional[StrictInt] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        module_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Module ID.")] = None,
+        nation: Annotated[Optional[Any], Field(description="Nation.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        type: Annotated[Optional[Any], Field(description="Module type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2100,22 +2098,22 @@ class TankopediaApi:
 
         Method returns list of available modules that can be installed on vehicles, such as engines, turrets, etc. At least one input filter parameter (module ID, type) is required to be indicated.
 
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param module_id:
+        :param module_id: Module ID.
         :type module_id: List[int]
-        :param nation:
-        :type nation: List[str]
-        :param page_no:
+        :param nation: Nation.
+        :type nation: object
+        :param page_no: Result page number
         :type page_no: int
-        :param type:
-        :type type: List[str]
+        :param type: Module type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2170,14 +2168,14 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_modules_with_http_info(
         self,
-        extra: Optional[List[StrictStr]] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        module_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        nation: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        page_no: Optional[StrictInt] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        module_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Module ID.")] = None,
+        nation: Annotated[Optional[Any], Field(description="Nation.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        type: Annotated[Optional[Any], Field(description="Module type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2195,22 +2193,22 @@ class TankopediaApi:
 
         Method returns list of available modules that can be installed on vehicles, such as engines, turrets, etc. At least one input filter parameter (module ID, type) is required to be indicated.
 
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param module_id:
+        :param module_id: Module ID.
         :type module_id: List[int]
-        :param nation:
-        :type nation: List[str]
-        :param page_no:
+        :param nation: Nation.
+        :type nation: object
+        :param page_no: Result page number
         :type page_no: int
-        :param type:
-        :type type: List[str]
+        :param type: Module type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2265,14 +2263,14 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_modules_without_preload_content(
         self,
-        extra: Optional[List[StrictStr]] = None,
+        extra: Annotated[Optional[Any], Field(description="Extra fields that will be added to the response.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        module_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        nation: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        page_no: Optional[StrictInt] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        module_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Module ID.")] = None,
+        nation: Annotated[Optional[Any], Field(description="Nation.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        type: Annotated[Optional[Any], Field(description="Module type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2290,22 +2288,22 @@ class TankopediaApi:
 
         Method returns list of available modules that can be installed on vehicles, such as engines, turrets, etc. At least one input filter parameter (module ID, type) is required to be indicated.
 
-        :param extra:
-        :type extra: List[str]
+        :param extra: Extra fields that will be added to the response.
+        :type extra: object
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param module_id:
+        :param module_id: Module ID.
         :type module_id: List[int]
-        :param nation:
-        :type nation: List[str]
-        :param page_no:
+        :param nation: Nation.
+        :type nation: object
+        :param page_no: Result page number
         :type page_no: int
-        :param type:
-        :type type: List[str]
+        :param type: Module type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2372,11 +2370,8 @@ class TankopediaApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'extra': 'csv',
             'fields': 'csv',
             'module_id': 'csv',
-            'nation': 'csv',
-            'type': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2462,12 +2457,12 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_personalmissions(
         self,
-        campaign_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        campaign_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Campaign ID.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        operation_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        set_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        tag: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        operation_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Operation ID.")] = None,
+        set_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Mission branch ID.")] = None,
+        tag: Annotated[Optional[Any], Field(description="Mission tag.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2485,18 +2480,18 @@ class TankopediaApi:
 
         Method returns details on Personal Missions on the basis of specified campaign IDs, operation IDs, mission branch and tag IDs.
 
-        :param campaign_id:
+        :param campaign_id: Campaign ID.
         :type campaign_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param operation_id:
+        :param operation_id: Operation ID.
         :type operation_id: List[int]
-        :param set_id:
+        :param set_id: Mission branch ID.
         :type set_id: List[int]
-        :param tag:
-        :type tag: List[str]
+        :param tag: Mission tag.
+        :type tag: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2549,12 +2544,12 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_personalmissions_with_http_info(
         self,
-        campaign_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        campaign_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Campaign ID.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        operation_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        set_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        tag: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        operation_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Operation ID.")] = None,
+        set_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Mission branch ID.")] = None,
+        tag: Annotated[Optional[Any], Field(description="Mission tag.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2572,18 +2567,18 @@ class TankopediaApi:
 
         Method returns details on Personal Missions on the basis of specified campaign IDs, operation IDs, mission branch and tag IDs.
 
-        :param campaign_id:
+        :param campaign_id: Campaign ID.
         :type campaign_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param operation_id:
+        :param operation_id: Operation ID.
         :type operation_id: List[int]
-        :param set_id:
+        :param set_id: Mission branch ID.
         :type set_id: List[int]
-        :param tag:
-        :type tag: List[str]
+        :param tag: Mission tag.
+        :type tag: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2636,12 +2631,12 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_personalmissions_without_preload_content(
         self,
-        campaign_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
+        campaign_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Campaign ID.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        operation_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        set_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        tag: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        operation_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Operation ID.")] = None,
+        set_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Mission branch ID.")] = None,
+        tag: Annotated[Optional[Any], Field(description="Mission tag.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2659,18 +2654,18 @@ class TankopediaApi:
 
         Method returns details on Personal Missions on the basis of specified campaign IDs, operation IDs, mission branch and tag IDs.
 
-        :param campaign_id:
+        :param campaign_id: Campaign ID.
         :type campaign_id: List[int]
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param operation_id:
+        :param operation_id: Operation ID.
         :type operation_id: List[int]
-        :param set_id:
+        :param set_id: Mission branch ID.
         :type set_id: List[int]
-        :param tag:
-        :type tag: List[str]
+        :param tag: Mission tag.
+        :type tag: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2737,7 +2732,6 @@ class TankopediaApi:
             'fields': 'csv',
             'operation_id': 'csv',
             'set_id': 'csv',
-            'tag': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2817,10 +2811,10 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[StrictInt] = None,
-        provision_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        provision_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Equipment or consumables ID.")] = None,
+        type: Annotated[Optional[Any], Field(description="Type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2842,14 +2836,14 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Result page number
         :type page_no: int
-        :param provision_id:
+        :param provision_id: Equipment or consumables ID.
         :type provision_id: List[int]
-        :param type:
-        :type type: List[str]
+        :param type: Type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2904,10 +2898,10 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[StrictInt] = None,
-        provision_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        provision_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Equipment or consumables ID.")] = None,
+        type: Annotated[Optional[Any], Field(description="Type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2929,14 +2923,14 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Result page number
         :type page_no: int
-        :param provision_id:
+        :param provision_id: Equipment or consumables ID.
         :type provision_id: List[int]
-        :param type:
-        :type type: List[str]
+        :param type: Type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2991,10 +2985,10 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        page_no: Optional[StrictInt] = None,
-        provision_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        provision_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Equipment or consumables ID.")] = None,
+        type: Annotated[Optional[Any], Field(description="Type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3016,14 +3010,14 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param page_no:
+        :param page_no: Result page number
         :type page_no: int
-        :param provision_id:
+        :param provision_id: Equipment or consumables ID.
         :type provision_id: List[int]
-        :param type:
-        :type type: List[str]
+        :param type: Type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3088,7 +3082,6 @@ class TankopediaApi:
         _collection_formats: Dict[str, str] = {
             'fields': 'csv',
             'provision_id': 'csv',
-            'type': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3166,15 +3159,15 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_vehicleprofile(
         self,
-        tank_id: StrictInt,
-        engine_id: Optional[StrictInt] = None,
+        tank_id: Annotated[StrictInt, Field(description="Vehicle ID")],
+        engine_id: Annotated[Optional[StrictInt], Field(description="Engine ID. If module is not specified, standard module is used by default.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        gun_id: Optional[StrictInt] = None,
+        gun_id: Annotated[Optional[StrictInt], Field(description="Gun ID. If module is not specified, standard module is used by default.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        profile_id: Optional[StrictStr] = None,
-        radio_id: Optional[StrictInt] = None,
-        suspension_id: Optional[StrictInt] = None,
-        turret_id: Optional[StrictInt] = None,
+        profile_id: Annotated[Optional[StrictStr], Field(description="Configuration ID. If specified, parameters of IDs of separate modules are ignored.")] = None,
+        radio_id: Annotated[Optional[StrictInt], Field(description="Radio ID. If module is not specified, standard module is used by default.")] = None,
+        suspension_id: Annotated[Optional[StrictInt], Field(description="Suspension ID. If module is not specified, standard module is used by default.")] = None,
+        turret_id: Annotated[Optional[StrictInt], Field(description="Turret ID. If module is not specified, standard module is used by default.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3192,23 +3185,23 @@ class TankopediaApi:
 
         Method returns vehicle configuration characteristics based on the specified module IDs.
 
-        :param tank_id: (required)
+        :param tank_id: Vehicle ID (required)
         :type tank_id: int
-        :param engine_id:
+        :param engine_id: Engine ID. If module is not specified, standard module is used by default.
         :type engine_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param gun_id:
+        :param gun_id: Gun ID. If module is not specified, standard module is used by default.
         :type gun_id: int
         :param language: Localization language.
         :type language: str
-        :param profile_id:
+        :param profile_id: Configuration ID. If specified, parameters of IDs of separate modules are ignored.
         :type profile_id: str
-        :param radio_id:
+        :param radio_id: Radio ID. If module is not specified, standard module is used by default.
         :type radio_id: int
-        :param suspension_id:
+        :param suspension_id: Suspension ID. If module is not specified, standard module is used by default.
         :type suspension_id: int
-        :param turret_id:
+        :param turret_id: Turret ID. If module is not specified, standard module is used by default.
         :type turret_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3265,15 +3258,15 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_vehicleprofile_with_http_info(
         self,
-        tank_id: StrictInt,
-        engine_id: Optional[StrictInt] = None,
+        tank_id: Annotated[StrictInt, Field(description="Vehicle ID")],
+        engine_id: Annotated[Optional[StrictInt], Field(description="Engine ID. If module is not specified, standard module is used by default.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        gun_id: Optional[StrictInt] = None,
+        gun_id: Annotated[Optional[StrictInt], Field(description="Gun ID. If module is not specified, standard module is used by default.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        profile_id: Optional[StrictStr] = None,
-        radio_id: Optional[StrictInt] = None,
-        suspension_id: Optional[StrictInt] = None,
-        turret_id: Optional[StrictInt] = None,
+        profile_id: Annotated[Optional[StrictStr], Field(description="Configuration ID. If specified, parameters of IDs of separate modules are ignored.")] = None,
+        radio_id: Annotated[Optional[StrictInt], Field(description="Radio ID. If module is not specified, standard module is used by default.")] = None,
+        suspension_id: Annotated[Optional[StrictInt], Field(description="Suspension ID. If module is not specified, standard module is used by default.")] = None,
+        turret_id: Annotated[Optional[StrictInt], Field(description="Turret ID. If module is not specified, standard module is used by default.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3291,23 +3284,23 @@ class TankopediaApi:
 
         Method returns vehicle configuration characteristics based on the specified module IDs.
 
-        :param tank_id: (required)
+        :param tank_id: Vehicle ID (required)
         :type tank_id: int
-        :param engine_id:
+        :param engine_id: Engine ID. If module is not specified, standard module is used by default.
         :type engine_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param gun_id:
+        :param gun_id: Gun ID. If module is not specified, standard module is used by default.
         :type gun_id: int
         :param language: Localization language.
         :type language: str
-        :param profile_id:
+        :param profile_id: Configuration ID. If specified, parameters of IDs of separate modules are ignored.
         :type profile_id: str
-        :param radio_id:
+        :param radio_id: Radio ID. If module is not specified, standard module is used by default.
         :type radio_id: int
-        :param suspension_id:
+        :param suspension_id: Suspension ID. If module is not specified, standard module is used by default.
         :type suspension_id: int
-        :param turret_id:
+        :param turret_id: Turret ID. If module is not specified, standard module is used by default.
         :type turret_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3364,15 +3357,15 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_vehicleprofile_without_preload_content(
         self,
-        tank_id: StrictInt,
-        engine_id: Optional[StrictInt] = None,
+        tank_id: Annotated[StrictInt, Field(description="Vehicle ID")],
+        engine_id: Annotated[Optional[StrictInt], Field(description="Engine ID. If module is not specified, standard module is used by default.")] = None,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
-        gun_id: Optional[StrictInt] = None,
+        gun_id: Annotated[Optional[StrictInt], Field(description="Gun ID. If module is not specified, standard module is used by default.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        profile_id: Optional[StrictStr] = None,
-        radio_id: Optional[StrictInt] = None,
-        suspension_id: Optional[StrictInt] = None,
-        turret_id: Optional[StrictInt] = None,
+        profile_id: Annotated[Optional[StrictStr], Field(description="Configuration ID. If specified, parameters of IDs of separate modules are ignored.")] = None,
+        radio_id: Annotated[Optional[StrictInt], Field(description="Radio ID. If module is not specified, standard module is used by default.")] = None,
+        suspension_id: Annotated[Optional[StrictInt], Field(description="Suspension ID. If module is not specified, standard module is used by default.")] = None,
+        turret_id: Annotated[Optional[StrictInt], Field(description="Turret ID. If module is not specified, standard module is used by default.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3390,23 +3383,23 @@ class TankopediaApi:
 
         Method returns vehicle configuration characteristics based on the specified module IDs.
 
-        :param tank_id: (required)
+        :param tank_id: Vehicle ID (required)
         :type tank_id: int
-        :param engine_id:
+        :param engine_id: Engine ID. If module is not specified, standard module is used by default.
         :type engine_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
-        :param gun_id:
+        :param gun_id: Gun ID. If module is not specified, standard module is used by default.
         :type gun_id: int
         :param language: Localization language.
         :type language: str
-        :param profile_id:
+        :param profile_id: Configuration ID. If specified, parameters of IDs of separate modules are ignored.
         :type profile_id: str
-        :param radio_id:
+        :param radio_id: Radio ID. If module is not specified, standard module is used by default.
         :type radio_id: int
-        :param suspension_id:
+        :param suspension_id: Suspension ID. If module is not specified, standard module is used by default.
         :type suspension_id: int
-        :param turret_id:
+        :param turret_id: Turret ID. If module is not specified, standard module is used by default.
         :type turret_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3566,10 +3559,10 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_vehicleprofiles(
         self,
-        tank_id: StrictInt,
+        tank_id: Annotated[StrictInt, Field(description="Vehicle ID")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        order_by: Optional[StrictStr] = None,
+        order_by: Annotated[Optional[StrictStr], Field(description="Sorting.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3587,13 +3580,13 @@ class TankopediaApi:
 
         Method returns vehicle configuration characteristics.
 
-        :param tank_id: (required)
+        :param tank_id: Vehicle ID (required)
         :type tank_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param order_by:
+        :param order_by: Sorting.
         :type order_by: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3645,10 +3638,10 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_vehicleprofiles_with_http_info(
         self,
-        tank_id: StrictInt,
+        tank_id: Annotated[StrictInt, Field(description="Vehicle ID")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        order_by: Optional[StrictStr] = None,
+        order_by: Annotated[Optional[StrictStr], Field(description="Sorting.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3666,13 +3659,13 @@ class TankopediaApi:
 
         Method returns vehicle configuration characteristics.
 
-        :param tank_id: (required)
+        :param tank_id: Vehicle ID (required)
         :type tank_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param order_by:
+        :param order_by: Sorting.
         :type order_by: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3724,10 +3717,10 @@ class TankopediaApi:
     @validate_call
     def get_encyclopedia_vehicleprofiles_without_preload_content(
         self,
-        tank_id: StrictInt,
+        tank_id: Annotated[StrictInt, Field(description="Vehicle ID")],
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        order_by: Optional[StrictStr] = None,
+        order_by: Annotated[Optional[StrictStr], Field(description="Sorting.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3745,13 +3738,13 @@ class TankopediaApi:
 
         Method returns vehicle configuration characteristics.
 
-        :param tank_id: (required)
+        :param tank_id: Vehicle ID (required)
         :type tank_id: int
         :param fields: Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param order_by:
+        :param order_by: Sorting.
         :type order_by: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3883,12 +3876,12 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        nation: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        page_no: Optional[StrictInt] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        tier: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        nation: Annotated[Optional[Any], Field(description="Nation.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Vehicle ID.")] = None,
+        tier: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Tier.")] = None,
+        type: Annotated[Optional[Any], Field(description="Vehicle type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3910,18 +3903,18 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param nation:
-        :type nation: List[str]
-        :param page_no:
+        :param nation: Nation.
+        :type nation: object
+        :param page_no: Result page number
         :type page_no: int
-        :param tank_id:
+        :param tank_id: Vehicle ID.
         :type tank_id: List[int]
-        :param tier:
+        :param tier: Tier.
         :type tier: List[int]
-        :param type:
-        :type type: List[str]
+        :param type: Vehicle type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3978,12 +3971,12 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        nation: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        page_no: Optional[StrictInt] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        tier: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        nation: Annotated[Optional[Any], Field(description="Nation.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Vehicle ID.")] = None,
+        tier: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Tier.")] = None,
+        type: Annotated[Optional[Any], Field(description="Vehicle type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4005,18 +3998,18 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param nation:
-        :type nation: List[str]
-        :param page_no:
+        :param nation: Nation.
+        :type nation: object
+        :param page_no: Result page number
         :type page_no: int
-        :param tank_id:
+        :param tank_id: Vehicle ID.
         :type tank_id: List[int]
-        :param tier:
+        :param tier: Tier.
         :type tier: List[int]
-        :param type:
-        :type type: List[str]
+        :param type: Vehicle type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4073,12 +4066,12 @@ class TankopediaApi:
         self,
         fields: Annotated[Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=100)]], Field(description="Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Localization language.")] = None,
-        limit: Optional[Annotated[int, Field(le=100, strict=True)]] = None,
-        nation: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
-        page_no: Optional[StrictInt] = None,
-        tank_id: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        tier: Optional[Annotated[List[StrictInt], Field(max_length=100)]] = None,
-        type: Optional[Annotated[List[StrictStr], Field(max_length=100)]] = None,
+        limit: Annotated[Optional[Annotated[int, Field(le=100, strict=True)]], Field(description="Number of returned entries.")] = None,
+        nation: Annotated[Optional[Any], Field(description="Nation.")] = None,
+        page_no: Annotated[Optional[StrictInt], Field(description="Result page number")] = None,
+        tank_id: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Vehicle ID.")] = None,
+        tier: Annotated[Optional[Annotated[List[StrictInt], Field(max_length=100)]], Field(description="Tier.")] = None,
+        type: Annotated[Optional[Any], Field(description="Vehicle type.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4100,18 +4093,18 @@ class TankopediaApi:
         :type fields: List[str]
         :param language: Localization language.
         :type language: str
-        :param limit:
+        :param limit: Number of returned entries.
         :type limit: int
-        :param nation:
-        :type nation: List[str]
-        :param page_no:
+        :param nation: Nation.
+        :type nation: object
+        :param page_no: Result page number
         :type page_no: int
-        :param tank_id:
+        :param tank_id: Vehicle ID.
         :type tank_id: List[int]
-        :param tier:
+        :param tier: Tier.
         :type tier: List[int]
-        :param type:
-        :type type: List[str]
+        :param type: Vehicle type.
+        :type type: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4179,10 +4172,8 @@ class TankopediaApi:
 
         _collection_formats: Dict[str, str] = {
             'fields': 'csv',
-            'nation': 'csv',
             'tank_id': 'csv',
             'tier': 'csv',
-            'type': 'csv',
         }
 
         _path_params: Dict[str, str] = {}

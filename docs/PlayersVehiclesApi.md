@@ -54,11 +54,11 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.PlayersVehiclesApi(api_client)
-    account_id = 56 # int | 
-    access_token = 'access_token_example' # str |  (optional)
+    account_id = 56 # int | Player account ID
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    in_garage = 'in_garage_example' # str |  (optional)
-    tank_id = [56] # List[int] |  (optional)
+    in_garage = 'in_garage_example' # str | Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id. (optional)
+    tank_id = [56] # List[int] | Player's vehicle ID. (optional)
 
     try:
         # Vehicle achievements
@@ -76,11 +76,11 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**|  | 
- **access_token** | **str**|  | [optional] 
+ **account_id** | **int**| Player account ID | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **in_garage** | **str**|  | [optional] 
- **tank_id** | [**List[int]**](int.md)|  | [optional] 
+ **in_garage** | **str**| Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id. | [optional] 
+ **tank_id** | [**List[int]**](int.md)| Player&#39;s vehicle ID. | [optional] 
 
 ### Return type
 
@@ -141,10 +141,10 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.PlayersVehiclesApi(api_client)
-    distribution = 'distribution_example' # str | 
-    percentile = [56] # List[int] | 
+    distribution = 'distribution_example' # str | Type of data.
+    percentile = [56] # List[int] | A list of percentiles to be included in the response.
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    tank_id = [56] # List[int] |  (optional)
+    tank_id = [56] # List[int] | Player's vehicle ID. (optional)
 
     try:
         # Vehicle mastery distribution
@@ -162,10 +162,10 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **distribution** | **str**|  | 
- **percentile** | [**List[int]**](int.md)|  | 
+ **distribution** | **str**| Type of data. | 
+ **percentile** | [**List[int]**](int.md)| A list of percentiles to be included in the response. | 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **tank_id** | [**List[int]**](int.md)|  | [optional] 
+ **tank_id** | [**List[int]**](int.md)| Player&#39;s vehicle ID. | [optional] 
 
 ### Return type
 
@@ -226,12 +226,12 @@ configuration.api_key['application_id'] = os.environ["API_KEY"]
 with wot_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wot_api_client.PlayersVehiclesApi(api_client)
-    account_id = 56 # int | 
-    access_token = 'access_token_example' # str |  (optional)
-    extra = ['extra_example'] # List[str] |  (optional)
+    account_id = 56 # int | Player account ID
+    access_token = 'access_token_example' # str | [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user's account; can be received via the authorization method; valid within a stated time period (optional)
+    extra = None # object | Extra fields that will be added to the response. (optional)
     fields = [] # List[str] | Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. (optional) (default to [])
-    in_garage = 'in_garage_example' # str |  (optional)
-    tank_id = [56] # List[int] |  (optional)
+    in_garage = 'in_garage_example' # str | Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id. (optional)
+    tank_id = [56] # List[int] | Player's vehicle ID. (optional)
 
     try:
         # Vehicle statistics
@@ -249,12 +249,12 @@ with wot_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**|  | 
- **access_token** | **str**|  | [optional] 
- **extra** | [**List[str]**](str.md)|  | [optional] 
+ **account_id** | **int**| Player account ID | 
+ **access_token** | **str**| [Access token](https://developers.wargaming.net/documentation/guide/principles/#access_token) for the private data of a user&#39;s account; can be received via the authorization method; valid within a stated time period | [optional] 
+ **extra** | [**object**](.md)| Extra fields that will be added to the response. | [optional] 
  **fields** | [**List[str]**](str.md)| Response field. Embedded fields are separated with dots. To exclude a field, use “-” in front of its name. In case the parameter is not defined, the method returns all fields. | [optional] [default to []]
- **in_garage** | **str**|  | [optional] 
- **tank_id** | [**List[int]**](int.md)|  | [optional] 
+ **in_garage** | **str**| Filter by vehicle availability in the Garage. If the parameter is not specified, all vehicles are returned. Parameter processing requires a valid access_token for the specified account_id. | [optional] 
+ **tank_id** | [**List[int]**](int.md)| Player&#39;s vehicle ID. | [optional] 
 
 ### Return type
 
