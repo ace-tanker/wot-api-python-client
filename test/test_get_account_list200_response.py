@@ -37,34 +37,26 @@ class TestGetAccountList200Response(unittest.TestCase):
         if include_optional:
             return GetAccountList200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.account_list_meta.account_list_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_account_list_200_response_one_of_data_inner.get_account_list_200_response_oneOf_data_inner(
+                    wot_api_client.models.account_list_data_inner.account_list_data_inner(
                         account_id = 56, 
                         nickname = '', )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = None
             )
         else:
             return GetAccountList200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.account_list_meta.account_list_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_account_list_200_response_one_of_data_inner.get_account_list_200_response_oneOf_data_inner(
+                    wot_api_client.models.account_list_data_inner.account_list_data_inner(
                         account_id = 56, 
                         nickname = '', )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = None,
         )
         """
 

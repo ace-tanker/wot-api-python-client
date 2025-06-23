@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**List[GetAccountList200ResponseOneOfDataInner]**](GetAccountList200ResponseOneOfDataInner.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**AccountListMeta**](AccountListMeta.md) |  | 
+**data** | [**List[AccountListDataInner]**](AccountListDataInner.md) |  | 
+**error** | [**AccountListErrorError**](AccountListErrorError.md) |  | 
 
 ## Example
 

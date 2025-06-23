@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_encyclopedia_badges200_response_one_of import GetEncyclopediaBadges200ResponseOneOf
+from wot_api_client.models.encyclopedia_badges_error import EncyclopediaBadgesError
+from wot_api_client.models.encyclopedia_badges_ok import EncyclopediaBadgesOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETENCYCLOPEDIABADGES200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetEncyclopediaBadges200ResponseOneOf"]
+GETENCYCLOPEDIABADGES200RESPONSE_ONE_OF_SCHEMAS = ["EncyclopediaBadgesError", "EncyclopediaBadgesOk"]
 
 class GetEncyclopediaBadges200Response(BaseModel):
     """
     GetEncyclopediaBadges200Response
     """
-    # data type: GetEncyclopediaBadges200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetEncyclopediaBadges200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetEncyclopediaBadges200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetEncyclopediaBadges200ResponseOneOf" }
+    # data type: EncyclopediaBadgesOk
+    oneof_schema_1_validator: Optional[EncyclopediaBadgesOk] = None
+    # data type: EncyclopediaBadgesError
+    oneof_schema_2_validator: Optional[EncyclopediaBadgesError] = None
+    actual_instance: Optional[Union[EncyclopediaBadgesError, EncyclopediaBadgesOk]] = None
+    one_of_schemas: Set[str] = { "EncyclopediaBadgesError", "EncyclopediaBadgesOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetEncyclopediaBadges200Response(BaseModel):
         instance = GetEncyclopediaBadges200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetEncyclopediaBadges200ResponseOneOf
-        if not isinstance(v, GetEncyclopediaBadges200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetEncyclopediaBadges200ResponseOneOf`")
+        # validate data type: EncyclopediaBadgesOk
+        if not isinstance(v, EncyclopediaBadgesOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaBadgesOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: EncyclopediaBadgesError
+        if not isinstance(v, EncyclopediaBadgesError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaBadgesError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaBadges200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaBadges200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaBadges200Response with oneOf schemas: EncyclopediaBadgesError, EncyclopediaBadgesOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaBadges200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaBadges200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaBadges200Response with oneOf schemas: EncyclopediaBadgesError, EncyclopediaBadgesOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetEncyclopediaBadges200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `EncyclopediaBadgesError`
+        if _data_type == "encyclopedia_badges_error":
+            instance.actual_instance = EncyclopediaBadgesError.from_json(json_str)
             return instance
 
-        # check if data type is `GetEncyclopediaBadges200ResponseOneOf`
-        if _data_type == "get_encyclopedia_badges_200_response_oneOf":
-            instance.actual_instance = GetEncyclopediaBadges200ResponseOneOf.from_json(json_str)
+        # check if data type is `EncyclopediaBadgesOk`
+        if _data_type == "encyclopedia_badges_ok":
+            instance.actual_instance = EncyclopediaBadgesOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetEncyclopediaBadges200ResponseOneOf
+        # deserialize data into EncyclopediaBadgesOk
         try:
-            instance.actual_instance = GetEncyclopediaBadges200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = EncyclopediaBadgesOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into EncyclopediaBadgesError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = EncyclopediaBadgesError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaBadges200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaBadges200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaBadges200Response with oneOf schemas: EncyclopediaBadgesError, EncyclopediaBadgesOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaBadges200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaBadges200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaBadges200Response with oneOf schemas: EncyclopediaBadgesError, EncyclopediaBadgesOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetEncyclopediaBadges200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetEncyclopediaBadges200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], EncyclopediaBadgesError, EncyclopediaBadgesOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

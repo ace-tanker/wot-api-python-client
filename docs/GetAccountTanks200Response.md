@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | **Dict[str, Optional[List[GetAccountTanks200ResponseOneOfDataValueInner]]]** |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**AccountTanksMeta**](AccountTanksMeta.md) |  | 
+**data** | **Dict[str, Optional[List[AccountTanksDataValueInner]]]** |  | 
+**error** | **object** |  | 
 
 ## Example
 

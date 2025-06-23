@@ -37,32 +37,24 @@ class TestProlongate200Response(unittest.TestCase):
         if include_optional:
             return Prolongate200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.auth_prolongate_meta.auth_prolongate_meta(
                     count = 56, ),
-                data = wot_api_client.models.prolongate_200_response_one_of_data.prolongate_200_response_oneOf_data(
+                data = wot_api_client.models.auth_prolongate_data.auth_prolongate_data(
                     access_token = '', 
                     expires_at = 56, 
                     account_id = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return Prolongate200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.auth_prolongate_meta.auth_prolongate_meta(
                     count = 56, ),
-                data = wot_api_client.models.prolongate_200_response_one_of_data.prolongate_200_response_oneOf_data(
+                data = wot_api_client.models.auth_prolongate_data.auth_prolongate_data(
                     access_token = '', 
                     expires_at = 56, 
                     account_id = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of import GetAccountList200ResponseOneOf
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
+from wot_api_client.models.account_list_error import AccountListError
+from wot_api_client.models.account_list_ok import AccountListOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETACCOUNTLIST200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf", "GetAccountList200ResponseOneOf1"]
+GETACCOUNTLIST200RESPONSE_ONE_OF_SCHEMAS = ["AccountListError", "AccountListOk"]
 
 class GetAccountList200Response(BaseModel):
     """
     GetAccountList200Response
     """
-    # data type: GetAccountList200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetAccountList200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf, GetAccountList200ResponseOneOf1]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf", "GetAccountList200ResponseOneOf1" }
+    # data type: AccountListOk
+    oneof_schema_1_validator: Optional[AccountListOk] = None
+    # data type: AccountListError
+    oneof_schema_2_validator: Optional[AccountListError] = None
+    actual_instance: Optional[Union[AccountListError, AccountListOk]] = None
+    one_of_schemas: Set[str] = { "AccountListError", "AccountListOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetAccountList200Response(BaseModel):
         instance = GetAccountList200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetAccountList200ResponseOneOf
-        if not isinstance(v, GetAccountList200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf`")
+        # validate data type: AccountListOk
+        if not isinstance(v, AccountListOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AccountListOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: AccountListError
+        if not isinstance(v, AccountListError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AccountListError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetAccountList200Response with oneOf schemas: GetAccountList200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetAccountList200Response with oneOf schemas: AccountListError, AccountListOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetAccountList200Response with oneOf schemas: GetAccountList200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetAccountList200Response with oneOf schemas: AccountListError, AccountListOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetAccountList200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf`
-        if _data_type == "get_account_list_200_response_oneOf":
-            instance.actual_instance = GetAccountList200ResponseOneOf.from_json(json_str)
+        # check if data type is `AccountListError`
+        if _data_type == "account_list_error":
+            instance.actual_instance = AccountListError.from_json(json_str)
             return instance
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `AccountListOk`
+        if _data_type == "account_list_ok":
+            instance.actual_instance = AccountListOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetAccountList200ResponseOneOf
+        # deserialize data into AccountListOk
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = AccountListOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into AccountListError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = AccountListError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetAccountList200Response with oneOf schemas: GetAccountList200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetAccountList200Response with oneOf schemas: AccountListError, AccountListOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetAccountList200Response with oneOf schemas: GetAccountList200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetAccountList200Response with oneOf schemas: AccountListError, AccountListOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetAccountList200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf, GetAccountList200ResponseOneOf1]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AccountListError, AccountListOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

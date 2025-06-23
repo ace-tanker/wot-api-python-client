@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetEncyclopediaPersonalmissions200ResponseOneOfDataValue]**](GetEncyclopediaPersonalmissions200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**EncyclopediaPersonalmissionsMeta**](EncyclopediaPersonalmissionsMeta.md) |  | 
+**data** | [**Dict[str, EncyclopediaPersonalmissionsDataValue]**](EncyclopediaPersonalmissionsDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

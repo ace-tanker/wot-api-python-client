@@ -37,38 +37,30 @@ class TestGetEncyclopediaArenas200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaArenas200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_arenas_meta.encyclopedia_arenas_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_arenas_200_response_one_of_data_value.get_encyclopedia_arenas_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_arenas_data_value.encyclopedia_arenas_data_value(
                         arena_id = '', 
                         camouflage_type = '', 
                         name_i18n = '', 
                         description = '', )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaArenas200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_arenas_meta.encyclopedia_arenas_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_arenas_200_response_one_of_data_value.get_encyclopedia_arenas_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_arenas_data_value.encyclopedia_arenas_data_value(
                         arena_id = '', 
                         camouflage_type = '', 
                         name_i18n = '', 
                         description = '', )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

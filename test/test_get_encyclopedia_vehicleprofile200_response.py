@@ -37,10 +37,10 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaVehicleprofile200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_vehicleprofile_meta.encyclopedia_vehicleprofile_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_vehicleprofile_200_response_one_of_data_value.get_encyclopedia_vehicleprofile_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_vehicleprofile_data_value.encyclopedia_vehicleprofile_data_value(
                         hp = 56, 
                         hull_hp = 56, 
                         weight = 56, 
@@ -49,29 +49,29 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                         max_ammo = 56, 
                         speed_forward = 56, 
                         speed_backward = 56, 
-                        modules = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_modules.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_modules(
+                        modules = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_modules.encyclopedia_vehicles_data_value_default_profile_modules(
                             engine_id = 56, 
                             gun_id = 56, 
                             turret_id = 56, 
                             suspension_id = 56, 
                             radio_id = 56, ), 
-                        armor = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_armor.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_armor(
-                            hull = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_armor_hull.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_armor_hull(
+                        armor = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_armor.encyclopedia_vehicles_data_value_default_profile_armor(
+                            hull = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_armor_hull.encyclopedia_vehicles_data_value_default_profile_armor_hull(
                                 front = 56, 
                                 sides = 56, 
                                 rear = 56, ), 
-                            turret = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_armor_turret.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_armor_turret(
+                            turret = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_armor_turret.encyclopedia_vehicles_data_value_default_profile_armor_turret(
                                 front = 56, 
                                 sides = 56, 
                                 rear = 56, ), ), 
-                        engine = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_engine.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_engine(
+                        engine = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_engine.encyclopedia_vehicles_data_value_default_profile_engine(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
                             tag = '', 
                             power = 56, 
                             fire_chance = 1.337, ), 
-                        gun = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_gun.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_gun(
+                        gun = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_gun.encyclopedia_vehicles_data_value_default_profile_gun(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
@@ -84,7 +84,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             move_up_arc = 56, 
                             move_down_arc = 56, 
                             traverse_speed = 56, ), 
-                        turret = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_turret.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_turret(
+                        turret = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_turret.encyclopedia_vehicles_data_value_default_profile_turret(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
@@ -94,7 +94,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             hp = 56, 
                             traverse_left_arc = 56, 
                             traverse_right_arc = 56, ), 
-                        suspension = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_suspension.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_suspension(
+                        suspension = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_suspension.encyclopedia_vehicles_data_value_default_profile_suspension(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
@@ -102,14 +102,14 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             load_limit = 56, 
                             traverse_speed = 56, 
                             steering_lock_angle = 56, ), 
-                        radio = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_radio.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_radio(
+                        radio = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_radio.encyclopedia_vehicles_data_value_default_profile_radio(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
                             tag = '', 
                             signal_range = 56, ), 
                         ammo = [
-                            wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner(
+                            wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner.encyclopedia_vehicles_data_value_default_profile_ammo_inner(
                                 type = '', 
                                 damage = [
                                     56
@@ -117,10 +117,10 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                                 penetration = [
                                     56
                                     ], 
-                                stun = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner_stun.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner_stun(
+                                stun = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun(
                                     duration = wot_api_client.models.duration.duration(), ), )
                             ], 
-                        siege = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_siege.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_siege(
+                        siege = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_siege.encyclopedia_vehicles_data_value_default_profile_siege(
                             aim_time = 1.337, 
                             suspension_traverse_speed = 56, 
                             move_down_arc = 56, 
@@ -130,7 +130,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             speed_backward = 56, 
                             switch_off_time = 1.337, 
                             switch_on_time = 1.337, ), 
-                        rapid = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_rapid.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_rapid(
+                        rapid = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_rapid.encyclopedia_vehicles_data_value_default_profile_rapid(
                             speed_forward = 56, 
                             speed_backward = 56, 
                             suspension_steering_lock_angle = 56, 
@@ -140,19 +140,15 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                         is_default = True, 
                         profile_id = '', )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = None
             )
         else:
             return GetEncyclopediaVehicleprofile200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_vehicleprofile_meta.encyclopedia_vehicleprofile_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_vehicleprofile_200_response_one_of_data_value.get_encyclopedia_vehicleprofile_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_vehicleprofile_data_value.encyclopedia_vehicleprofile_data_value(
                         hp = 56, 
                         hull_hp = 56, 
                         weight = 56, 
@@ -161,29 +157,29 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                         max_ammo = 56, 
                         speed_forward = 56, 
                         speed_backward = 56, 
-                        modules = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_modules.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_modules(
+                        modules = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_modules.encyclopedia_vehicles_data_value_default_profile_modules(
                             engine_id = 56, 
                             gun_id = 56, 
                             turret_id = 56, 
                             suspension_id = 56, 
                             radio_id = 56, ), 
-                        armor = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_armor.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_armor(
-                            hull = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_armor_hull.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_armor_hull(
+                        armor = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_armor.encyclopedia_vehicles_data_value_default_profile_armor(
+                            hull = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_armor_hull.encyclopedia_vehicles_data_value_default_profile_armor_hull(
                                 front = 56, 
                                 sides = 56, 
                                 rear = 56, ), 
-                            turret = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_armor_turret.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_armor_turret(
+                            turret = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_armor_turret.encyclopedia_vehicles_data_value_default_profile_armor_turret(
                                 front = 56, 
                                 sides = 56, 
                                 rear = 56, ), ), 
-                        engine = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_engine.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_engine(
+                        engine = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_engine.encyclopedia_vehicles_data_value_default_profile_engine(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
                             tag = '', 
                             power = 56, 
                             fire_chance = 1.337, ), 
-                        gun = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_gun.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_gun(
+                        gun = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_gun.encyclopedia_vehicles_data_value_default_profile_gun(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
@@ -196,7 +192,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             move_up_arc = 56, 
                             move_down_arc = 56, 
                             traverse_speed = 56, ), 
-                        turret = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_turret.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_turret(
+                        turret = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_turret.encyclopedia_vehicles_data_value_default_profile_turret(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
@@ -206,7 +202,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             hp = 56, 
                             traverse_left_arc = 56, 
                             traverse_right_arc = 56, ), 
-                        suspension = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_suspension.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_suspension(
+                        suspension = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_suspension.encyclopedia_vehicles_data_value_default_profile_suspension(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
@@ -214,14 +210,14 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             load_limit = 56, 
                             traverse_speed = 56, 
                             steering_lock_angle = 56, ), 
-                        radio = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_radio.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_radio(
+                        radio = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_radio.encyclopedia_vehicles_data_value_default_profile_radio(
                             tier = 56, 
                             name = '', 
                             weight = 56, 
                             tag = '', 
                             signal_range = 56, ), 
                         ammo = [
-                            wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner(
+                            wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner.encyclopedia_vehicles_data_value_default_profile_ammo_inner(
                                 type = '', 
                                 damage = [
                                     56
@@ -229,10 +225,10 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                                 penetration = [
                                     56
                                     ], 
-                                stun = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner_stun.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner_stun(
+                                stun = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun(
                                     duration = wot_api_client.models.duration.duration(), ), )
                             ], 
-                        siege = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_siege.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_siege(
+                        siege = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_siege.encyclopedia_vehicles_data_value_default_profile_siege(
                             aim_time = 1.337, 
                             suspension_traverse_speed = 56, 
                             move_down_arc = 56, 
@@ -242,7 +238,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                             speed_backward = 56, 
                             switch_off_time = 1.337, 
                             switch_on_time = 1.337, ), 
-                        rapid = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_rapid.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_rapid(
+                        rapid = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_rapid.encyclopedia_vehicles_data_value_default_profile_rapid(
                             speed_forward = 56, 
                             speed_backward = 56, 
                             suspension_steering_lock_angle = 56, 
@@ -252,11 +248,7 @@ class TestGetEncyclopediaVehicleprofile200Response(unittest.TestCase):
                         is_default = True, 
                         profile_id = '', )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = None,
         )
         """
 

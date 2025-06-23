@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetEncyclopediaProvisions200ResponseOneOfMeta**](GetEncyclopediaProvisions200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetEncyclopediaModules200ResponseOneOfDataValue]**](GetEncyclopediaModules200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**EncyclopediaModulesMeta**](EncyclopediaModulesMeta.md) |  | 
+**data** | [**Dict[str, EncyclopediaModulesDataValue]**](EncyclopediaModulesDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

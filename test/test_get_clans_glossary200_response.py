@@ -38,29 +38,21 @@ class TestGetClansGlossary200Response(unittest.TestCase):
             return GetClansGlossary200Response(
                 status = 'error',
                 meta = wot_api_client.models.meta.meta(),
-                data = wot_api_client.models.get_clans_glossary_200_response_one_of_data.get_clans_glossary_200_response_oneOf_data(
+                data = wot_api_client.models.clans_glossary_data.clans_glossary_data(
                     clans_roles = {
                         'key' : ''
                         }, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetClansGlossary200Response(
                 status = 'error',
                 meta = wot_api_client.models.meta.meta(),
-                data = wot_api_client.models.get_clans_glossary_200_response_one_of_data.get_clans_glossary_200_response_oneOf_data(
+                data = wot_api_client.models.clans_glossary_data.clans_glossary_data(
                     clans_roles = {
                         'key' : ''
                         }, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

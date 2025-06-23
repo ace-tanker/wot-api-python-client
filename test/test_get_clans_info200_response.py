@@ -37,17 +37,17 @@ class TestGetClansInfo200Response(unittest.TestCase):
         if include_optional:
             return GetClansInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clans_info_meta.clans_info_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_clans_info_200_response_one_of_data_value.get_clans_info_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.clans_info_data_value.clans_info_data_value(
                         clan_id = 56, 
                         name = '', 
                         tag = '', 
                         created_at = 56, 
                         color = '', 
                         members_count = 56, 
-                        emblems = wot_api_client.models.get_clans_list_200_response_one_of_data_inner_emblems.get_clans_list_200_response_oneOf_data_inner_emblems(
+                        emblems = wot_api_client.models.clans_list_data_inner_emblems.clans_list_data_inner_emblems(
                             x24 = {
                                 'key' : ''
                                 }, 
@@ -77,9 +77,9 @@ class TestGetClansInfo200Response(unittest.TestCase):
                         leader_id = 56, 
                         leader_name = '', 
                         members = null, 
-                        private = wot_api_client.models.get_clans_info_200_response_one_of_data_value_private.get_clans_info_200_response_oneOf_data_value_private(
+                        private = wot_api_client.models.clans_info_data_value_private.clans_info_data_value_private(
                             treasury = 56, 
-                            clan_treasury = wot_api_client.models.get_clans_info_200_response_one_of_data_value_private_clan_treasury.get_clans_info_200_response_oneOf_data_value_private_clan_treasury(
+                            clan_treasury = wot_api_client.models.clans_info_data_value_private_clan_treasury.clans_info_data_value_private_clan_treasury(
                                 gold = 56, 
                                 credits = 56, 
                                 crystal = 56, ), 
@@ -87,26 +87,22 @@ class TestGetClansInfo200Response(unittest.TestCase):
                                 56
                                 ], ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetClansInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clans_info_meta.clans_info_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_clans_info_200_response_one_of_data_value.get_clans_info_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.clans_info_data_value.clans_info_data_value(
                         clan_id = 56, 
                         name = '', 
                         tag = '', 
                         created_at = 56, 
                         color = '', 
                         members_count = 56, 
-                        emblems = wot_api_client.models.get_clans_list_200_response_one_of_data_inner_emblems.get_clans_list_200_response_oneOf_data_inner_emblems(
+                        emblems = wot_api_client.models.clans_list_data_inner_emblems.clans_list_data_inner_emblems(
                             x24 = {
                                 'key' : ''
                                 }, 
@@ -136,9 +132,9 @@ class TestGetClansInfo200Response(unittest.TestCase):
                         leader_id = 56, 
                         leader_name = '', 
                         members = null, 
-                        private = wot_api_client.models.get_clans_info_200_response_one_of_data_value_private.get_clans_info_200_response_oneOf_data_value_private(
+                        private = wot_api_client.models.clans_info_data_value_private.clans_info_data_value_private(
                             treasury = 56, 
-                            clan_treasury = wot_api_client.models.get_clans_info_200_response_one_of_data_value_private_clan_treasury.get_clans_info_200_response_oneOf_data_value_private_clan_treasury(
+                            clan_treasury = wot_api_client.models.clans_info_data_value_private_clan_treasury.clans_info_data_value_private_clan_treasury(
                                 gold = 56, 
                                 credits = 56, 
                                 crystal = 56, ), 
@@ -146,11 +142,7 @@ class TestGetClansInfo200Response(unittest.TestCase):
                                 56
                                 ], ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

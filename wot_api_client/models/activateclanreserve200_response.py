@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.activateclanreserve200_response_one_of import Activateclanreserve200ResponseOneOf
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
+from wot_api_client.models.stronghold_activateclanreserve_error import StrongholdActivateclanreserveError
+from wot_api_client.models.stronghold_activateclanreserve_ok import StrongholdActivateclanreserveOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ACTIVATECLANRESERVE200RESPONSE_ONE_OF_SCHEMAS = ["Activateclanreserve200ResponseOneOf", "GetAccountList200ResponseOneOf1"]
+ACTIVATECLANRESERVE200RESPONSE_ONE_OF_SCHEMAS = ["StrongholdActivateclanreserveError", "StrongholdActivateclanreserveOk"]
 
 class Activateclanreserve200Response(BaseModel):
     """
     Activateclanreserve200Response
     """
-    # data type: Activateclanreserve200ResponseOneOf
-    oneof_schema_1_validator: Optional[Activateclanreserve200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[Activateclanreserve200ResponseOneOf, GetAccountList200ResponseOneOf1]] = None
-    one_of_schemas: Set[str] = { "Activateclanreserve200ResponseOneOf", "GetAccountList200ResponseOneOf1" }
+    # data type: StrongholdActivateclanreserveOk
+    oneof_schema_1_validator: Optional[StrongholdActivateclanreserveOk] = None
+    # data type: StrongholdActivateclanreserveError
+    oneof_schema_2_validator: Optional[StrongholdActivateclanreserveError] = None
+    actual_instance: Optional[Union[StrongholdActivateclanreserveError, StrongholdActivateclanreserveOk]] = None
+    one_of_schemas: Set[str] = { "StrongholdActivateclanreserveError", "StrongholdActivateclanreserveOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class Activateclanreserve200Response(BaseModel):
         instance = Activateclanreserve200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: Activateclanreserve200ResponseOneOf
-        if not isinstance(v, Activateclanreserve200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `Activateclanreserve200ResponseOneOf`")
+        # validate data type: StrongholdActivateclanreserveOk
+        if not isinstance(v, StrongholdActivateclanreserveOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `StrongholdActivateclanreserveOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: StrongholdActivateclanreserveError
+        if not isinstance(v, StrongholdActivateclanreserveError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `StrongholdActivateclanreserveError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in Activateclanreserve200Response with oneOf schemas: Activateclanreserve200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in Activateclanreserve200Response with oneOf schemas: StrongholdActivateclanreserveError, StrongholdActivateclanreserveOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in Activateclanreserve200Response with oneOf schemas: Activateclanreserve200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in Activateclanreserve200Response with oneOf schemas: StrongholdActivateclanreserveError, StrongholdActivateclanreserveOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class Activateclanreserve200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `Activateclanreserve200ResponseOneOf`
-        if _data_type == "activateclanreserve_200_response_oneOf":
-            instance.actual_instance = Activateclanreserve200ResponseOneOf.from_json(json_str)
+        # check if data type is `StrongholdActivateclanreserveError`
+        if _data_type == "stronghold_activateclanreserve_error":
+            instance.actual_instance = StrongholdActivateclanreserveError.from_json(json_str)
             return instance
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `StrongholdActivateclanreserveOk`
+        if _data_type == "stronghold_activateclanreserve_ok":
+            instance.actual_instance = StrongholdActivateclanreserveOk.from_json(json_str)
             return instance
 
-        # deserialize data into Activateclanreserve200ResponseOneOf
+        # deserialize data into StrongholdActivateclanreserveOk
         try:
-            instance.actual_instance = Activateclanreserve200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = StrongholdActivateclanreserveOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into StrongholdActivateclanreserveError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = StrongholdActivateclanreserveError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into Activateclanreserve200Response with oneOf schemas: Activateclanreserve200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into Activateclanreserve200Response with oneOf schemas: StrongholdActivateclanreserveError, StrongholdActivateclanreserveOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into Activateclanreserve200Response with oneOf schemas: Activateclanreserve200ResponseOneOf, GetAccountList200ResponseOneOf1. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into Activateclanreserve200Response with oneOf schemas: StrongholdActivateclanreserveError, StrongholdActivateclanreserveOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class Activateclanreserve200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], Activateclanreserve200ResponseOneOf, GetAccountList200ResponseOneOf1]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], StrongholdActivateclanreserveError, StrongholdActivateclanreserveOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

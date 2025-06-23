@@ -37,26 +37,26 @@ class TestActivateclanreserve200Response(unittest.TestCase):
         if include_optional:
             return Activateclanreserve200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.stronghold_activateclanreserve_meta.stronghold_activateclanreserve_meta(
                     count = 56, ),
-                data = wot_api_client.models.activateclanreserve_200_response_one_of_data.activateclanreserve_200_response_oneOf_data(
+                data = wot_api_client.models.stronghold_activateclanreserve_data.stronghold_activateclanreserve_data(
                     activated_at = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.stronghold_activateclanreserve_error_error.stronghold_activateclanreserve_error_error(
+                    code = 409, 
+                    message = 'RESERVE_ACTIVATION_ERROR', 
                     field = '', 
                     value = '', )
             )
         else:
             return Activateclanreserve200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.stronghold_activateclanreserve_meta.stronghold_activateclanreserve_meta(
                     count = 56, ),
-                data = wot_api_client.models.activateclanreserve_200_response_one_of_data.activateclanreserve_200_response_oneOf_data(
+                data = wot_api_client.models.stronghold_activateclanreserve_data.stronghold_activateclanreserve_data(
                     activated_at = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.stronghold_activateclanreserve_error_error.stronghold_activateclanreserve_error_error(
+                    code = 409, 
+                    message = 'RESERVE_ACTIVATION_ERROR', 
                     field = '', 
                     value = '', ),
         )

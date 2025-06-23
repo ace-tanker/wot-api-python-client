@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetEncyclopediaBoosters200ResponseOneOfDataValue]**](GetEncyclopediaBoosters200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**EncyclopediaBoostersMeta**](EncyclopediaBoostersMeta.md) |  | 
+**data** | [**Dict[str, EncyclopediaBoostersDataValue]**](EncyclopediaBoostersDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

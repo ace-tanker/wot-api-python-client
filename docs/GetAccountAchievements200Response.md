@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetAccountAchievements200ResponseOneOfDataValue]**](GetAccountAchievements200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**AccountAchievementsMeta**](AccountAchievementsMeta.md) |  | 
+**data** | [**Dict[str, AccountAchievementsDataValue]**](AccountAchievementsDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

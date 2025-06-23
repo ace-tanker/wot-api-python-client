@@ -37,15 +37,15 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaPersonalmissions200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_personalmissions_meta.encyclopedia_personalmissions_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_personalmissions_data_value.encyclopedia_personalmissions_data_value(
                         campaign_id = 56, 
                         name = '', 
                         description = '', 
                         operations = {
-                            'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value(
+                            'key' : wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value.encyclopedia_personalmissions_data_value_operations_value(
                                 operation_id = 56, 
                                 name = '', 
                                 description = '', 
@@ -54,13 +54,13 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
                                 missions_in_set = 56, 
                                 next_id = 56, 
                                 sets_to_next = 56, 
-                                reward = wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value_reward.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value_reward(
+                                reward = wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value_reward.encyclopedia_personalmissions_data_value_operations_value_reward(
                                     slots = 56, 
                                     tanks = [
                                         56
                                         ], ), 
                                 missions = {
-                                    'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value_missions_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value_missions_value(
+                                    'key' : wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value_missions_value.encyclopedia_personalmissions_data_value_operations_value_missions_value(
                                         mission_id = 56, 
                                         set_id = 56, 
                                         name = '', 
@@ -72,7 +72,7 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
                                             ''
                                             ], 
                                         rewards = {
-                                            'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value_missions_value_rewards_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value_missions_value_rewards_value(
+                                            'key' : wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value_missions_value_rewards_value.encyclopedia_personalmissions_data_value_operations_value_missions_value_rewards_value(
                                                 conditions = '', 
                                                 credits = 56, 
                                                 items = {
@@ -87,24 +87,20 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
                                     }, )
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaPersonalmissions200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_personalmissions_meta.encyclopedia_personalmissions_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_personalmissions_data_value.encyclopedia_personalmissions_data_value(
                         campaign_id = 56, 
                         name = '', 
                         description = '', 
                         operations = {
-                            'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value(
+                            'key' : wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value.encyclopedia_personalmissions_data_value_operations_value(
                                 operation_id = 56, 
                                 name = '', 
                                 description = '', 
@@ -113,13 +109,13 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
                                 missions_in_set = 56, 
                                 next_id = 56, 
                                 sets_to_next = 56, 
-                                reward = wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value_reward.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value_reward(
+                                reward = wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value_reward.encyclopedia_personalmissions_data_value_operations_value_reward(
                                     slots = 56, 
                                     tanks = [
                                         56
                                         ], ), 
                                 missions = {
-                                    'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value_missions_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value_missions_value(
+                                    'key' : wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value_missions_value.encyclopedia_personalmissions_data_value_operations_value_missions_value(
                                         mission_id = 56, 
                                         set_id = 56, 
                                         name = '', 
@@ -131,7 +127,7 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
                                             ''
                                             ], 
                                         rewards = {
-                                            'key' : wot_api_client.models.get_encyclopedia_personalmissions_200_response_one_of_data_value_operations_value_missions_value_rewards_value.get_encyclopedia_personalmissions_200_response_oneOf_data_value_operations_value_missions_value_rewards_value(
+                                            'key' : wot_api_client.models.encyclopedia_personalmissions_data_value_operations_value_missions_value_rewards_value.encyclopedia_personalmissions_data_value_operations_value_missions_value_rewards_value(
                                                 conditions = '', 
                                                 credits = 56, 
                                                 items = {
@@ -146,11 +142,7 @@ class TestGetEncyclopediaPersonalmissions200Response(unittest.TestCase):
                                     }, )
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

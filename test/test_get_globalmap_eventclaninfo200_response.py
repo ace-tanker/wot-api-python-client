@@ -37,13 +37,13 @@ class TestGetGlobalmapEventclaninfo200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapEventclaninfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_eventclaninfo_meta.globalmap_eventclaninfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_globalmap_eventclaninfo_200_response_one_of_data_value.get_globalmap_eventclaninfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.globalmap_eventclaninfo_data_value.globalmap_eventclaninfo_data_value(
                         events = {
                             'key' : [
-                                wot_api_client.models.get_globalmap_eventclaninfo_200_response_one_of_data_value_events_value_inner.get_globalmap_eventclaninfo_200_response_oneOf_data_value_events_value_inner(
+                                wot_api_client.models.globalmap_eventclaninfo_data_value_events_value_inner.globalmap_eventclaninfo_data_value_events_value_inner(
                                     front_id = '', 
                                     event_id = '', 
                                     fame_points = 56, 
@@ -58,22 +58,22 @@ class TestGetGlobalmapEventclaninfo200Response(unittest.TestCase):
                                 ]
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_events_error_error.globalmap_events_error_error(
+                    code = 404, 
+                    message = 'EVENT_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetGlobalmapEventclaninfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_eventclaninfo_meta.globalmap_eventclaninfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_globalmap_eventclaninfo_200_response_one_of_data_value.get_globalmap_eventclaninfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.globalmap_eventclaninfo_data_value.globalmap_eventclaninfo_data_value(
                         events = {
                             'key' : [
-                                wot_api_client.models.get_globalmap_eventclaninfo_200_response_one_of_data_value_events_value_inner.get_globalmap_eventclaninfo_200_response_oneOf_data_value_events_value_inner(
+                                wot_api_client.models.globalmap_eventclaninfo_data_value_events_value_inner.globalmap_eventclaninfo_data_value_events_value_inner(
                                     front_id = '', 
                                     event_id = '', 
                                     fame_points = 56, 
@@ -88,9 +88,9 @@ class TestGetGlobalmapEventclaninfo200Response(unittest.TestCase):
                                 ]
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_events_error_error.globalmap_events_error_error(
+                    code = 404, 
+                    message = 'EVENT_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

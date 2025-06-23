@@ -37,10 +37,10 @@ class TestGetGlobalmapProvinces200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapProvinces200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_provinces_meta.globalmap_provinces_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner.get_globalmap_provinces_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_provinces_data_inner.globalmap_provinces_data_inner(
                         arena_id = '', 
                         arena_name = '', 
                         daily_revenue = 56, 
@@ -69,16 +69,16 @@ class TestGetGlobalmapProvinces200Response(unittest.TestCase):
                             56
                             ], 
                         active_battles = [
-                            wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner_active_battles_inner.get_globalmap_provinces_200_response_oneOf_data_inner_active_battles_inner(
+                            wot_api_client.models.globalmap_provinces_data_inner_active_battles_inner.globalmap_provinces_data_inner_active_battles_inner(
                                 start_at = '', 
                                 round = 56, 
                                 battle_reward = 56, 
-                                clan_a = wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner_active_battles_inner_clan_a.get_globalmap_provinces_200_response_oneOf_data_inner_active_battles_inner_clan_a(
+                                clan_a = wot_api_client.models.globalmap_provinces_data_inner_active_battles_inner_clan_a.globalmap_provinces_data_inner_active_battles_inner_clan_a(
                                     clan_id = 56, 
                                     win_elo_delta = 56, 
                                     loose_elo_delta = 56, 
                                     battle_reward = 56, ), 
-                                clan_b = wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner_active_battles_inner_clan_b.get_globalmap_provinces_200_response_oneOf_data_inner_active_battles_inner_clan_b(
+                                clan_b = wot_api_client.models.globalmap_provinces_data_inner_active_battles_inner_clan_b.globalmap_provinces_data_inner_active_battles_inner_clan_b(
                                     clan_id = 56, 
                                     win_elo_delta = 56, 
                                     loose_elo_delta = 56, 
@@ -89,19 +89,15 @@ class TestGetGlobalmapProvinces200Response(unittest.TestCase):
                         pillage_end_at = '', 
                         server = '', )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetGlobalmapProvinces200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_provinces_meta.globalmap_provinces_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner.get_globalmap_provinces_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_provinces_data_inner.globalmap_provinces_data_inner(
                         arena_id = '', 
                         arena_name = '', 
                         daily_revenue = 56, 
@@ -130,16 +126,16 @@ class TestGetGlobalmapProvinces200Response(unittest.TestCase):
                             56
                             ], 
                         active_battles = [
-                            wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner_active_battles_inner.get_globalmap_provinces_200_response_oneOf_data_inner_active_battles_inner(
+                            wot_api_client.models.globalmap_provinces_data_inner_active_battles_inner.globalmap_provinces_data_inner_active_battles_inner(
                                 start_at = '', 
                                 round = 56, 
                                 battle_reward = 56, 
-                                clan_a = wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner_active_battles_inner_clan_a.get_globalmap_provinces_200_response_oneOf_data_inner_active_battles_inner_clan_a(
+                                clan_a = wot_api_client.models.globalmap_provinces_data_inner_active_battles_inner_clan_a.globalmap_provinces_data_inner_active_battles_inner_clan_a(
                                     clan_id = 56, 
                                     win_elo_delta = 56, 
                                     loose_elo_delta = 56, 
                                     battle_reward = 56, ), 
-                                clan_b = wot_api_client.models.get_globalmap_provinces_200_response_one_of_data_inner_active_battles_inner_clan_b.get_globalmap_provinces_200_response_oneOf_data_inner_active_battles_inner_clan_b(
+                                clan_b = wot_api_client.models.globalmap_provinces_data_inner_active_battles_inner_clan_b.globalmap_provinces_data_inner_active_battles_inner_clan_b(
                                     clan_id = 56, 
                                     win_elo_delta = 56, 
                                     loose_elo_delta = 56, 
@@ -150,11 +146,7 @@ class TestGetGlobalmapProvinces200Response(unittest.TestCase):
                         pillage_end_at = '', 
                         server = '', )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

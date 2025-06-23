@@ -37,44 +37,36 @@ class TestGetAccountTanks200Response(unittest.TestCase):
         if include_optional:
             return GetAccountTanks200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.account_tanks_meta.account_tanks_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_account_tanks_200_response_one_of_data_value_inner.get_account_tanks_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.account_tanks_data_value_inner.account_tanks_data_value_inner(
                             tank_id = 56, 
                             mark_of_mastery = 56, 
-                            statistics = wot_api_client.models.get_account_tanks_200_response_one_of_data_value_inner_statistics.get_account_tanks_200_response_oneOf_data_value_inner_statistics(
+                            statistics = wot_api_client.models.account_tanks_data_value_inner_statistics.account_tanks_data_value_inner_statistics(
                                 battles = 56, 
                                 wins = 56, ), )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetAccountTanks200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.account_tanks_meta.account_tanks_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_account_tanks_200_response_one_of_data_value_inner.get_account_tanks_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.account_tanks_data_value_inner.account_tanks_data_value_inner(
                             tank_id = 56, 
                             mark_of_mastery = 56, 
-                            statistics = wot_api_client.models.get_account_tanks_200_response_one_of_data_value_inner_statistics.get_account_tanks_200_response_oneOf_data_value_inner_statistics(
+                            statistics = wot_api_client.models.account_tanks_data_value_inner_statistics.account_tanks_data_value_inner_statistics(
                                 battles = 56, 
                                 wins = 56, ), )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

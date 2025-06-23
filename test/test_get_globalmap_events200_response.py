@@ -37,54 +37,54 @@ class TestGetGlobalmapEvents200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapEvents200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_globalmap_seasons_200_response_one_of_meta.get_globalmap_seasons_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_events_meta.globalmap_events_meta(
                     count = 56, 
                     page_total = 56, 
                     page = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_events_200_response_one_of_data_inner.get_globalmap_events_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_events_data_inner.globalmap_events_data_inner(
                         event_id = '', 
                         event_name = '', 
                         start = '', 
                         end = '', 
                         status = '', 
                         fronts = [
-                            wot_api_client.models.get_globalmap_events_200_response_one_of_data_inner_fronts_inner.get_globalmap_events_200_response_oneOf_data_inner_fronts_inner(
+                            wot_api_client.models.globalmap_events_data_inner_fronts_inner.globalmap_events_data_inner_fronts_inner(
                                 front_id = '', 
                                 front_name = '', 
                                 url = '', )
                             ], )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_events_error_error.globalmap_events_error_error(
+                    code = 404, 
+                    message = 'EVENT_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetGlobalmapEvents200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_globalmap_seasons_200_response_one_of_meta.get_globalmap_seasons_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_events_meta.globalmap_events_meta(
                     count = 56, 
                     page_total = 56, 
                     page = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_events_200_response_one_of_data_inner.get_globalmap_events_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_events_data_inner.globalmap_events_data_inner(
                         event_id = '', 
                         event_name = '', 
                         start = '', 
                         end = '', 
                         status = '', 
                         fronts = [
-                            wot_api_client.models.get_globalmap_events_200_response_one_of_data_inner_fronts_inner.get_globalmap_events_200_response_oneOf_data_inner_fronts_inner(
+                            wot_api_client.models.globalmap_events_data_inner_fronts_inner.globalmap_events_data_inner_fronts_inner(
                                 front_id = '', 
                                 front_name = '', 
                                 url = '', )
                             ], )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_events_error_error.globalmap_events_error_error(
+                    code = 404, 
+                    message = 'EVENT_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

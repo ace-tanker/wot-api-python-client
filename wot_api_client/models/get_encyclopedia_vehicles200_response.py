@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_encyclopedia_vehicles200_response_one_of import GetEncyclopediaVehicles200ResponseOneOf
+from wot_api_client.models.encyclopedia_vehicles_error import EncyclopediaVehiclesError
+from wot_api_client.models.encyclopedia_vehicles_ok import EncyclopediaVehiclesOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETENCYCLOPEDIAVEHICLES200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetEncyclopediaVehicles200ResponseOneOf"]
+GETENCYCLOPEDIAVEHICLES200RESPONSE_ONE_OF_SCHEMAS = ["EncyclopediaVehiclesError", "EncyclopediaVehiclesOk"]
 
 class GetEncyclopediaVehicles200Response(BaseModel):
     """
     GetEncyclopediaVehicles200Response
     """
-    # data type: GetEncyclopediaVehicles200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetEncyclopediaVehicles200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetEncyclopediaVehicles200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetEncyclopediaVehicles200ResponseOneOf" }
+    # data type: EncyclopediaVehiclesOk
+    oneof_schema_1_validator: Optional[EncyclopediaVehiclesOk] = None
+    # data type: EncyclopediaVehiclesError
+    oneof_schema_2_validator: Optional[EncyclopediaVehiclesError] = None
+    actual_instance: Optional[Union[EncyclopediaVehiclesError, EncyclopediaVehiclesOk]] = None
+    one_of_schemas: Set[str] = { "EncyclopediaVehiclesError", "EncyclopediaVehiclesOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetEncyclopediaVehicles200Response(BaseModel):
         instance = GetEncyclopediaVehicles200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetEncyclopediaVehicles200ResponseOneOf
-        if not isinstance(v, GetEncyclopediaVehicles200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetEncyclopediaVehicles200ResponseOneOf`")
+        # validate data type: EncyclopediaVehiclesOk
+        if not isinstance(v, EncyclopediaVehiclesOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaVehiclesOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: EncyclopediaVehiclesError
+        if not isinstance(v, EncyclopediaVehiclesError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaVehiclesError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaVehicles200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaVehicles200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaVehicles200Response with oneOf schemas: EncyclopediaVehiclesError, EncyclopediaVehiclesOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaVehicles200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaVehicles200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaVehicles200Response with oneOf schemas: EncyclopediaVehiclesError, EncyclopediaVehiclesOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetEncyclopediaVehicles200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `EncyclopediaVehiclesError`
+        if _data_type == "encyclopedia_vehicles_error":
+            instance.actual_instance = EncyclopediaVehiclesError.from_json(json_str)
             return instance
 
-        # check if data type is `GetEncyclopediaVehicles200ResponseOneOf`
-        if _data_type == "get_encyclopedia_vehicles_200_response_oneOf":
-            instance.actual_instance = GetEncyclopediaVehicles200ResponseOneOf.from_json(json_str)
+        # check if data type is `EncyclopediaVehiclesOk`
+        if _data_type == "encyclopedia_vehicles_ok":
+            instance.actual_instance = EncyclopediaVehiclesOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetEncyclopediaVehicles200ResponseOneOf
+        # deserialize data into EncyclopediaVehiclesOk
         try:
-            instance.actual_instance = GetEncyclopediaVehicles200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = EncyclopediaVehiclesOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into EncyclopediaVehiclesError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = EncyclopediaVehiclesError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaVehicles200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaVehicles200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaVehicles200Response with oneOf schemas: EncyclopediaVehiclesError, EncyclopediaVehiclesOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaVehicles200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaVehicles200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaVehicles200Response with oneOf schemas: EncyclopediaVehiclesError, EncyclopediaVehiclesOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetEncyclopediaVehicles200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetEncyclopediaVehicles200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], EncyclopediaVehiclesError, EncyclopediaVehiclesOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

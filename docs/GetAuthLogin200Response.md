@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**GetAuthLogin200ResponseOneOfData**](GetAuthLogin200ResponseOneOfData.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**AuthLoginMeta**](AuthLoginMeta.md) |  | 
+**data** | [**AuthLoginData**](AuthLoginData.md) |  | 
+**error** | [**AuthLoginErrorError**](AuthLoginErrorError.md) |  | 
 
 ## Example
 

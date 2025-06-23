@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | **Dict[str, Optional[List[GetTanksAchievements200ResponseOneOfDataValueInner]]]** |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**TanksAchievementsMeta**](TanksAchievementsMeta.md) |  | 
+**data** | **Dict[str, Optional[List[TanksAchievementsDataValueInner]]]** |  | 
+**error** | **object** |  | 
 
 ## Example
 

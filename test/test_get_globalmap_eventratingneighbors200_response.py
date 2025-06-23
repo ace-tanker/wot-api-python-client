@@ -37,10 +37,10 @@ class TestGetGlobalmapEventratingneighbors200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapEventratingneighbors200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_eventratingneighbors_meta.globalmap_eventratingneighbors_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_eventratingneighbors_200_response_one_of_data_inner.get_globalmap_eventratingneighbors_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_eventratingneighbors_data_inner.globalmap_eventratingneighbors_data_inner(
                         clan_id = 56, 
                         name = '', 
                         tag = '', 
@@ -54,19 +54,19 @@ class TestGetGlobalmapEventratingneighbors200Response(unittest.TestCase):
                         task_fame_points = 56, 
                         fame_points_to_improve_award = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasonratingneighbors_error_error.globalmap_seasonratingneighbors_error_error(
+                    code = 404, 
+                    message = 'RATINGS_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetGlobalmapEventratingneighbors200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_eventratingneighbors_meta.globalmap_eventratingneighbors_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_eventratingneighbors_200_response_one_of_data_inner.get_globalmap_eventratingneighbors_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_eventratingneighbors_data_inner.globalmap_eventratingneighbors_data_inner(
                         clan_id = 56, 
                         name = '', 
                         tag = '', 
@@ -80,9 +80,9 @@ class TestGetGlobalmapEventratingneighbors200Response(unittest.TestCase):
                         task_fame_points = 56, 
                         fame_points_to_improve_award = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasonratingneighbors_error_error.globalmap_seasonratingneighbors_error_error(
+                    code = 404, 
+                    message = 'RATINGS_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

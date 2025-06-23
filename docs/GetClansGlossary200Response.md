@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
 **meta** | **object** |  | 
-**data** | [**GetClansGlossary200ResponseOneOfData**](GetClansGlossary200ResponseOneOfData.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**data** | [**ClansGlossaryData**](ClansGlossaryData.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

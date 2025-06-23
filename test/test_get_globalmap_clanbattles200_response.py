@@ -37,10 +37,10 @@ class TestGetGlobalmapClanbattles200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapClanbattles200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_clanbattles_meta.globalmap_clanbattles_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_clanbattles_200_response_one_of_data_inner.get_globalmap_clanbattles_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_clanbattles_data_inner.globalmap_clanbattles_data_inner(
                         front_id = '', 
                         front_name = '', 
                         province_id = '', 
@@ -51,19 +51,15 @@ class TestGetGlobalmapClanbattles200Response(unittest.TestCase):
                         attack_type = '', 
                         vehicle_level = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetGlobalmapClanbattles200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_clanbattles_meta.globalmap_clanbattles_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_clanbattles_200_response_one_of_data_inner.get_globalmap_clanbattles_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_clanbattles_data_inner.globalmap_clanbattles_data_inner(
                         front_id = '', 
                         front_name = '', 
                         province_id = '', 
@@ -74,11 +70,7 @@ class TestGetGlobalmapClanbattles200Response(unittest.TestCase):
                         attack_type = '', 
                         vehicle_level = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

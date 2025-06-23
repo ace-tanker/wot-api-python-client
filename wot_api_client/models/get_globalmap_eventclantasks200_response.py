@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_globalmap_eventclantasks200_response_one_of import GetGlobalmapEventclantasks200ResponseOneOf
+from wot_api_client.models.globalmap_eventclantasks_error import GlobalmapEventclantasksError
+from wot_api_client.models.globalmap_eventclantasks_ok import GlobalmapEventclantasksOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETGLOBALMAPEVENTCLANTASKS200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetGlobalmapEventclantasks200ResponseOneOf"]
+GETGLOBALMAPEVENTCLANTASKS200RESPONSE_ONE_OF_SCHEMAS = ["GlobalmapEventclantasksError", "GlobalmapEventclantasksOk"]
 
 class GetGlobalmapEventclantasks200Response(BaseModel):
     """
     GetGlobalmapEventclantasks200Response
     """
-    # data type: GetGlobalmapEventclantasks200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetGlobalmapEventclantasks200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetGlobalmapEventclantasks200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetGlobalmapEventclantasks200ResponseOneOf" }
+    # data type: GlobalmapEventclantasksOk
+    oneof_schema_1_validator: Optional[GlobalmapEventclantasksOk] = None
+    # data type: GlobalmapEventclantasksError
+    oneof_schema_2_validator: Optional[GlobalmapEventclantasksError] = None
+    actual_instance: Optional[Union[GlobalmapEventclantasksError, GlobalmapEventclantasksOk]] = None
+    one_of_schemas: Set[str] = { "GlobalmapEventclantasksError", "GlobalmapEventclantasksOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetGlobalmapEventclantasks200Response(BaseModel):
         instance = GetGlobalmapEventclantasks200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetGlobalmapEventclantasks200ResponseOneOf
-        if not isinstance(v, GetGlobalmapEventclantasks200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetGlobalmapEventclantasks200ResponseOneOf`")
+        # validate data type: GlobalmapEventclantasksOk
+        if not isinstance(v, GlobalmapEventclantasksOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `GlobalmapEventclantasksOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: GlobalmapEventclantasksError
+        if not isinstance(v, GlobalmapEventclantasksError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `GlobalmapEventclantasksError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetGlobalmapEventclantasks200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapEventclantasks200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetGlobalmapEventclantasks200Response with oneOf schemas: GlobalmapEventclantasksError, GlobalmapEventclantasksOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetGlobalmapEventclantasks200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapEventclantasks200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetGlobalmapEventclantasks200Response with oneOf schemas: GlobalmapEventclantasksError, GlobalmapEventclantasksOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetGlobalmapEventclantasks200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `GlobalmapEventclantasksError`
+        if _data_type == "globalmap_eventclantasks_error":
+            instance.actual_instance = GlobalmapEventclantasksError.from_json(json_str)
             return instance
 
-        # check if data type is `GetGlobalmapEventclantasks200ResponseOneOf`
-        if _data_type == "get_globalmap_eventclantasks_200_response_oneOf":
-            instance.actual_instance = GetGlobalmapEventclantasks200ResponseOneOf.from_json(json_str)
+        # check if data type is `GlobalmapEventclantasksOk`
+        if _data_type == "globalmap_eventclantasks_ok":
+            instance.actual_instance = GlobalmapEventclantasksOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetGlobalmapEventclantasks200ResponseOneOf
+        # deserialize data into GlobalmapEventclantasksOk
         try:
-            instance.actual_instance = GetGlobalmapEventclantasks200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = GlobalmapEventclantasksOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into GlobalmapEventclantasksError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = GlobalmapEventclantasksError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetGlobalmapEventclantasks200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapEventclantasks200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetGlobalmapEventclantasks200Response with oneOf schemas: GlobalmapEventclantasksError, GlobalmapEventclantasksOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetGlobalmapEventclantasks200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapEventclantasks200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetGlobalmapEventclantasks200Response with oneOf schemas: GlobalmapEventclantasksError, GlobalmapEventclantasksOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetGlobalmapEventclantasks200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetGlobalmapEventclantasks200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], GlobalmapEventclantasksError, GlobalmapEventclantasksOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

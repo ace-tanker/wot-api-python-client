@@ -37,14 +37,14 @@ class TestGetTanksStats200Response(unittest.TestCase):
         if include_optional:
             return GetTanksStats200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.tanks_stats_meta.tanks_stats_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner.get_tanks_stats_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.tanks_stats_data_value_inner.tanks_stats_data_value_inner(
                             account_id = 56, 
                             tank_id = 56, 
-                            all = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_all.get_tanks_stats_200_response_oneOf_data_value_inner_all(
+                            all = wot_api_client.models.tanks_stats_data_value_inner_all.tanks_stats_data_value_inner_all(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -78,7 +78,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            company = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_company.get_tanks_stats_200_response_oneOf_data_value_inner_company(
+                            company = wot_api_client.models.tanks_stats_data_value_inner_company.tanks_stats_data_value_inner_company(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -100,7 +100,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 stun_assisted_damage = 56, 
                                 track_assisted_damage = 56, 
                                 radio_assisted_damage = 56, ), 
-                            stronghold_defense = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_stronghold_defense.get_tanks_stats_200_response_oneOf_data_value_inner_stronghold_defense(
+                            stronghold_defense = wot_api_client.models.tanks_stats_data_value_inner_stronghold_defense.tanks_stats_data_value_inner_stronghold_defense(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -132,7 +132,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            stronghold_skirmish = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_stronghold_skirmish.get_tanks_stats_200_response_oneOf_data_value_inner_stronghold_skirmish(
+                            stronghold_skirmish = wot_api_client.models.tanks_stats_data_value_inner_stronghold_skirmish.tanks_stats_data_value_inner_stronghold_skirmish(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -164,7 +164,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            clan = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_clan.get_tanks_stats_200_response_oneOf_data_value_inner_clan(
+                            clan = wot_api_client.models.tanks_stats_data_value_inner_clan.tanks_stats_data_value_inner_clan(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -189,7 +189,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            random = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_random.get_tanks_stats_200_response_oneOf_data_value_inner_random(
+                            random = wot_api_client.models.tanks_stats_data_value_inner_random.tanks_stats_data_value_inner_random(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -214,7 +214,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            fallout = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_fallout.get_tanks_stats_200_response_oneOf_data_value_inner_fallout(
+                            fallout = wot_api_client.models.tanks_stats_data_value_inner_fallout.tanks_stats_data_value_inner_fallout(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -261,7 +261,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            team = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_team.get_tanks_stats_200_response_oneOf_data_value_inner_team(
+                            team = wot_api_client.models.tanks_stats_data_value_inner_team.tanks_stats_data_value_inner_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -286,7 +286,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            regular_team = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_regular_team.get_tanks_stats_200_response_oneOf_data_value_inner_regular_team(
+                            regular_team = wot_api_client.models.tanks_stats_data_value_inner_regular_team.tanks_stats_data_value_inner_regular_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -311,7 +311,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            globalmap = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_globalmap.get_tanks_stats_200_response_oneOf_data_value_inner_globalmap(
+                            globalmap = wot_api_client.models.tanks_stats_data_value_inner_globalmap.tanks_stats_data_value_inner_globalmap(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -345,7 +345,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            epic = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_epic.get_tanks_stats_200_response_oneOf_data_value_inner_epic(
+                            epic = wot_api_client.models.tanks_stats_data_value_inner_epic.tanks_stats_data_value_inner_epic(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -370,7 +370,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_battles = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_ranked_battles.get_tanks_stats_200_response_oneOf_data_value_inner_ranked_battles(
+                            ranked_battles = wot_api_client.models.tanks_stats_data_value_inner_ranked_battles.tanks_stats_data_value_inner_ranked_battles(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -402,7 +402,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 }, 
                             in_garage = True, 
                             mark_of_mastery = 56, 
-                            ranked_10x10 = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_ranked_10x10.get_tanks_stats_200_response_oneOf_data_value_inner_ranked_10x10(
+                            ranked_10x10 = wot_api_client.models.tanks_stats_data_value_inner_ranked_10x10.tanks_stats_data_value_inner_ranked_10x10(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -429,23 +429,19 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_damage = 56, ), )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetTanksStats200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.tanks_stats_meta.tanks_stats_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner.get_tanks_stats_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.tanks_stats_data_value_inner.tanks_stats_data_value_inner(
                             account_id = 56, 
                             tank_id = 56, 
-                            all = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_all.get_tanks_stats_200_response_oneOf_data_value_inner_all(
+                            all = wot_api_client.models.tanks_stats_data_value_inner_all.tanks_stats_data_value_inner_all(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -479,7 +475,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            company = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_company.get_tanks_stats_200_response_oneOf_data_value_inner_company(
+                            company = wot_api_client.models.tanks_stats_data_value_inner_company.tanks_stats_data_value_inner_company(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -501,7 +497,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 stun_assisted_damage = 56, 
                                 track_assisted_damage = 56, 
                                 radio_assisted_damage = 56, ), 
-                            stronghold_defense = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_stronghold_defense.get_tanks_stats_200_response_oneOf_data_value_inner_stronghold_defense(
+                            stronghold_defense = wot_api_client.models.tanks_stats_data_value_inner_stronghold_defense.tanks_stats_data_value_inner_stronghold_defense(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -533,7 +529,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            stronghold_skirmish = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_stronghold_skirmish.get_tanks_stats_200_response_oneOf_data_value_inner_stronghold_skirmish(
+                            stronghold_skirmish = wot_api_client.models.tanks_stats_data_value_inner_stronghold_skirmish.tanks_stats_data_value_inner_stronghold_skirmish(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -565,7 +561,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            clan = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_clan.get_tanks_stats_200_response_oneOf_data_value_inner_clan(
+                            clan = wot_api_client.models.tanks_stats_data_value_inner_clan.tanks_stats_data_value_inner_clan(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -590,7 +586,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            random = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_random.get_tanks_stats_200_response_oneOf_data_value_inner_random(
+                            random = wot_api_client.models.tanks_stats_data_value_inner_random.tanks_stats_data_value_inner_random(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -615,7 +611,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            fallout = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_fallout.get_tanks_stats_200_response_oneOf_data_value_inner_fallout(
+                            fallout = wot_api_client.models.tanks_stats_data_value_inner_fallout.tanks_stats_data_value_inner_fallout(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -662,7 +658,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            team = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_team.get_tanks_stats_200_response_oneOf_data_value_inner_team(
+                            team = wot_api_client.models.tanks_stats_data_value_inner_team.tanks_stats_data_value_inner_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -687,7 +683,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            regular_team = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_regular_team.get_tanks_stats_200_response_oneOf_data_value_inner_regular_team(
+                            regular_team = wot_api_client.models.tanks_stats_data_value_inner_regular_team.tanks_stats_data_value_inner_regular_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -712,7 +708,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            globalmap = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_globalmap.get_tanks_stats_200_response_oneOf_data_value_inner_globalmap(
+                            globalmap = wot_api_client.models.tanks_stats_data_value_inner_globalmap.tanks_stats_data_value_inner_globalmap(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -746,7 +742,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            epic = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_epic.get_tanks_stats_200_response_oneOf_data_value_inner_epic(
+                            epic = wot_api_client.models.tanks_stats_data_value_inner_epic.tanks_stats_data_value_inner_epic(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -771,7 +767,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_battles = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_ranked_battles.get_tanks_stats_200_response_oneOf_data_value_inner_ranked_battles(
+                            ranked_battles = wot_api_client.models.tanks_stats_data_value_inner_ranked_battles.tanks_stats_data_value_inner_ranked_battles(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -803,7 +799,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 }, 
                             in_garage = True, 
                             mark_of_mastery = 56, 
-                            ranked_10x10 = wot_api_client.models.get_tanks_stats_200_response_one_of_data_value_inner_ranked_10x10.get_tanks_stats_200_response_oneOf_data_value_inner_ranked_10x10(
+                            ranked_10x10 = wot_api_client.models.tanks_stats_data_value_inner_ranked_10x10.tanks_stats_data_value_inner_ranked_10x10(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -830,11 +826,7 @@ class TestGetTanksStats200Response(unittest.TestCase):
                                 max_damage = 56, ), )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

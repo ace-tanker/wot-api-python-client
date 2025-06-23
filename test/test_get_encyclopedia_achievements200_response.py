@@ -37,10 +37,10 @@ class TestGetEncyclopediaAchievements200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaAchievements200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_achievements_meta.encyclopedia_achievements_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_achievements_200_response_one_of_data_value.get_encyclopedia_achievements_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_achievements_data_value.encyclopedia_achievements_data_value(
                         name = '', 
                         name_i18n = '', 
                         type = '', 
@@ -53,11 +53,11 @@ class TestGetEncyclopediaAchievements200Response(unittest.TestCase):
                         hero_info = '', 
                         order = 56, 
                         options = [
-                            wot_api_client.models.get_encyclopedia_achievements_200_response_one_of_data_value_options_inner.get_encyclopedia_achievements_200_response_oneOf_data_value_options_inner(
+                            wot_api_client.models.encyclopedia_achievements_data_value_options_inner.encyclopedia_achievements_data_value_options_inner(
                                 name_i18n = '', 
                                 image = '', 
                                 image_big = '', 
-                                nation_images = wot_api_client.models.get_encyclopedia_achievements_200_response_one_of_data_value_options_inner_nation_images.get_encyclopedia_achievements_200_response_oneOf_data_value_options_inner_nation_images(
+                                nation_images = wot_api_client.models.encyclopedia_achievements_data_value_options_inner_nation_images.encyclopedia_achievements_data_value_options_inner_nation_images(
                                     x71 = {
                                         'key' : ''
                                         }, 
@@ -71,19 +71,15 @@ class TestGetEncyclopediaAchievements200Response(unittest.TestCase):
                             ], 
                         outdated = True, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaAchievements200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_achievements_meta.encyclopedia_achievements_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_achievements_200_response_one_of_data_value.get_encyclopedia_achievements_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_achievements_data_value.encyclopedia_achievements_data_value(
                         name = '', 
                         name_i18n = '', 
                         type = '', 
@@ -96,11 +92,11 @@ class TestGetEncyclopediaAchievements200Response(unittest.TestCase):
                         hero_info = '', 
                         order = 56, 
                         options = [
-                            wot_api_client.models.get_encyclopedia_achievements_200_response_one_of_data_value_options_inner.get_encyclopedia_achievements_200_response_oneOf_data_value_options_inner(
+                            wot_api_client.models.encyclopedia_achievements_data_value_options_inner.encyclopedia_achievements_data_value_options_inner(
                                 name_i18n = '', 
                                 image = '', 
                                 image_big = '', 
-                                nation_images = wot_api_client.models.get_encyclopedia_achievements_200_response_one_of_data_value_options_inner_nation_images.get_encyclopedia_achievements_200_response_oneOf_data_value_options_inner_nation_images(
+                                nation_images = wot_api_client.models.encyclopedia_achievements_data_value_options_inner_nation_images.encyclopedia_achievements_data_value_options_inner_nation_images(
                                     x71 = {
                                         'key' : ''
                                         }, 
@@ -114,11 +110,7 @@ class TestGetEncyclopediaAchievements200Response(unittest.TestCase):
                             ], 
                         outdated = True, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

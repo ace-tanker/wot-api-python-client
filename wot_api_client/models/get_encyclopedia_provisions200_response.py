@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_encyclopedia_provisions200_response_one_of import GetEncyclopediaProvisions200ResponseOneOf
+from wot_api_client.models.encyclopedia_provisions_error import EncyclopediaProvisionsError
+from wot_api_client.models.encyclopedia_provisions_ok import EncyclopediaProvisionsOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETENCYCLOPEDIAPROVISIONS200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetEncyclopediaProvisions200ResponseOneOf"]
+GETENCYCLOPEDIAPROVISIONS200RESPONSE_ONE_OF_SCHEMAS = ["EncyclopediaProvisionsError", "EncyclopediaProvisionsOk"]
 
 class GetEncyclopediaProvisions200Response(BaseModel):
     """
     GetEncyclopediaProvisions200Response
     """
-    # data type: GetEncyclopediaProvisions200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetEncyclopediaProvisions200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetEncyclopediaProvisions200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetEncyclopediaProvisions200ResponseOneOf" }
+    # data type: EncyclopediaProvisionsOk
+    oneof_schema_1_validator: Optional[EncyclopediaProvisionsOk] = None
+    # data type: EncyclopediaProvisionsError
+    oneof_schema_2_validator: Optional[EncyclopediaProvisionsError] = None
+    actual_instance: Optional[Union[EncyclopediaProvisionsError, EncyclopediaProvisionsOk]] = None
+    one_of_schemas: Set[str] = { "EncyclopediaProvisionsError", "EncyclopediaProvisionsOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetEncyclopediaProvisions200Response(BaseModel):
         instance = GetEncyclopediaProvisions200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetEncyclopediaProvisions200ResponseOneOf
-        if not isinstance(v, GetEncyclopediaProvisions200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetEncyclopediaProvisions200ResponseOneOf`")
+        # validate data type: EncyclopediaProvisionsOk
+        if not isinstance(v, EncyclopediaProvisionsOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaProvisionsOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: EncyclopediaProvisionsError
+        if not isinstance(v, EncyclopediaProvisionsError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaProvisionsError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaProvisions200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaProvisions200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaProvisions200Response with oneOf schemas: EncyclopediaProvisionsError, EncyclopediaProvisionsOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaProvisions200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaProvisions200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaProvisions200Response with oneOf schemas: EncyclopediaProvisionsError, EncyclopediaProvisionsOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetEncyclopediaProvisions200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `EncyclopediaProvisionsError`
+        if _data_type == "encyclopedia_provisions_error":
+            instance.actual_instance = EncyclopediaProvisionsError.from_json(json_str)
             return instance
 
-        # check if data type is `GetEncyclopediaProvisions200ResponseOneOf`
-        if _data_type == "get_encyclopedia_provisions_200_response_oneOf":
-            instance.actual_instance = GetEncyclopediaProvisions200ResponseOneOf.from_json(json_str)
+        # check if data type is `EncyclopediaProvisionsOk`
+        if _data_type == "encyclopedia_provisions_ok":
+            instance.actual_instance = EncyclopediaProvisionsOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetEncyclopediaProvisions200ResponseOneOf
+        # deserialize data into EncyclopediaProvisionsOk
         try:
-            instance.actual_instance = GetEncyclopediaProvisions200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = EncyclopediaProvisionsOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into EncyclopediaProvisionsError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = EncyclopediaProvisionsError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaProvisions200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaProvisions200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaProvisions200Response with oneOf schemas: EncyclopediaProvisionsError, EncyclopediaProvisionsOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaProvisions200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaProvisions200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaProvisions200Response with oneOf schemas: EncyclopediaProvisionsError, EncyclopediaProvisionsOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetEncyclopediaProvisions200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetEncyclopediaProvisions200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], EncyclopediaProvisionsError, EncyclopediaProvisionsOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_globalmap_seasonaccountinfo200_response_one_of import GetGlobalmapSeasonaccountinfo200ResponseOneOf
+from wot_api_client.models.globalmap_seasonaccountinfo_error import GlobalmapSeasonaccountinfoError
+from wot_api_client.models.globalmap_seasonaccountinfo_ok import GlobalmapSeasonaccountinfoOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETGLOBALMAPSEASONACCOUNTINFO200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetGlobalmapSeasonaccountinfo200ResponseOneOf"]
+GETGLOBALMAPSEASONACCOUNTINFO200RESPONSE_ONE_OF_SCHEMAS = ["GlobalmapSeasonaccountinfoError", "GlobalmapSeasonaccountinfoOk"]
 
 class GetGlobalmapSeasonaccountinfo200Response(BaseModel):
     """
     GetGlobalmapSeasonaccountinfo200Response
     """
-    # data type: GetGlobalmapSeasonaccountinfo200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetGlobalmapSeasonaccountinfo200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetGlobalmapSeasonaccountinfo200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetGlobalmapSeasonaccountinfo200ResponseOneOf" }
+    # data type: GlobalmapSeasonaccountinfoOk
+    oneof_schema_1_validator: Optional[GlobalmapSeasonaccountinfoOk] = None
+    # data type: GlobalmapSeasonaccountinfoError
+    oneof_schema_2_validator: Optional[GlobalmapSeasonaccountinfoError] = None
+    actual_instance: Optional[Union[GlobalmapSeasonaccountinfoError, GlobalmapSeasonaccountinfoOk]] = None
+    one_of_schemas: Set[str] = { "GlobalmapSeasonaccountinfoError", "GlobalmapSeasonaccountinfoOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetGlobalmapSeasonaccountinfo200Response(BaseModel):
         instance = GetGlobalmapSeasonaccountinfo200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetGlobalmapSeasonaccountinfo200ResponseOneOf
-        if not isinstance(v, GetGlobalmapSeasonaccountinfo200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetGlobalmapSeasonaccountinfo200ResponseOneOf`")
+        # validate data type: GlobalmapSeasonaccountinfoOk
+        if not isinstance(v, GlobalmapSeasonaccountinfoOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `GlobalmapSeasonaccountinfoOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: GlobalmapSeasonaccountinfoError
+        if not isinstance(v, GlobalmapSeasonaccountinfoError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `GlobalmapSeasonaccountinfoError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapSeasonaccountinfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GlobalmapSeasonaccountinfoError, GlobalmapSeasonaccountinfoOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapSeasonaccountinfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GlobalmapSeasonaccountinfoError, GlobalmapSeasonaccountinfoOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetGlobalmapSeasonaccountinfo200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `GlobalmapSeasonaccountinfoError`
+        if _data_type == "globalmap_seasonaccountinfo_error":
+            instance.actual_instance = GlobalmapSeasonaccountinfoError.from_json(json_str)
             return instance
 
-        # check if data type is `GetGlobalmapSeasonaccountinfo200ResponseOneOf`
-        if _data_type == "get_globalmap_seasonaccountinfo_200_response_oneOf":
-            instance.actual_instance = GetGlobalmapSeasonaccountinfo200ResponseOneOf.from_json(json_str)
+        # check if data type is `GlobalmapSeasonaccountinfoOk`
+        if _data_type == "globalmap_seasonaccountinfo_ok":
+            instance.actual_instance = GlobalmapSeasonaccountinfoOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetGlobalmapSeasonaccountinfo200ResponseOneOf
+        # deserialize data into GlobalmapSeasonaccountinfoOk
         try:
-            instance.actual_instance = GetGlobalmapSeasonaccountinfo200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = GlobalmapSeasonaccountinfoOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into GlobalmapSeasonaccountinfoError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = GlobalmapSeasonaccountinfoError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapSeasonaccountinfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GlobalmapSeasonaccountinfoError, GlobalmapSeasonaccountinfoOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetGlobalmapSeasonaccountinfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetGlobalmapSeasonaccountinfo200Response with oneOf schemas: GlobalmapSeasonaccountinfoError, GlobalmapSeasonaccountinfoOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetGlobalmapSeasonaccountinfo200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetGlobalmapSeasonaccountinfo200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], GlobalmapSeasonaccountinfoError, GlobalmapSeasonaccountinfoOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

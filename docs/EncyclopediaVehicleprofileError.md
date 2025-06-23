@@ -1,0 +1,30 @@
+# EncyclopediaVehicleprofileError
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**status** | **str** |  | 
+**error** | [**EncyclopediaVehicleprofileErrorError**](EncyclopediaVehicleprofileErrorError.md) |  | 
+
+## Example
+
+```python
+from wot_api_client.models.encyclopedia_vehicleprofile_error import EncyclopediaVehicleprofileError
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of EncyclopediaVehicleprofileError from a JSON string
+encyclopedia_vehicleprofile_error_instance = EncyclopediaVehicleprofileError.from_json(json)
+# print the JSON string representation of the object
+print(EncyclopediaVehicleprofileError.to_json())
+
+# convert the object into a dict
+encyclopedia_vehicleprofile_error_dict = encyclopedia_vehicleprofile_error_instance.to_dict()
+# create an instance of EncyclopediaVehicleprofileError from a dict
+encyclopedia_vehicleprofile_error_from_dict = EncyclopediaVehicleprofileError.from_dict(encyclopedia_vehicleprofile_error_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

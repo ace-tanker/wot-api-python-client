@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_clanratings_top200_response_one_of import GetClanratingsTop200ResponseOneOf
+from wot_api_client.models.clanratings_top_error import ClanratingsTopError
+from wot_api_client.models.clanratings_top_ok import ClanratingsTopOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETCLANRATINGSTOP200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetClanratingsTop200ResponseOneOf"]
+GETCLANRATINGSTOP200RESPONSE_ONE_OF_SCHEMAS = ["ClanratingsTopError", "ClanratingsTopOk"]
 
 class GetClanratingsTop200Response(BaseModel):
     """
     GetClanratingsTop200Response
     """
-    # data type: GetClanratingsTop200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetClanratingsTop200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetClanratingsTop200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetClanratingsTop200ResponseOneOf" }
+    # data type: ClanratingsTopOk
+    oneof_schema_1_validator: Optional[ClanratingsTopOk] = None
+    # data type: ClanratingsTopError
+    oneof_schema_2_validator: Optional[ClanratingsTopError] = None
+    actual_instance: Optional[Union[ClanratingsTopError, ClanratingsTopOk]] = None
+    one_of_schemas: Set[str] = { "ClanratingsTopError", "ClanratingsTopOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetClanratingsTop200Response(BaseModel):
         instance = GetClanratingsTop200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetClanratingsTop200ResponseOneOf
-        if not isinstance(v, GetClanratingsTop200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetClanratingsTop200ResponseOneOf`")
+        # validate data type: ClanratingsTopOk
+        if not isinstance(v, ClanratingsTopOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ClanratingsTopOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: ClanratingsTopError
+        if not isinstance(v, ClanratingsTopError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ClanratingsTopError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetClanratingsTop200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClanratingsTop200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetClanratingsTop200Response with oneOf schemas: ClanratingsTopError, ClanratingsTopOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetClanratingsTop200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClanratingsTop200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetClanratingsTop200Response with oneOf schemas: ClanratingsTopError, ClanratingsTopOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetClanratingsTop200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `ClanratingsTopError`
+        if _data_type == "clanratings_top_error":
+            instance.actual_instance = ClanratingsTopError.from_json(json_str)
             return instance
 
-        # check if data type is `GetClanratingsTop200ResponseOneOf`
-        if _data_type == "get_clanratings_top_200_response_oneOf":
-            instance.actual_instance = GetClanratingsTop200ResponseOneOf.from_json(json_str)
+        # check if data type is `ClanratingsTopOk`
+        if _data_type == "clanratings_top_ok":
+            instance.actual_instance = ClanratingsTopOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetClanratingsTop200ResponseOneOf
+        # deserialize data into ClanratingsTopOk
         try:
-            instance.actual_instance = GetClanratingsTop200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = ClanratingsTopOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into ClanratingsTopError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = ClanratingsTopError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetClanratingsTop200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClanratingsTop200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetClanratingsTop200Response with oneOf schemas: ClanratingsTopError, ClanratingsTopOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetClanratingsTop200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClanratingsTop200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetClanratingsTop200Response with oneOf schemas: ClanratingsTopError, ClanratingsTopOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetClanratingsTop200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetClanratingsTop200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ClanratingsTopError, ClanratingsTopOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

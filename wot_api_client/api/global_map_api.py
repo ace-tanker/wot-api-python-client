@@ -24,6 +24,7 @@ from wot_api_client.models.get_globalmap_clanbattles200_response import GetGloba
 from wot_api_client.models.get_globalmap_claninfo200_response import GetGlobalmapClaninfo200Response
 from wot_api_client.models.get_globalmap_clanprovinces200_response import GetGlobalmapClanprovinces200Response
 from wot_api_client.models.get_globalmap_eventaccountinfo200_response import GetGlobalmapEventaccountinfo200Response
+from wot_api_client.models.get_globalmap_eventaccountratingneighbors200_response import GetGlobalmapEventaccountratingneighbors200Response
 from wot_api_client.models.get_globalmap_eventaccountratings200_response import GetGlobalmapEventaccountratings200Response
 from wot_api_client.models.get_globalmap_eventclaninfo200_response import GetGlobalmapEventclaninfo200Response
 from wot_api_client.models.get_globalmap_eventclantasks200_response import GetGlobalmapEventclantasks200Response
@@ -1357,7 +1358,7 @@ class GlobalMapApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GetGlobalmapEventaccountratings200Response:
+    ) -> GetGlobalmapEventaccountratingneighbors200Response:
         """Adjacent positions in event account rating
 
         Method returns adjacent position in account event rating.
@@ -1413,7 +1414,7 @@ class GlobalMapApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GetGlobalmapEventaccountratings200Response",
+            '200': "GetGlobalmapEventaccountratingneighbors200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1448,7 +1449,7 @@ class GlobalMapApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GetGlobalmapEventaccountratings200Response]:
+    ) -> ApiResponse[GetGlobalmapEventaccountratingneighbors200Response]:
         """Adjacent positions in event account rating
 
         Method returns adjacent position in account event rating.
@@ -1504,7 +1505,7 @@ class GlobalMapApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GetGlobalmapEventaccountratings200Response",
+            '200': "GetGlobalmapEventaccountratingneighbors200Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1595,7 +1596,7 @@ class GlobalMapApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GetGlobalmapEventaccountratings200Response",
+            '200': "GetGlobalmapEventaccountratingneighbors200Response",
         }
         response_data = self.api_client.call_api(
             *_param,

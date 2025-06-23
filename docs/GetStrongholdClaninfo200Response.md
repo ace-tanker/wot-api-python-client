@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetStrongholdClaninfo200ResponseOneOfDataValue]**](GetStrongholdClaninfo200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**StrongholdClaninfoMeta**](StrongholdClaninfoMeta.md) |  | 
+**data** | [**Dict[str, StrongholdClaninfoDataValue]**](StrongholdClaninfoDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

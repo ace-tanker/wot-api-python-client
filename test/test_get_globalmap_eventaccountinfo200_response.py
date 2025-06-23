@@ -37,13 +37,13 @@ class TestGetGlobalmapEventaccountinfo200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapEventaccountinfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_eventaccountinfo_meta.globalmap_eventaccountinfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_globalmap_eventaccountinfo_200_response_one_of_data_value.get_globalmap_eventaccountinfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.globalmap_eventaccountinfo_data_value.globalmap_eventaccountinfo_data_value(
                         events = {
                             'key' : [
-                                wot_api_client.models.get_globalmap_eventaccountinfo_200_response_one_of_data_value_events_value_inner.get_globalmap_eventaccountinfo_200_response_oneOf_data_value_events_value_inner(
+                                wot_api_client.models.globalmap_eventaccountinfo_data_value_events_value_inner.globalmap_eventaccountinfo_data_value_events_value_inner(
                                     account_id = 56, 
                                     award_level = '', 
                                     battles = 56, 
@@ -62,22 +62,18 @@ class TestGetGlobalmapEventaccountinfo200Response(unittest.TestCase):
                                 ]
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = None
             )
         else:
             return GetGlobalmapEventaccountinfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_eventaccountinfo_meta.globalmap_eventaccountinfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_globalmap_eventaccountinfo_200_response_one_of_data_value.get_globalmap_eventaccountinfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.globalmap_eventaccountinfo_data_value.globalmap_eventaccountinfo_data_value(
                         events = {
                             'key' : [
-                                wot_api_client.models.get_globalmap_eventaccountinfo_200_response_one_of_data_value_events_value_inner.get_globalmap_eventaccountinfo_200_response_oneOf_data_value_events_value_inner(
+                                wot_api_client.models.globalmap_eventaccountinfo_data_value_events_value_inner.globalmap_eventaccountinfo_data_value_events_value_inner(
                                     account_id = 56, 
                                     award_level = '', 
                                     battles = 56, 
@@ -96,11 +92,7 @@ class TestGetGlobalmapEventaccountinfo200Response(unittest.TestCase):
                                 ]
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = None,
         )
         """
 

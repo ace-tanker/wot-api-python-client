@@ -39,22 +39,14 @@ class TestLogout200Response(unittest.TestCase):
                 status = 'error',
                 meta = wot_api_client.models.meta.meta(),
                 data = wot_api_client.models.data.data(),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return Logout200Response(
                 status = 'error',
                 meta = wot_api_client.models.meta.meta(),
                 data = wot_api_client.models.data.data(),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

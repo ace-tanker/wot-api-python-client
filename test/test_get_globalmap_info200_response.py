@@ -37,34 +37,26 @@ class TestGetGlobalmapInfo200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_info_meta.globalmap_info_meta(
                     count = 56, ),
-                data = wot_api_client.models.get_globalmap_info_200_response_one_of_data.get_globalmap_info_200_response_oneOf_data(
+                data = wot_api_client.models.globalmap_info_data.globalmap_info_data(
                     state = '', 
                     last_turn = 56, 
                     last_turn_created_at = 56, 
                     last_turn_calculated_at = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetGlobalmapInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_info_meta.globalmap_info_meta(
                     count = 56, ),
-                data = wot_api_client.models.get_globalmap_info_200_response_one_of_data.get_globalmap_info_200_response_oneOf_data(
+                data = wot_api_client.models.globalmap_info_data.globalmap_info_data(
                     state = '', 
                     last_turn = 56, 
                     last_turn_created_at = 56, 
                     last_turn_calculated_at = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

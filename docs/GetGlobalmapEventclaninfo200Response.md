@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetGlobalmapEventclaninfo200ResponseOneOfDataValue]**](GetGlobalmapEventclaninfo200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**GlobalmapEventclaninfoMeta**](GlobalmapEventclaninfoMeta.md) |  | 
+**data** | [**Dict[str, GlobalmapEventclaninfoDataValue]**](GlobalmapEventclaninfoDataValue.md) |  | 
+**error** | [**GlobalmapEventsErrorError**](GlobalmapEventsErrorError.md) |  | 
 
 ## Example
 

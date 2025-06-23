@@ -37,20 +37,20 @@ class TestGetStrongholdClanreserves200Response(unittest.TestCase):
         if include_optional:
             return GetStrongholdClanreserves200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.stronghold_clanreserves_meta.stronghold_clanreserves_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_stronghold_clanreserves_200_response_one_of_data_inner.get_stronghold_clanreserves_200_response_oneOf_data_inner(
+                    wot_api_client.models.stronghold_clanreserves_data_inner.stronghold_clanreserves_data_inner(
                         name = '', 
                         type = '', 
                         disposable = True, 
                         bonus_type = '', 
                         icon = '', 
                         in_stock = [
-                            wot_api_client.models.get_stronghold_clanreserves_200_response_one_of_data_inner_in_stock_inner.get_stronghold_clanreserves_200_response_oneOf_data_inner_in_stock_inner(
+                            wot_api_client.models.stronghold_clanreserves_data_inner_in_stock_inner.stronghold_clanreserves_data_inner_in_stock_inner(
                                 amount = 56, 
                                 bonus_values = [
-                                    wot_api_client.models.get_stronghold_clanreserves_200_response_one_of_data_inner_in_stock_inner_bonus_values_inner.get_stronghold_clanreserves_200_response_oneOf_data_inner_in_stock_inner_bonus_values_inner(
+                                    wot_api_client.models.stronghold_clanreserves_data_inner_in_stock_inner_bonus_values_inner.stronghold_clanreserves_data_inner_in_stock_inner_bonus_values_inner(
                                         battle_type = '', 
                                         value = 1.337, )
                                     ], 
@@ -62,29 +62,29 @@ class TestGetStrongholdClanreserves200Response(unittest.TestCase):
                                 level = 56, )
                             ], )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.stronghold_clanreserves_error_error.stronghold_clanreserves_error_error(
+                    code = 409, 
+                    message = 'ACCOUNT_NOT_IN_CLAN', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetStrongholdClanreserves200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.stronghold_clanreserves_meta.stronghold_clanreserves_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_stronghold_clanreserves_200_response_one_of_data_inner.get_stronghold_clanreserves_200_response_oneOf_data_inner(
+                    wot_api_client.models.stronghold_clanreserves_data_inner.stronghold_clanreserves_data_inner(
                         name = '', 
                         type = '', 
                         disposable = True, 
                         bonus_type = '', 
                         icon = '', 
                         in_stock = [
-                            wot_api_client.models.get_stronghold_clanreserves_200_response_one_of_data_inner_in_stock_inner.get_stronghold_clanreserves_200_response_oneOf_data_inner_in_stock_inner(
+                            wot_api_client.models.stronghold_clanreserves_data_inner_in_stock_inner.stronghold_clanreserves_data_inner_in_stock_inner(
                                 amount = 56, 
                                 bonus_values = [
-                                    wot_api_client.models.get_stronghold_clanreserves_200_response_one_of_data_inner_in_stock_inner_bonus_values_inner.get_stronghold_clanreserves_200_response_oneOf_data_inner_in_stock_inner_bonus_values_inner(
+                                    wot_api_client.models.stronghold_clanreserves_data_inner_in_stock_inner_bonus_values_inner.stronghold_clanreserves_data_inner_in_stock_inner_bonus_values_inner(
                                         battle_type = '', 
                                         value = 1.337, )
                                     ], 
@@ -96,9 +96,9 @@ class TestGetStrongholdClanreserves200Response(unittest.TestCase):
                                 level = 56, )
                             ], )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.stronghold_clanreserves_error_error.stronghold_clanreserves_error_error(
+                    code = 409, 
+                    message = 'ACCOUNT_NOT_IN_CLAN', 
                     field = '', 
                     value = '', ),
         )

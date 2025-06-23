@@ -37,12 +37,12 @@ class TestGetGlobalmapSeasons200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapSeasons200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_globalmap_seasons_200_response_one_of_meta.get_globalmap_seasons_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_seasons_meta.globalmap_seasons_meta(
                     count = 56, 
                     page_total = 56, 
                     page = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_seasons_200_response_one_of_data_inner.get_globalmap_seasons_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_seasons_data_inner.globalmap_seasons_data_inner(
                         season_id = '', 
                         season_name = '', 
                         start = '', 
@@ -52,21 +52,21 @@ class TestGetGlobalmapSeasons200Response(unittest.TestCase):
                             null
                             ], )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasons_error_error.globalmap_seasons_error_error(
+                    code = 404, 
+                    message = 'SEASON_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetGlobalmapSeasons200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_globalmap_seasons_200_response_one_of_meta.get_globalmap_seasons_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_seasons_meta.globalmap_seasons_meta(
                     count = 56, 
                     page_total = 56, 
                     page = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_seasons_200_response_one_of_data_inner.get_globalmap_seasons_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_seasons_data_inner.globalmap_seasons_data_inner(
                         season_id = '', 
                         season_name = '', 
                         start = '', 
@@ -76,9 +76,9 @@ class TestGetGlobalmapSeasons200Response(unittest.TestCase):
                             null
                             ], )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasons_error_error.globalmap_seasons_error_error(
+                    code = 404, 
+                    message = 'SEASON_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

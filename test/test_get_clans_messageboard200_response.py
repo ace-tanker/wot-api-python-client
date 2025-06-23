@@ -37,11 +37,11 @@ class TestGetClansMessageboard200Response(unittest.TestCase):
         if include_optional:
             return GetClansMessageboard200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clans_messageboard_meta.clans_messageboard_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_clans_messageboard_200_response_one_of_data_value_inner.get_clans_messageboard_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.clans_messageboard_data_value_inner.clans_messageboard_data_value_inner(
                             message = '', 
                             created_at = 56, 
                             updated_at = 56, 
@@ -50,20 +50,20 @@ class TestGetClansMessageboard200Response(unittest.TestCase):
                             is_read = True, )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.clans_messageboard_error_error.clans_messageboard_error_error(
+                    code = 404, 
+                    message = 'CLAN_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetClansMessageboard200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clans_messageboard_meta.clans_messageboard_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_clans_messageboard_200_response_one_of_data_value_inner.get_clans_messageboard_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.clans_messageboard_data_value_inner.clans_messageboard_data_value_inner(
                             message = '', 
                             created_at = 56, 
                             updated_at = 56, 
@@ -72,9 +72,9 @@ class TestGetClansMessageboard200Response(unittest.TestCase):
                             is_read = True, )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.clans_messageboard_error_error.clans_messageboard_error_error(
+                    code = 404, 
+                    message = 'CLAN_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

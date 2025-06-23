@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetEncyclopediaArenas200ResponseOneOfDataValue]**](GetEncyclopediaArenas200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**EncyclopediaArenasMeta**](EncyclopediaArenasMeta.md) |  | 
+**data** | [**Dict[str, EncyclopediaArenasDataValue]**](EncyclopediaArenasDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

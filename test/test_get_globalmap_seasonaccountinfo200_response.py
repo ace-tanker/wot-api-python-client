@@ -37,13 +37,13 @@ class TestGetGlobalmapSeasonaccountinfo200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapSeasonaccountinfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_seasonaccountinfo_meta.globalmap_seasonaccountinfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_globalmap_seasonaccountinfo_200_response_one_of_data_value.get_globalmap_seasonaccountinfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.globalmap_seasonaccountinfo_data_value.globalmap_seasonaccountinfo_data_value(
                         seasons = {
                             'key' : [
-                                wot_api_client.models.get_globalmap_seasonaccountinfo_200_response_one_of_data_value_seasons_value_inner.get_globalmap_seasonaccountinfo_200_response_oneOf_data_value_seasons_value_inner(
+                                wot_api_client.models.globalmap_seasonaccountinfo_data_value_seasons_value_inner.globalmap_seasonaccountinfo_data_value_seasons_value_inner(
                                     account_id = 56, 
                                     award_level = '', 
                                     battles = 56, 
@@ -56,22 +56,22 @@ class TestGetGlobalmapSeasonaccountinfo200Response(unittest.TestCase):
                                 ]
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasons_error_error.globalmap_seasons_error_error(
+                    code = 404, 
+                    message = 'SEASON_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetGlobalmapSeasonaccountinfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_seasonaccountinfo_meta.globalmap_seasonaccountinfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_globalmap_seasonaccountinfo_200_response_one_of_data_value.get_globalmap_seasonaccountinfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.globalmap_seasonaccountinfo_data_value.globalmap_seasonaccountinfo_data_value(
                         seasons = {
                             'key' : [
-                                wot_api_client.models.get_globalmap_seasonaccountinfo_200_response_one_of_data_value_seasons_value_inner.get_globalmap_seasonaccountinfo_200_response_oneOf_data_value_seasons_value_inner(
+                                wot_api_client.models.globalmap_seasonaccountinfo_data_value_seasons_value_inner.globalmap_seasonaccountinfo_data_value_seasons_value_inner(
                                     account_id = 56, 
                                     award_level = '', 
                                     battles = 56, 
@@ -84,9 +84,9 @@ class TestGetGlobalmapSeasonaccountinfo200Response(unittest.TestCase):
                                 ]
                             }, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasons_error_error.globalmap_seasons_error_error(
+                    code = 404, 
+                    message = 'SEASON_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

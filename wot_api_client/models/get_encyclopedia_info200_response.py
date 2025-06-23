@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_encyclopedia_info200_response_one_of import GetEncyclopediaInfo200ResponseOneOf
+from wot_api_client.models.encyclopedia_info_error import EncyclopediaInfoError
+from wot_api_client.models.encyclopedia_info_ok import EncyclopediaInfoOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETENCYCLOPEDIAINFO200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetEncyclopediaInfo200ResponseOneOf"]
+GETENCYCLOPEDIAINFO200RESPONSE_ONE_OF_SCHEMAS = ["EncyclopediaInfoError", "EncyclopediaInfoOk"]
 
 class GetEncyclopediaInfo200Response(BaseModel):
     """
     GetEncyclopediaInfo200Response
     """
-    # data type: GetEncyclopediaInfo200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetEncyclopediaInfo200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetEncyclopediaInfo200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetEncyclopediaInfo200ResponseOneOf" }
+    # data type: EncyclopediaInfoOk
+    oneof_schema_1_validator: Optional[EncyclopediaInfoOk] = None
+    # data type: EncyclopediaInfoError
+    oneof_schema_2_validator: Optional[EncyclopediaInfoError] = None
+    actual_instance: Optional[Union[EncyclopediaInfoError, EncyclopediaInfoOk]] = None
+    one_of_schemas: Set[str] = { "EncyclopediaInfoError", "EncyclopediaInfoOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetEncyclopediaInfo200Response(BaseModel):
         instance = GetEncyclopediaInfo200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetEncyclopediaInfo200ResponseOneOf
-        if not isinstance(v, GetEncyclopediaInfo200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetEncyclopediaInfo200ResponseOneOf`")
+        # validate data type: EncyclopediaInfoOk
+        if not isinstance(v, EncyclopediaInfoOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaInfoOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: EncyclopediaInfoError
+        if not isinstance(v, EncyclopediaInfoError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EncyclopediaInfoError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaInfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaInfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetEncyclopediaInfo200Response with oneOf schemas: EncyclopediaInfoError, EncyclopediaInfoOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaInfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaInfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetEncyclopediaInfo200Response with oneOf schemas: EncyclopediaInfoError, EncyclopediaInfoOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetEncyclopediaInfo200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `EncyclopediaInfoError`
+        if _data_type == "encyclopedia_info_error":
+            instance.actual_instance = EncyclopediaInfoError.from_json(json_str)
             return instance
 
-        # check if data type is `GetEncyclopediaInfo200ResponseOneOf`
-        if _data_type == "get_encyclopedia_info_200_response_oneOf":
-            instance.actual_instance = GetEncyclopediaInfo200ResponseOneOf.from_json(json_str)
+        # check if data type is `EncyclopediaInfoOk`
+        if _data_type == "encyclopedia_info_ok":
+            instance.actual_instance = EncyclopediaInfoOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetEncyclopediaInfo200ResponseOneOf
+        # deserialize data into EncyclopediaInfoOk
         try:
-            instance.actual_instance = GetEncyclopediaInfo200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = EncyclopediaInfoOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into EncyclopediaInfoError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = EncyclopediaInfoError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaInfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaInfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetEncyclopediaInfo200Response with oneOf schemas: EncyclopediaInfoError, EncyclopediaInfoOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaInfo200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetEncyclopediaInfo200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetEncyclopediaInfo200Response with oneOf schemas: EncyclopediaInfoError, EncyclopediaInfoOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetEncyclopediaInfo200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetEncyclopediaInfo200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], EncyclopediaInfoError, EncyclopediaInfoOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

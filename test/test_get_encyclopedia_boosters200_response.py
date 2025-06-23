@@ -37,14 +37,14 @@ class TestGetEncyclopediaBoosters200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaBoosters200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_boosters_meta.encyclopedia_boosters_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_boosters_200_response_one_of_data_value.get_encyclopedia_boosters_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_boosters_data_value.encyclopedia_boosters_data_value(
                         booster_id = 56, 
                         name = '', 
                         description = '', 
-                        images = wot_api_client.models.get_encyclopedia_boosters_200_response_one_of_data_value_images.get_encyclopedia_boosters_200_response_oneOf_data_value_images(
+                        images = wot_api_client.models.encyclopedia_boosters_data_value_images.encyclopedia_boosters_data_value_images(
                             large = '', 
                             small = '', ), 
                         lifetime = 56, 
@@ -54,23 +54,19 @@ class TestGetEncyclopediaBoosters200Response(unittest.TestCase):
                         price_credit = 56, 
                         price_gold = 56, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaBoosters200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_boosters_meta.encyclopedia_boosters_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_boosters_200_response_one_of_data_value.get_encyclopedia_boosters_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_boosters_data_value.encyclopedia_boosters_data_value(
                         booster_id = 56, 
                         name = '', 
                         description = '', 
-                        images = wot_api_client.models.get_encyclopedia_boosters_200_response_one_of_data_value_images.get_encyclopedia_boosters_200_response_oneOf_data_value_images(
+                        images = wot_api_client.models.encyclopedia_boosters_data_value_images.encyclopedia_boosters_data_value_images(
                             large = '', 
                             small = '', ), 
                         lifetime = 56, 
@@ -80,11 +76,7 @@ class TestGetEncyclopediaBoosters200Response(unittest.TestCase):
                         price_credit = 56, 
                         price_gold = 56, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

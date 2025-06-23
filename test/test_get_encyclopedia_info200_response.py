@@ -37,9 +37,9 @@ class TestGetEncyclopediaInfo200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_info_meta.encyclopedia_info_meta(
                     count = 56, ),
-                data = wot_api_client.models.get_encyclopedia_info_200_response_one_of_data.get_encyclopedia_info_200_response_oneOf_data(
+                data = wot_api_client.models.encyclopedia_info_data.encyclopedia_info_data(
                     game_version = '', 
                     tanks_updated_at = 56, 
                     vehicle_types = {
@@ -55,22 +55,18 @@ class TestGetEncyclopediaInfo200Response(unittest.TestCase):
                         'key' : ''
                         }, 
                     achievement_sections = {
-                        'key' : wot_api_client.models.get_encyclopedia_info_200_response_one_of_data_achievement_sections_value.get_encyclopedia_info_200_response_oneOf_data_achievement_sections_value(
+                        'key' : wot_api_client.models.encyclopedia_info_data_achievement_sections_value.encyclopedia_info_data_achievement_sections_value(
                             name = '', 
                             order = 56, )
                         }, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_info_meta.encyclopedia_info_meta(
                     count = 56, ),
-                data = wot_api_client.models.get_encyclopedia_info_200_response_one_of_data.get_encyclopedia_info_200_response_oneOf_data(
+                data = wot_api_client.models.encyclopedia_info_data.encyclopedia_info_data(
                     game_version = '', 
                     tanks_updated_at = 56, 
                     vehicle_types = {
@@ -86,15 +82,11 @@ class TestGetEncyclopediaInfo200Response(unittest.TestCase):
                         'key' : ''
                         }, 
                     achievement_sections = {
-                        'key' : wot_api_client.models.get_encyclopedia_info_200_response_one_of_data_achievement_sections_value.get_encyclopedia_info_200_response_oneOf_data_achievement_sections_value(
+                        'key' : wot_api_client.models.encyclopedia_info_data_achievement_sections_value.encyclopedia_info_data_achievement_sections_value(
                             name = '', 
                             order = 56, )
                         }, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

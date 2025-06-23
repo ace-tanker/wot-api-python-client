@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetGlobalmapSeasons200ResponseOneOfMeta**](GetGlobalmapSeasons200ResponseOneOfMeta.md) |  | 
-**data** | [**List[GetGlobalmapSeasons200ResponseOneOfDataInner]**](GetGlobalmapSeasons200ResponseOneOfDataInner.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**GlobalmapSeasonsMeta**](GlobalmapSeasonsMeta.md) |  | 
+**data** | [**List[GlobalmapSeasonsDataInner]**](GlobalmapSeasonsDataInner.md) |  | 
+**error** | [**GlobalmapSeasonsErrorError**](GlobalmapSeasonsErrorError.md) |  | 
 
 ## Example
 

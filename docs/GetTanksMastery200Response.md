@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**GetTanksMastery200ResponseOneOfData**](GetTanksMastery200ResponseOneOfData.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**TanksMasteryMeta**](TanksMasteryMeta.md) |  | 
+**data** | [**TanksMasteryData**](TanksMasteryData.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

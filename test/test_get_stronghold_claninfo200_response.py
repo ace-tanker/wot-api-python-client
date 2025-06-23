@@ -37,10 +37,10 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
         if include_optional:
             return GetStrongholdClaninfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.stronghold_claninfo_meta.stronghold_claninfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value.get_stronghold_claninfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.stronghold_claninfo_data_value.stronghold_claninfo_data_value(
                         clan_id = 56, 
                         clan_name = '', 
                         clan_tag = '', 
@@ -48,7 +48,7 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
                         stronghold_buildings_level = 56, 
                         command_center_arena_id = '', 
                         building_slots = [
-                            wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_building_slots_inner.get_stronghold_claninfo_200_response_oneOf_data_value_building_slots_inner(
+                            wot_api_client.models.stronghold_claninfo_data_value_building_slots_inner.stronghold_claninfo_data_value_building_slots_inner(
                                 position = '', 
                                 direction = '', 
                                 arena_id = '', 
@@ -56,7 +56,7 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
                                 building_level = 56, 
                                 reserve_title = '', )
                             ], 
-                        skirmish_statistics = wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_skirmish_statistics.get_stronghold_claninfo_200_response_oneOf_data_value_skirmish_statistics(
+                        skirmish_statistics = wot_api_client.models.stronghold_claninfo_data_value_skirmish_statistics.stronghold_claninfo_data_value_skirmish_statistics(
                             total_10 = 56, 
                             win_10 = 56, 
                             lose_10 = 56, 
@@ -75,33 +75,29 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
                             last_time_10 = 56, 
                             last_time_8 = 56, 
                             last_time_6 = 56, ), 
-                        battles_for_strongholds_statistics = wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_battles_for_strongholds_statistics.get_stronghold_claninfo_200_response_oneOf_data_value_battles_for_strongholds_statistics(
+                        battles_for_strongholds_statistics = wot_api_client.models.stronghold_claninfo_data_value_battles_for_strongholds_statistics.stronghold_claninfo_data_value_battles_for_strongholds_statistics(
                             total_10 = 56, 
                             win_10 = 56, 
                             lose_10 = 56, 
                             total_10_in_28d = 56, 
                             win_10_in_28d = 56, 
                             last_time_10 = 56, ), 
-                        battles_series_for_strongholds_statistics = wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_battles_series_for_strongholds_statistics.get_stronghold_claninfo_200_response_oneOf_data_value_battles_series_for_strongholds_statistics(
+                        battles_series_for_strongholds_statistics = wot_api_client.models.stronghold_claninfo_data_value_battles_series_for_strongholds_statistics.stronghold_claninfo_data_value_battles_series_for_strongholds_statistics(
                             total_10 = 56, 
                             win_10 = 56, 
                             lose_10 = 56, 
                             total_10_in_28d = 56, 
                             win_10_in_28d = 56, ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetStrongholdClaninfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.stronghold_claninfo_meta.stronghold_claninfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value.get_stronghold_claninfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.stronghold_claninfo_data_value.stronghold_claninfo_data_value(
                         clan_id = 56, 
                         clan_name = '', 
                         clan_tag = '', 
@@ -109,7 +105,7 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
                         stronghold_buildings_level = 56, 
                         command_center_arena_id = '', 
                         building_slots = [
-                            wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_building_slots_inner.get_stronghold_claninfo_200_response_oneOf_data_value_building_slots_inner(
+                            wot_api_client.models.stronghold_claninfo_data_value_building_slots_inner.stronghold_claninfo_data_value_building_slots_inner(
                                 position = '', 
                                 direction = '', 
                                 arena_id = '', 
@@ -117,7 +113,7 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
                                 building_level = 56, 
                                 reserve_title = '', )
                             ], 
-                        skirmish_statistics = wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_skirmish_statistics.get_stronghold_claninfo_200_response_oneOf_data_value_skirmish_statistics(
+                        skirmish_statistics = wot_api_client.models.stronghold_claninfo_data_value_skirmish_statistics.stronghold_claninfo_data_value_skirmish_statistics(
                             total_10 = 56, 
                             win_10 = 56, 
                             lose_10 = 56, 
@@ -136,25 +132,21 @@ class TestGetStrongholdClaninfo200Response(unittest.TestCase):
                             last_time_10 = 56, 
                             last_time_8 = 56, 
                             last_time_6 = 56, ), 
-                        battles_for_strongholds_statistics = wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_battles_for_strongholds_statistics.get_stronghold_claninfo_200_response_oneOf_data_value_battles_for_strongholds_statistics(
+                        battles_for_strongholds_statistics = wot_api_client.models.stronghold_claninfo_data_value_battles_for_strongholds_statistics.stronghold_claninfo_data_value_battles_for_strongholds_statistics(
                             total_10 = 56, 
                             win_10 = 56, 
                             lose_10 = 56, 
                             total_10_in_28d = 56, 
                             win_10_in_28d = 56, 
                             last_time_10 = 56, ), 
-                        battles_series_for_strongholds_statistics = wot_api_client.models.get_stronghold_claninfo_200_response_one_of_data_value_battles_series_for_strongholds_statistics.get_stronghold_claninfo_200_response_oneOf_data_value_battles_series_for_strongholds_statistics(
+                        battles_series_for_strongholds_statistics = wot_api_client.models.stronghold_claninfo_data_value_battles_series_for_strongholds_statistics.stronghold_claninfo_data_value_battles_series_for_strongholds_statistics(
                             total_10 = 56, 
                             win_10 = 56, 
                             lose_10 = 56, 
                             total_10_in_28d = 56, 
                             win_10_in_28d = 56, ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

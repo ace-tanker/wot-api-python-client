@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetGlobalmapSeasons200ResponseOneOfMeta**](GetGlobalmapSeasons200ResponseOneOfMeta.md) |  | 
+**meta** | [**GlobalmapEventclantasksMeta**](GlobalmapEventclantasksMeta.md) |  | 
 **data** | **List[object]** |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**error** | [**GlobalmapEventsErrorError**](GlobalmapEventsErrorError.md) |  | 
 
 ## Example
 

@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetClanratingsClans200ResponseOneOfDataValue]**](GetClanratingsClans200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**ClanratingsClansMeta**](ClanratingsClansMeta.md) |  | 
+**data** | [**Dict[str, ClanratingsClansDataValue]**](ClanratingsClansDataValue.md) |  | 
+**error** | [**ClanratingsClansErrorError**](ClanratingsClansErrorError.md) |  | 
 
 ## Example
 

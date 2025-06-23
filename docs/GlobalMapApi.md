@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_globalmap_eventaccountratingneighbors**
-> GetGlobalmapEventaccountratings200Response get_globalmap_eventaccountratingneighbors(account_id, event_id, front_id, fields=fields, limit=limit, neighbours_count=neighbours_count, page_no=page_no)
+> GetGlobalmapEventaccountratingneighbors200Response get_globalmap_eventaccountratingneighbors(account_id, event_id, front_id, fields=fields, limit=limit, neighbours_count=neighbours_count, page_no=page_no)
 
 Adjacent positions in event account rating
 
@@ -379,7 +379,7 @@ Method returns adjacent position in account event rating.
 
 ```python
 import wot_api_client
-from wot_api_client.models.get_globalmap_eventaccountratings200_response import GetGlobalmapEventaccountratings200Response
+from wot_api_client.models.get_globalmap_eventaccountratingneighbors200_response import GetGlobalmapEventaccountratingneighbors200Response
 from wot_api_client.rest import ApiException
 from pprint import pprint
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetGlobalmapEventaccountratings200Response**](GetGlobalmapEventaccountratings200Response.md)
+[**GetGlobalmapEventaccountratingneighbors200Response**](GetGlobalmapEventaccountratingneighbors200Response.md)
 
 ### Authorization
 

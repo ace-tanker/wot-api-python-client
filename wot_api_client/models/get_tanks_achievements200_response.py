@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_tanks_achievements200_response_one_of import GetTanksAchievements200ResponseOneOf
+from wot_api_client.models.tanks_achievements_error import TanksAchievementsError
+from wot_api_client.models.tanks_achievements_ok import TanksAchievementsOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETTANKSACHIEVEMENTS200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetTanksAchievements200ResponseOneOf"]
+GETTANKSACHIEVEMENTS200RESPONSE_ONE_OF_SCHEMAS = ["TanksAchievementsError", "TanksAchievementsOk"]
 
 class GetTanksAchievements200Response(BaseModel):
     """
     GetTanksAchievements200Response
     """
-    # data type: GetTanksAchievements200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetTanksAchievements200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetTanksAchievements200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetTanksAchievements200ResponseOneOf" }
+    # data type: TanksAchievementsOk
+    oneof_schema_1_validator: Optional[TanksAchievementsOk] = None
+    # data type: TanksAchievementsError
+    oneof_schema_2_validator: Optional[TanksAchievementsError] = None
+    actual_instance: Optional[Union[TanksAchievementsError, TanksAchievementsOk]] = None
+    one_of_schemas: Set[str] = { "TanksAchievementsError", "TanksAchievementsOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetTanksAchievements200Response(BaseModel):
         instance = GetTanksAchievements200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetTanksAchievements200ResponseOneOf
-        if not isinstance(v, GetTanksAchievements200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetTanksAchievements200ResponseOneOf`")
+        # validate data type: TanksAchievementsOk
+        if not isinstance(v, TanksAchievementsOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TanksAchievementsOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: TanksAchievementsError
+        if not isinstance(v, TanksAchievementsError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TanksAchievementsError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetTanksAchievements200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetTanksAchievements200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetTanksAchievements200Response with oneOf schemas: TanksAchievementsError, TanksAchievementsOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetTanksAchievements200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetTanksAchievements200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetTanksAchievements200Response with oneOf schemas: TanksAchievementsError, TanksAchievementsOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetTanksAchievements200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `TanksAchievementsError`
+        if _data_type == "tanks_achievements_error":
+            instance.actual_instance = TanksAchievementsError.from_json(json_str)
             return instance
 
-        # check if data type is `GetTanksAchievements200ResponseOneOf`
-        if _data_type == "get_tanks_achievements_200_response_oneOf":
-            instance.actual_instance = GetTanksAchievements200ResponseOneOf.from_json(json_str)
+        # check if data type is `TanksAchievementsOk`
+        if _data_type == "tanks_achievements_ok":
+            instance.actual_instance = TanksAchievementsOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetTanksAchievements200ResponseOneOf
+        # deserialize data into TanksAchievementsOk
         try:
-            instance.actual_instance = GetTanksAchievements200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = TanksAchievementsOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into TanksAchievementsError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = TanksAchievementsError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetTanksAchievements200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetTanksAchievements200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetTanksAchievements200Response with oneOf schemas: TanksAchievementsError, TanksAchievementsOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetTanksAchievements200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetTanksAchievements200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetTanksAchievements200Response with oneOf schemas: TanksAchievementsError, TanksAchievementsOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetTanksAchievements200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetTanksAchievements200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], TanksAchievementsError, TanksAchievementsOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

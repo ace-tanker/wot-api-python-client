@@ -37,13 +37,13 @@ class TestGetAccountInfo200Response(unittest.TestCase):
         if include_optional:
             return GetAccountInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.account_info_meta.account_info_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_account_info_200_response_one_of_data_value.get_account_info_200_response_oneOf_data_value(
-                        statistics = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics.get_account_info_200_response_oneOf_data_value_statistics(
+                    'key' : wot_api_client.models.account_info_data_value.account_info_data_value(
+                        statistics = wot_api_client.models.account_info_data_value_statistics.account_info_data_value_statistics(
                             trees_cut = 56, 
-                            all = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_all.get_account_info_200_response_oneOf_data_value_statistics_all(
+                            all = wot_api_client.models.account_info_data_value_statistics_all.account_info_data_value_statistics_all(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -83,7 +83,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags_tank_id = 56, 
                                 max_xp_tank_id = 56, 
                                 max_damage_tank_id = 56, ), 
-                            company = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_company.get_account_info_200_response_oneOf_data_value_statistics_company(
+                            company = wot_api_client.models.account_info_data_value_statistics_company.account_info_data_value_statistics_company(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -117,7 +117,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            clan = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_clan.get_account_info_200_response_oneOf_data_value_statistics_clan(
+                            clan = wot_api_client.models.account_info_data_value_statistics_clan.account_info_data_value_statistics_clan(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -151,7 +151,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            fallout = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_fallout.get_account_info_200_response_oneOf_data_value_statistics_fallout(
+                            fallout = wot_api_client.models.account_info_data_value_statistics_fallout.account_info_data_value_statistics_fallout(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -201,7 +201,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            random = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_random.get_account_info_200_response_oneOf_data_value_statistics_random(
+                            random = wot_api_client.models.account_info_data_value_statistics_random.account_info_data_value_statistics_random(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -235,7 +235,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            stronghold_defense = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_stronghold_defense.get_account_info_200_response_oneOf_data_value_statistics_stronghold_defense(
+                            stronghold_defense = wot_api_client.models.account_info_data_value_statistics_stronghold_defense.account_info_data_value_statistics_stronghold_defense(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -270,7 +270,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            stronghold_skirmish = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_stronghold_skirmish.get_account_info_200_response_oneOf_data_value_statistics_stronghold_skirmish(
+                            stronghold_skirmish = wot_api_client.models.account_info_data_value_statistics_stronghold_skirmish.account_info_data_value_statistics_stronghold_skirmish(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -305,7 +305,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            historical = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_historical.get_account_info_200_response_oneOf_data_value_statistics_historical(
+                            historical = wot_api_client.models.account_info_data_value_statistics_historical.account_info_data_value_statistics_historical(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -348,7 +348,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                             frags = {
                                 'key' : 56
                                 }, 
-                            team = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_team.get_account_info_200_response_oneOf_data_value_statistics_team(
+                            team = wot_api_client.models.account_info_data_value_statistics_team.account_info_data_value_statistics_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -388,7 +388,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            epic = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_epic.get_account_info_200_response_oneOf_data_value_statistics_epic(
+                            epic = wot_api_client.models.account_info_data_value_statistics_epic.account_info_data_value_statistics_epic(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -428,7 +428,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            regular_team = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_regular_team.get_account_info_200_response_oneOf_data_value_statistics_regular_team(
+                            regular_team = wot_api_client.models.account_info_data_value_statistics_regular_team.account_info_data_value_statistics_regular_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -468,7 +468,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            globalmap_middle = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_globalmap_middle.get_account_info_200_response_oneOf_data_value_statistics_globalmap_middle(
+                            globalmap_middle = wot_api_client.models.account_info_data_value_statistics_globalmap_middle.account_info_data_value_statistics_globalmap_middle(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -502,7 +502,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            globalmap_champion = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_globalmap_champion.get_account_info_200_response_oneOf_data_value_statistics_globalmap_champion(
+                            globalmap_champion = wot_api_client.models.account_info_data_value_statistics_globalmap_champion.account_info_data_value_statistics_globalmap_champion(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -536,7 +536,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            globalmap_absolute = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_globalmap_absolute.get_account_info_200_response_oneOf_data_value_statistics_globalmap_absolute(
+                            globalmap_absolute = wot_api_client.models.account_info_data_value_statistics_globalmap_absolute.account_info_data_value_statistics_globalmap_absolute(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -570,7 +570,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            ranked_battles = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_battles.get_account_info_200_response_oneOf_data_value_statistics_ranked_battles(
+                            ranked_battles = wot_api_client.models.account_info_data_value_statistics_ranked_battles.account_info_data_value_statistics_ranked_battles(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -610,7 +610,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_battles_current = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_battles_current.get_account_info_200_response_oneOf_data_value_statistics_ranked_battles_current(
+                            ranked_battles_current = wot_api_client.models.account_info_data_value_statistics_ranked_battles_current.account_info_data_value_statistics_ranked_battles_current(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -650,7 +650,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_battles_previous = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_battles_previous.get_account_info_200_response_oneOf_data_value_statistics_ranked_battles_previous(
+                            ranked_battles_previous = wot_api_client.models.account_info_data_value_statistics_ranked_battles_previous.account_info_data_value_statistics_ranked_battles_previous(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -690,7 +690,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_10x10 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_10x10.get_account_info_200_response_oneOf_data_value_statistics_ranked_10x10(
+                            ranked_10x10 = wot_api_client.models.account_info_data_value_statistics_ranked_10x10.account_info_data_value_statistics_ranked_10x10(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -730,7 +730,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_15x15 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_15x15.get_account_info_200_response_oneOf_data_value_statistics_ranked_15x15(
+                            ranked_15x15 = wot_api_client.models.account_info_data_value_statistics_ranked_15x15.account_info_data_value_statistics_ranked_15x15(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -770,7 +770,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_season_1 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_season_1.get_account_info_200_response_oneOf_data_value_statistics_ranked_season_1(
+                            ranked_season_1 = wot_api_client.models.account_info_data_value_statistics_ranked_season_1.account_info_data_value_statistics_ranked_season_1(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -810,7 +810,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_season_2 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_season_2.get_account_info_200_response_oneOf_data_value_statistics_ranked_season_2(
+                            ranked_season_2 = wot_api_client.models.account_info_data_value_statistics_ranked_season_2.account_info_data_value_statistics_ranked_season_2(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -850,7 +850,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_season_3 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_season_3.get_account_info_200_response_oneOf_data_value_statistics_ranked_season_3(
+                            ranked_season_3 = wot_api_client.models.account_info_data_value_statistics_ranked_season_3.account_info_data_value_statistics_ranked_season_3(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -897,7 +897,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                         last_battle_time = 56, 
                         nickname = '', 
                         global_rating = 56, 
-                        private = wot_api_client.models.get_account_info_200_response_one_of_data_value_private.get_account_info_200_response_oneOf_data_value_private(
+                        private = wot_api_client.models.account_info_data_value_private.account_info_data_value_private(
                             personal_missions = {
                                 'key' : ''
                                 }, 
@@ -908,13 +908,13 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                             premium_expires_at = 56, 
                             is_premium = True, 
                             rented = {
-                                'key' : wot_api_client.models.get_account_info_200_response_one_of_data_value_private_rented_value.get_account_info_200_response_oneOf_data_value_private_rented_value(
+                                'key' : wot_api_client.models.account_info_data_value_private_rented_value.account_info_data_value_private_rented_value(
                                     tank_id = 56, 
                                     compensation_credits = 56, 
                                     compensation_gold = 56, 
                                     expiration_time = 56, )
                                 }, 
-                            grouped_contacts = wot_api_client.models.get_account_info_200_response_one_of_data_value_private_grouped_contacts.get_account_info_200_response_oneOf_data_value_private_grouped_contacts(
+                            grouped_contacts = wot_api_client.models.account_info_data_value_private_grouped_contacts.account_info_data_value_private_grouped_contacts(
                                 ungrouped = [
                                     56
                                     ], 
@@ -932,11 +932,11 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                         56
                                         ]
                                     }, ), 
-                            restrictions = wot_api_client.models.get_account_info_200_response_one_of_data_value_private_restrictions.get_account_info_200_response_oneOf_data_value_private_restrictions(
+                            restrictions = wot_api_client.models.account_info_data_value_private_restrictions.account_info_data_value_private_restrictions(
                                 chat_ban_time = 56, ), 
                             is_bound_to_phone = True, 
                             boosters = {
-                                'key' : wot_api_client.models.get_account_info_200_response_one_of_data_value_private_boosters_value.get_account_info_200_response_oneOf_data_value_private_boosters_value(
+                                'key' : wot_api_client.models.account_info_data_value_private_boosters_value.account_info_data_value_private_boosters_value(
                                     state = '', 
                                     count = 56, 
                                     expiration_time = 56, )
@@ -950,22 +950,22 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                         client_language = '', 
                         clan_id = 56, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.account_info_error_error.account_info_error_error(
+                    code = 407, 
+                    message = 'ACCOUNT_ID_LIST_LIMIT_EXCEEDED', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetAccountInfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.account_info_meta.account_info_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_account_info_200_response_one_of_data_value.get_account_info_200_response_oneOf_data_value(
-                        statistics = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics.get_account_info_200_response_oneOf_data_value_statistics(
+                    'key' : wot_api_client.models.account_info_data_value.account_info_data_value(
+                        statistics = wot_api_client.models.account_info_data_value_statistics.account_info_data_value_statistics(
                             trees_cut = 56, 
-                            all = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_all.get_account_info_200_response_oneOf_data_value_statistics_all(
+                            all = wot_api_client.models.account_info_data_value_statistics_all.account_info_data_value_statistics_all(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1005,7 +1005,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags_tank_id = 56, 
                                 max_xp_tank_id = 56, 
                                 max_damage_tank_id = 56, ), 
-                            company = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_company.get_account_info_200_response_oneOf_data_value_statistics_company(
+                            company = wot_api_client.models.account_info_data_value_statistics_company.account_info_data_value_statistics_company(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1039,7 +1039,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            clan = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_clan.get_account_info_200_response_oneOf_data_value_statistics_clan(
+                            clan = wot_api_client.models.account_info_data_value_statistics_clan.account_info_data_value_statistics_clan(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1073,7 +1073,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            fallout = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_fallout.get_account_info_200_response_oneOf_data_value_statistics_fallout(
+                            fallout = wot_api_client.models.account_info_data_value_statistics_fallout.account_info_data_value_statistics_fallout(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1123,7 +1123,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            random = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_random.get_account_info_200_response_oneOf_data_value_statistics_random(
+                            random = wot_api_client.models.account_info_data_value_statistics_random.account_info_data_value_statistics_random(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1157,7 +1157,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            stronghold_defense = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_stronghold_defense.get_account_info_200_response_oneOf_data_value_statistics_stronghold_defense(
+                            stronghold_defense = wot_api_client.models.account_info_data_value_statistics_stronghold_defense.account_info_data_value_statistics_stronghold_defense(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1192,7 +1192,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            stronghold_skirmish = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_stronghold_skirmish.get_account_info_200_response_oneOf_data_value_statistics_stronghold_skirmish(
+                            stronghold_skirmish = wot_api_client.models.account_info_data_value_statistics_stronghold_skirmish.account_info_data_value_statistics_stronghold_skirmish(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1227,7 +1227,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            historical = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_historical.get_account_info_200_response_oneOf_data_value_statistics_historical(
+                            historical = wot_api_client.models.account_info_data_value_statistics_historical.account_info_data_value_statistics_historical(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1270,7 +1270,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                             frags = {
                                 'key' : 56
                                 }, 
-                            team = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_team.get_account_info_200_response_oneOf_data_value_statistics_team(
+                            team = wot_api_client.models.account_info_data_value_statistics_team.account_info_data_value_statistics_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1310,7 +1310,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            epic = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_epic.get_account_info_200_response_oneOf_data_value_statistics_epic(
+                            epic = wot_api_client.models.account_info_data_value_statistics_epic.account_info_data_value_statistics_epic(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1350,7 +1350,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            regular_team = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_regular_team.get_account_info_200_response_oneOf_data_value_statistics_regular_team(
+                            regular_team = wot_api_client.models.account_info_data_value_statistics_regular_team.account_info_data_value_statistics_regular_team(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1390,7 +1390,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            globalmap_middle = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_globalmap_middle.get_account_info_200_response_oneOf_data_value_statistics_globalmap_middle(
+                            globalmap_middle = wot_api_client.models.account_info_data_value_statistics_globalmap_middle.account_info_data_value_statistics_globalmap_middle(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1424,7 +1424,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            globalmap_champion = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_globalmap_champion.get_account_info_200_response_oneOf_data_value_statistics_globalmap_champion(
+                            globalmap_champion = wot_api_client.models.account_info_data_value_statistics_globalmap_champion.account_info_data_value_statistics_globalmap_champion(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1458,7 +1458,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            globalmap_absolute = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_globalmap_absolute.get_account_info_200_response_oneOf_data_value_statistics_globalmap_absolute(
+                            globalmap_absolute = wot_api_client.models.account_info_data_value_statistics_globalmap_absolute.account_info_data_value_statistics_globalmap_absolute(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1492,7 +1492,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 avg_damage_assisted_radio = 1.337, 
                                 avg_damage_assisted = 1.337, 
                                 avg_damage_assisted_stun = 1.337, ), 
-                            ranked_battles = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_battles.get_account_info_200_response_oneOf_data_value_statistics_ranked_battles(
+                            ranked_battles = wot_api_client.models.account_info_data_value_statistics_ranked_battles.account_info_data_value_statistics_ranked_battles(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1532,7 +1532,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_battles_current = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_battles_current.get_account_info_200_response_oneOf_data_value_statistics_ranked_battles_current(
+                            ranked_battles_current = wot_api_client.models.account_info_data_value_statistics_ranked_battles_current.account_info_data_value_statistics_ranked_battles_current(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1572,7 +1572,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_battles_previous = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_battles_previous.get_account_info_200_response_oneOf_data_value_statistics_ranked_battles_previous(
+                            ranked_battles_previous = wot_api_client.models.account_info_data_value_statistics_ranked_battles_previous.account_info_data_value_statistics_ranked_battles_previous(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1612,7 +1612,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_10x10 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_10x10.get_account_info_200_response_oneOf_data_value_statistics_ranked_10x10(
+                            ranked_10x10 = wot_api_client.models.account_info_data_value_statistics_ranked_10x10.account_info_data_value_statistics_ranked_10x10(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1652,7 +1652,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_15x15 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_15x15.get_account_info_200_response_oneOf_data_value_statistics_ranked_15x15(
+                            ranked_15x15 = wot_api_client.models.account_info_data_value_statistics_ranked_15x15.account_info_data_value_statistics_ranked_15x15(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1692,7 +1692,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_season_1 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_season_1.get_account_info_200_response_oneOf_data_value_statistics_ranked_season_1(
+                            ranked_season_1 = wot_api_client.models.account_info_data_value_statistics_ranked_season_1.account_info_data_value_statistics_ranked_season_1(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1732,7 +1732,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_season_2 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_season_2.get_account_info_200_response_oneOf_data_value_statistics_ranked_season_2(
+                            ranked_season_2 = wot_api_client.models.account_info_data_value_statistics_ranked_season_2.account_info_data_value_statistics_ranked_season_2(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1772,7 +1772,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                 max_frags = 56, 
                                 max_xp = 56, 
                                 max_damage = 56, ), 
-                            ranked_season_3 = wot_api_client.models.get_account_info_200_response_one_of_data_value_statistics_ranked_season_3.get_account_info_200_response_oneOf_data_value_statistics_ranked_season_3(
+                            ranked_season_3 = wot_api_client.models.account_info_data_value_statistics_ranked_season_3.account_info_data_value_statistics_ranked_season_3(
                                 battles = 56, 
                                 wins = 56, 
                                 xp = 56, 
@@ -1819,7 +1819,7 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                         last_battle_time = 56, 
                         nickname = '', 
                         global_rating = 56, 
-                        private = wot_api_client.models.get_account_info_200_response_one_of_data_value_private.get_account_info_200_response_oneOf_data_value_private(
+                        private = wot_api_client.models.account_info_data_value_private.account_info_data_value_private(
                             personal_missions = {
                                 'key' : ''
                                 }, 
@@ -1830,13 +1830,13 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                             premium_expires_at = 56, 
                             is_premium = True, 
                             rented = {
-                                'key' : wot_api_client.models.get_account_info_200_response_one_of_data_value_private_rented_value.get_account_info_200_response_oneOf_data_value_private_rented_value(
+                                'key' : wot_api_client.models.account_info_data_value_private_rented_value.account_info_data_value_private_rented_value(
                                     tank_id = 56, 
                                     compensation_credits = 56, 
                                     compensation_gold = 56, 
                                     expiration_time = 56, )
                                 }, 
-                            grouped_contacts = wot_api_client.models.get_account_info_200_response_one_of_data_value_private_grouped_contacts.get_account_info_200_response_oneOf_data_value_private_grouped_contacts(
+                            grouped_contacts = wot_api_client.models.account_info_data_value_private_grouped_contacts.account_info_data_value_private_grouped_contacts(
                                 ungrouped = [
                                     56
                                     ], 
@@ -1854,11 +1854,11 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                                         56
                                         ]
                                     }, ), 
-                            restrictions = wot_api_client.models.get_account_info_200_response_one_of_data_value_private_restrictions.get_account_info_200_response_oneOf_data_value_private_restrictions(
+                            restrictions = wot_api_client.models.account_info_data_value_private_restrictions.account_info_data_value_private_restrictions(
                                 chat_ban_time = 56, ), 
                             is_bound_to_phone = True, 
                             boosters = {
-                                'key' : wot_api_client.models.get_account_info_200_response_one_of_data_value_private_boosters_value.get_account_info_200_response_oneOf_data_value_private_boosters_value(
+                                'key' : wot_api_client.models.account_info_data_value_private_boosters_value.account_info_data_value_private_boosters_value(
                                     state = '', 
                                     count = 56, 
                                     expiration_time = 56, )
@@ -1872,9 +1872,9 @@ class TestGetAccountInfo200Response(unittest.TestCase):
                         client_language = '', 
                         clan_id = 56, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.account_info_error_error.account_info_error_error(
+                    code = 407, 
+                    message = 'ACCOUNT_ID_LIST_LIMIT_EXCEEDED', 
                     field = '', 
                     value = '', ),
         )

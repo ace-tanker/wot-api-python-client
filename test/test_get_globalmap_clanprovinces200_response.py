@@ -37,11 +37,11 @@ class TestGetGlobalmapClanprovinces200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapClanprovinces200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_clanprovinces_meta.globalmap_clanprovinces_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_globalmap_clanprovinces_200_response_one_of_data_value_inner.get_globalmap_clanprovinces_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.globalmap_clanprovinces_data_value_inner.globalmap_clanprovinces_data_value_inner(
                             arena_id = '', 
                             arena_name = '', 
                             daily_revenue = 56, 
@@ -59,20 +59,16 @@ class TestGetGlobalmapClanprovinces200Response(unittest.TestCase):
                             pillage_end_at = '', )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetGlobalmapClanprovinces200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_clanprovinces_meta.globalmap_clanprovinces_meta(
                     count = 56, ),
                 data = {
                     'key' : [
-                        wot_api_client.models.get_globalmap_clanprovinces_200_response_one_of_data_value_inner.get_globalmap_clanprovinces_200_response_oneOf_data_value_inner(
+                        wot_api_client.models.globalmap_clanprovinces_data_value_inner.globalmap_clanprovinces_data_value_inner(
                             arena_id = '', 
                             arena_name = '', 
                             daily_revenue = 56, 
@@ -90,11 +86,7 @@ class TestGetGlobalmapClanprovinces200Response(unittest.TestCase):
                             pillage_end_at = '', )
                         ]
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

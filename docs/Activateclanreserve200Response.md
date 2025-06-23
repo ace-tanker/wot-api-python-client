@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Activateclanreserve200ResponseOneOfData**](Activateclanreserve200ResponseOneOfData.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**StrongholdActivateclanreserveMeta**](StrongholdActivateclanreserveMeta.md) |  | 
+**data** | [**StrongholdActivateclanreserveData**](StrongholdActivateclanreserveData.md) |  | 
+**error** | [**StrongholdActivateclanreserveErrorError**](StrongholdActivateclanreserveErrorError.md) |  | 
 
 ## Example
 

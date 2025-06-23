@@ -37,44 +37,36 @@ class TestGetEncyclopediaCrewskills200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaCrewskills200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_crewskills_meta.encyclopedia_crewskills_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_crewskills_200_response_one_of_data_value.get_encyclopedia_crewskills_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_crewskills_data_value.encyclopedia_crewskills_data_value(
                         skill = '', 
                         name = '', 
                         description = '', 
-                        image_url = wot_api_client.models.get_encyclopedia_crewskills_200_response_one_of_data_value_image_url.get_encyclopedia_crewskills_200_response_oneOf_data_value_image_url(
+                        image_url = wot_api_client.models.encyclopedia_crewskills_data_value_image_url.encyclopedia_crewskills_data_value_image_url(
                             big_icon = '', 
                             small_icon = '', ), 
                         is_perk = True, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaCrewskills200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_crewskills_meta.encyclopedia_crewskills_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_crewskills_200_response_one_of_data_value.get_encyclopedia_crewskills_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_crewskills_data_value.encyclopedia_crewskills_data_value(
                         skill = '', 
                         name = '', 
                         description = '', 
-                        image_url = wot_api_client.models.get_encyclopedia_crewskills_200_response_one_of_data_value_image_url.get_encyclopedia_crewskills_200_response_oneOf_data_value_image_url(
+                        image_url = wot_api_client.models.encyclopedia_crewskills_data_value_image_url.encyclopedia_crewskills_data_value_image_url(
                             big_icon = '', 
                             small_icon = '', ), 
                         is_perk = True, )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

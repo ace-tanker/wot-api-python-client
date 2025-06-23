@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **meta** | **object** |  | 
 **data** | **object** |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

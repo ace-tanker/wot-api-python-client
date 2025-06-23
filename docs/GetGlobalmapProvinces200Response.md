@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**List[GetGlobalmapProvinces200ResponseOneOfDataInner]**](GetGlobalmapProvinces200ResponseOneOfDataInner.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**GlobalmapProvincesMeta**](GlobalmapProvincesMeta.md) |  | 
+**data** | [**List[GlobalmapProvincesDataInner]**](GlobalmapProvincesDataInner.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

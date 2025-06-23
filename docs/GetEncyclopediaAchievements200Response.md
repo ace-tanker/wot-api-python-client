@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**Dict[str, GetEncyclopediaAchievements200ResponseOneOfDataValue]**](GetEncyclopediaAchievements200ResponseOneOfDataValue.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**EncyclopediaAchievementsMeta**](EncyclopediaAchievementsMeta.md) |  | 
+**data** | [**Dict[str, EncyclopediaAchievementsDataValue]**](EncyclopediaAchievementsDataValue.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | **Dict[str, Optional[List[GetEncyclopediaVehicleprofiles200ResponseOneOfDataValueInner]]]** |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**EncyclopediaVehicleprofilesMeta**](EncyclopediaVehicleprofilesMeta.md) |  | 
+**data** | **Dict[str, Optional[List[EncyclopediaVehicleprofilesDataValueInner]]]** |  | 
+**error** | **object** |  | 
 
 ## Example
 

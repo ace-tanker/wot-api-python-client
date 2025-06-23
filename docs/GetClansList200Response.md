@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetClansList200ResponseOneOfMeta**](GetClansList200ResponseOneOfMeta.md) |  | 
-**data** | [**List[GetClansList200ResponseOneOfDataInner]**](GetClansList200ResponseOneOfDataInner.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**ClansListMeta**](ClansListMeta.md) |  | 
+**data** | [**List[ClansListDataInner]**](ClansListDataInner.md) |  | 
+**error** | **object** |  | 
 
 ## Example
 

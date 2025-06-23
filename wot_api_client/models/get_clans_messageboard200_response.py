@@ -18,24 +18,24 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from wot_api_client.models.get_account_list200_response_one_of1 import GetAccountList200ResponseOneOf1
-from wot_api_client.models.get_clans_messageboard200_response_one_of import GetClansMessageboard200ResponseOneOf
+from wot_api_client.models.clans_messageboard_error import ClansMessageboardError
+from wot_api_client.models.clans_messageboard_ok import ClansMessageboardOk
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GETCLANSMESSAGEBOARD200RESPONSE_ONE_OF_SCHEMAS = ["GetAccountList200ResponseOneOf1", "GetClansMessageboard200ResponseOneOf"]
+GETCLANSMESSAGEBOARD200RESPONSE_ONE_OF_SCHEMAS = ["ClansMessageboardError", "ClansMessageboardOk"]
 
 class GetClansMessageboard200Response(BaseModel):
     """
     GetClansMessageboard200Response
     """
-    # data type: GetClansMessageboard200ResponseOneOf
-    oneof_schema_1_validator: Optional[GetClansMessageboard200ResponseOneOf] = None
-    # data type: GetAccountList200ResponseOneOf1
-    oneof_schema_2_validator: Optional[GetAccountList200ResponseOneOf1] = None
-    actual_instance: Optional[Union[GetAccountList200ResponseOneOf1, GetClansMessageboard200ResponseOneOf]] = None
-    one_of_schemas: Set[str] = { "GetAccountList200ResponseOneOf1", "GetClansMessageboard200ResponseOneOf" }
+    # data type: ClansMessageboardOk
+    oneof_schema_1_validator: Optional[ClansMessageboardOk] = None
+    # data type: ClansMessageboardError
+    oneof_schema_2_validator: Optional[ClansMessageboardError] = None
+    actual_instance: Optional[Union[ClansMessageboardError, ClansMessageboardOk]] = None
+    one_of_schemas: Set[str] = { "ClansMessageboardError", "ClansMessageboardOk" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -61,22 +61,22 @@ class GetClansMessageboard200Response(BaseModel):
         instance = GetClansMessageboard200Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: GetClansMessageboard200ResponseOneOf
-        if not isinstance(v, GetClansMessageboard200ResponseOneOf):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetClansMessageboard200ResponseOneOf`")
+        # validate data type: ClansMessageboardOk
+        if not isinstance(v, ClansMessageboardOk):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ClansMessageboardOk`")
         else:
             match += 1
-        # validate data type: GetAccountList200ResponseOneOf1
-        if not isinstance(v, GetAccountList200ResponseOneOf1):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `GetAccountList200ResponseOneOf1`")
+        # validate data type: ClansMessageboardError
+        if not isinstance(v, ClansMessageboardError):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ClansMessageboardError`")
         else:
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GetClansMessageboard200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClansMessageboard200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GetClansMessageboard200Response with oneOf schemas: ClansMessageboardError, ClansMessageboardOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GetClansMessageboard200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClansMessageboard200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GetClansMessageboard200Response with oneOf schemas: ClansMessageboardError, ClansMessageboardOk. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -96,35 +96,35 @@ class GetClansMessageboard200Response(BaseModel):
         if not _data_type:
             raise ValueError("Failed to lookup data type from the field `status` in the input.")
 
-        # check if data type is `GetAccountList200ResponseOneOf1`
-        if _data_type == "get_account_list_200_response_oneOf_1":
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+        # check if data type is `ClansMessageboardError`
+        if _data_type == "clans_messageboard_error":
+            instance.actual_instance = ClansMessageboardError.from_json(json_str)
             return instance
 
-        # check if data type is `GetClansMessageboard200ResponseOneOf`
-        if _data_type == "get_clans_messageboard_200_response_oneOf":
-            instance.actual_instance = GetClansMessageboard200ResponseOneOf.from_json(json_str)
+        # check if data type is `ClansMessageboardOk`
+        if _data_type == "clans_messageboard_ok":
+            instance.actual_instance = ClansMessageboardOk.from_json(json_str)
             return instance
 
-        # deserialize data into GetClansMessageboard200ResponseOneOf
+        # deserialize data into ClansMessageboardOk
         try:
-            instance.actual_instance = GetClansMessageboard200ResponseOneOf.from_json(json_str)
+            instance.actual_instance = ClansMessageboardOk.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into GetAccountList200ResponseOneOf1
+        # deserialize data into ClansMessageboardError
         try:
-            instance.actual_instance = GetAccountList200ResponseOneOf1.from_json(json_str)
+            instance.actual_instance = ClansMessageboardError.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GetClansMessageboard200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClansMessageboard200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GetClansMessageboard200Response with oneOf schemas: ClansMessageboardError, ClansMessageboardOk. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GetClansMessageboard200Response with oneOf schemas: GetAccountList200ResponseOneOf1, GetClansMessageboard200ResponseOneOf. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GetClansMessageboard200Response with oneOf schemas: ClansMessageboardError, ClansMessageboardOk. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -138,7 +138,7 @@ class GetClansMessageboard200Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], GetAccountList200ResponseOneOf1, GetClansMessageboard200ResponseOneOf]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ClansMessageboardError, ClansMessageboardOk]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

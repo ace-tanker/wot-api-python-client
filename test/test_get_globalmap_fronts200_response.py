@@ -37,10 +37,10 @@ class TestGetGlobalmapFronts200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapFronts200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_fronts_meta.globalmap_fronts_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_fronts_200_response_one_of_data_inner.get_globalmap_fronts_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_fronts_data_inner.globalmap_fronts_data_inner(
                         front_id = '', 
                         front_name = '', 
                         is_active = True, 
@@ -57,7 +57,7 @@ class TestGetGlobalmapFronts200Response(unittest.TestCase):
                         min_vehicle_level = 56, 
                         max_vehicle_level = 56, 
                         available_extensions = [
-                            wot_api_client.models.get_globalmap_fronts_200_response_one_of_data_inner_available_extensions_inner.get_globalmap_fronts_200_response_oneOf_data_inner_available_extensions_inner(
+                            wot_api_client.models.globalmap_fronts_data_inner_available_extensions_inner.globalmap_fronts_data_inner_available_extensions_inner(
                                 extension_id = '', 
                                 cost = 56, 
                                 wage = 56, 
@@ -67,19 +67,15 @@ class TestGetGlobalmapFronts200Response(unittest.TestCase):
                             ], 
                         provinces_count = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetGlobalmapFronts200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_fronts_meta.globalmap_fronts_meta(
                     count = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_fronts_200_response_one_of_data_inner.get_globalmap_fronts_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_fronts_data_inner.globalmap_fronts_data_inner(
                         front_id = '', 
                         front_name = '', 
                         is_active = True, 
@@ -96,7 +92,7 @@ class TestGetGlobalmapFronts200Response(unittest.TestCase):
                         min_vehicle_level = 56, 
                         max_vehicle_level = 56, 
                         available_extensions = [
-                            wot_api_client.models.get_globalmap_fronts_200_response_one_of_data_inner_available_extensions_inner.get_globalmap_fronts_200_response_oneOf_data_inner_available_extensions_inner(
+                            wot_api_client.models.globalmap_fronts_data_inner_available_extensions_inner.globalmap_fronts_data_inner_available_extensions_inner(
                                 extension_id = '', 
                                 cost = 56, 
                                 wage = 56, 
@@ -106,11 +102,7 @@ class TestGetGlobalmapFronts200Response(unittest.TestCase):
                             ], 
                         provinces_count = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

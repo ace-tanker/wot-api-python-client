@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | **Dict[str, Optional[List[GetClansMessageboard200ResponseOneOfDataValueInner]]]** |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**ClansMessageboardMeta**](ClansMessageboardMeta.md) |  | 
+**data** | **Dict[str, Optional[List[ClansMessageboardDataValueInner]]]** |  | 
+**error** | [**ClansMessageboardErrorError**](ClansMessageboardErrorError.md) |  | 
 
 ## Example
 

@@ -37,23 +37,23 @@ class TestGetClansAccountinfo200Response(unittest.TestCase):
         if include_optional:
             return GetClansAccountinfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clans_accountinfo_meta.clans_accountinfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_clans_accountinfo_200_response_one_of_data_value.get_clans_accountinfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.clans_accountinfo_data_value.clans_accountinfo_data_value(
                         account_id = 56, 
                         account_name = '', 
                         joined_at = 56, 
                         role = '', 
                         role_i18n = '', 
-                        clan = wot_api_client.models.get_clans_accountinfo_200_response_one_of_data_value_clan.get_clans_accountinfo_200_response_oneOf_data_value_clan(
+                        clan = wot_api_client.models.clans_accountinfo_data_value_clan.clans_accountinfo_data_value_clan(
                             clan_id = 56, 
                             name = '', 
                             tag = '', 
                             created_at = 56, 
                             color = '', 
                             members_count = 56, 
-                            emblems = wot_api_client.models.get_clans_list_200_response_one_of_data_inner_emblems.get_clans_list_200_response_oneOf_data_inner_emblems(
+                            emblems = wot_api_client.models.clans_list_data_inner_emblems.clans_list_data_inner_emblems(
                                 x24 = {
                                     'key' : ''
                                     }, 
@@ -70,32 +70,28 @@ class TestGetClansAccountinfo200Response(unittest.TestCase):
                                     'key' : ''
                                     }, ), ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetClansAccountinfo200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clans_accountinfo_meta.clans_accountinfo_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_clans_accountinfo_200_response_one_of_data_value.get_clans_accountinfo_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.clans_accountinfo_data_value.clans_accountinfo_data_value(
                         account_id = 56, 
                         account_name = '', 
                         joined_at = 56, 
                         role = '', 
                         role_i18n = '', 
-                        clan = wot_api_client.models.get_clans_accountinfo_200_response_one_of_data_value_clan.get_clans_accountinfo_200_response_oneOf_data_value_clan(
+                        clan = wot_api_client.models.clans_accountinfo_data_value_clan.clans_accountinfo_data_value_clan(
                             clan_id = 56, 
                             name = '', 
                             tag = '', 
                             created_at = 56, 
                             color = '', 
                             members_count = 56, 
-                            emblems = wot_api_client.models.get_clans_list_200_response_one_of_data_inner_emblems.get_clans_list_200_response_oneOf_data_inner_emblems(
+                            emblems = wot_api_client.models.clans_list_data_inner_emblems.clans_list_data_inner_emblems(
                                 x24 = {
                                     'key' : ''
                                     }, 
@@ -112,11 +108,7 @@ class TestGetClansAccountinfo200Response(unittest.TestCase):
                                     'key' : ''
                                     }, ), ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

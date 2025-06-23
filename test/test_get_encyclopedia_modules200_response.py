@@ -37,14 +37,14 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
         if include_optional:
             return GetEncyclopediaModules200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_encyclopedia_provisions_200_response_one_of_meta.get_encyclopedia_provisions_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_modules_meta.encyclopedia_modules_meta(
                     count = 56, 
                     page_total = 56, 
                     total = 56, 
                     limit = 56, 
                     page = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value.get_encyclopedia_modules_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_modules_data_value.encyclopedia_modules_data_value(
                         module_id = 56, 
                         type = '', 
                         name = '', 
@@ -56,8 +56,8 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
                         tanks = [
                             56
                             ], 
-                        default_profile = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile(
-                            gun = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_gun.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_gun(
+                        default_profile = wot_api_client.models.encyclopedia_modules_data_value_default_profile.encyclopedia_modules_data_value_default_profile(
+                            gun = wot_api_client.models.encyclopedia_modules_data_value_default_profile_gun.encyclopedia_modules_data_value_default_profile_gun(
                                 fire_rate = 1.337, 
                                 dispersion = 1.337, 
                                 aim_time = 1.337, 
@@ -66,7 +66,7 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
                                 move_down_arc = 56, 
                                 traverse_speed = 56, 
                                 ammo = [
-                                    wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner(
+                                    wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner.encyclopedia_vehicles_data_value_default_profile_ammo_inner(
                                         type = '', 
                                         damage = [
                                             56
@@ -74,43 +74,39 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
                                         penetration = [
                                             56
                                             ], 
-                                        stun = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner_stun.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner_stun(
+                                        stun = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun(
                                             duration = wot_api_client.models.duration.duration(), ), )
                                     ], 
                                 max_ammo = 56, ), 
-                            engine = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_engine.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_engine(
+                            engine = wot_api_client.models.encyclopedia_modules_data_value_default_profile_engine.encyclopedia_modules_data_value_default_profile_engine(
                                 power = 56, 
                                 fire_chance = 1.337, ), 
-                            turret = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_turret.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_turret(
+                            turret = wot_api_client.models.encyclopedia_modules_data_value_default_profile_turret.encyclopedia_modules_data_value_default_profile_turret(
                                 hp = 56, 
                                 armor_front = 56, 
                                 armor_sides = 56, 
                                 armor_rear = 56, 
                                 view_range = 56, 
                                 traverse_speed = 56, ), 
-                            suspension = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_suspension.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_suspension(
+                            suspension = wot_api_client.models.encyclopedia_modules_data_value_default_profile_suspension.encyclopedia_modules_data_value_default_profile_suspension(
                                 load_limit = 56, 
                                 traverse_speed = 56, ), 
-                            radio = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_radio.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_radio(
+                            radio = wot_api_client.models.encyclopedia_modules_data_value_default_profile_radio.encyclopedia_modules_data_value_default_profile_radio(
                                 signal_range = 56, ), ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetEncyclopediaModules200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_encyclopedia_provisions_200_response_one_of_meta.get_encyclopedia_provisions_200_response_oneOf_meta(
+                meta = wot_api_client.models.encyclopedia_modules_meta.encyclopedia_modules_meta(
                     count = 56, 
                     page_total = 56, 
                     total = 56, 
                     limit = 56, 
                     page = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value.get_encyclopedia_modules_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.encyclopedia_modules_data_value.encyclopedia_modules_data_value(
                         module_id = 56, 
                         type = '', 
                         name = '', 
@@ -122,8 +118,8 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
                         tanks = [
                             56
                             ], 
-                        default_profile = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile(
-                            gun = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_gun.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_gun(
+                        default_profile = wot_api_client.models.encyclopedia_modules_data_value_default_profile.encyclopedia_modules_data_value_default_profile(
+                            gun = wot_api_client.models.encyclopedia_modules_data_value_default_profile_gun.encyclopedia_modules_data_value_default_profile_gun(
                                 fire_rate = 1.337, 
                                 dispersion = 1.337, 
                                 aim_time = 1.337, 
@@ -132,7 +128,7 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
                                 move_down_arc = 56, 
                                 traverse_speed = 56, 
                                 ammo = [
-                                    wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner(
+                                    wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner.encyclopedia_vehicles_data_value_default_profile_ammo_inner(
                                         type = '', 
                                         damage = [
                                             56
@@ -140,31 +136,27 @@ class TestGetEncyclopediaModules200Response(unittest.TestCase):
                                         penetration = [
                                             56
                                             ], 
-                                        stun = wot_api_client.models.get_encyclopedia_vehicles_200_response_one_of_data_value_default_profile_ammo_inner_stun.get_encyclopedia_vehicles_200_response_oneOf_data_value_default_profile_ammo_inner_stun(
+                                        stun = wot_api_client.models.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun.encyclopedia_vehicles_data_value_default_profile_ammo_inner_stun(
                                             duration = wot_api_client.models.duration.duration(), ), )
                                     ], 
                                 max_ammo = 56, ), 
-                            engine = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_engine.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_engine(
+                            engine = wot_api_client.models.encyclopedia_modules_data_value_default_profile_engine.encyclopedia_modules_data_value_default_profile_engine(
                                 power = 56, 
                                 fire_chance = 1.337, ), 
-                            turret = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_turret.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_turret(
+                            turret = wot_api_client.models.encyclopedia_modules_data_value_default_profile_turret.encyclopedia_modules_data_value_default_profile_turret(
                                 hp = 56, 
                                 armor_front = 56, 
                                 armor_sides = 56, 
                                 armor_rear = 56, 
                                 view_range = 56, 
                                 traverse_speed = 56, ), 
-                            suspension = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_suspension.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_suspension(
+                            suspension = wot_api_client.models.encyclopedia_modules_data_value_default_profile_suspension.encyclopedia_modules_data_value_default_profile_suspension(
                                 load_limit = 56, 
                                 traverse_speed = 56, ), 
-                            radio = wot_api_client.models.get_encyclopedia_modules_200_response_one_of_data_value_default_profile_radio.get_encyclopedia_modules_200_response_oneOf_data_value_default_profile_radio(
+                            radio = wot_api_client.models.encyclopedia_modules_data_value_default_profile_radio.encyclopedia_modules_data_value_default_profile_radio(
                                 signal_range = 56, ), ), )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

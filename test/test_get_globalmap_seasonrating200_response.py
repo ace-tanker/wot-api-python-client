@@ -37,12 +37,12 @@ class TestGetGlobalmapSeasonrating200Response(unittest.TestCase):
         if include_optional:
             return GetGlobalmapSeasonrating200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_globalmap_seasons_200_response_one_of_meta.get_globalmap_seasons_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_seasonrating_meta.globalmap_seasonrating_meta(
                     count = 56, 
                     page_total = 56, 
                     page = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_seasonrating_200_response_one_of_data_inner.get_globalmap_seasonrating_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_seasonrating_data_inner.globalmap_seasonrating_data_inner(
                         clan_id = 56, 
                         name = '', 
                         tag = '', 
@@ -54,21 +54,21 @@ class TestGetGlobalmapSeasonrating200Response(unittest.TestCase):
                         victory_points = 56, 
                         victory_points_to_next_award = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasons_error_error.globalmap_seasons_error_error(
+                    code = 404, 
+                    message = 'SEASON_NOT_FOUND', 
                     field = '', 
                     value = '', )
             )
         else:
             return GetGlobalmapSeasonrating200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_globalmap_seasons_200_response_one_of_meta.get_globalmap_seasons_200_response_oneOf_meta(
+                meta = wot_api_client.models.globalmap_seasonrating_meta.globalmap_seasonrating_meta(
                     count = 56, 
                     page_total = 56, 
                     page = 56, ),
                 data = [
-                    wot_api_client.models.get_globalmap_seasonrating_200_response_one_of_data_inner.get_globalmap_seasonrating_200_response_oneOf_data_inner(
+                    wot_api_client.models.globalmap_seasonrating_data_inner.globalmap_seasonrating_data_inner(
                         clan_id = 56, 
                         name = '', 
                         tag = '', 
@@ -80,9 +80,9 @@ class TestGetGlobalmapSeasonrating200Response(unittest.TestCase):
                         victory_points = 56, 
                         victory_points_to_next_award = 56, )
                     ],
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
+                error = wot_api_client.models.globalmap_seasons_error_error.globalmap_seasons_error_error(
+                    code = 404, 
+                    message = 'SEASON_NOT_FOUND', 
                     field = '', 
                     value = '', ),
         )

@@ -37,38 +37,30 @@ class TestGetTanksMastery200Response(unittest.TestCase):
         if include_optional:
             return GetTanksMastery200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.tanks_mastery_meta.tanks_mastery_meta(
                     count = 56, ),
-                data = wot_api_client.models.get_tanks_mastery_200_response_one_of_data.get_tanks_mastery_200_response_oneOf_data(
+                data = wot_api_client.models.tanks_mastery_data.tanks_mastery_data(
                     distribution = {
                         'key' : {
                             'key' : 56
                             }
                         }, 
                     updated_at = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetTanksMastery200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.tanks_mastery_meta.tanks_mastery_meta(
                     count = 56, ),
-                data = wot_api_client.models.get_tanks_mastery_200_response_one_of_data.get_tanks_mastery_200_response_oneOf_data(
+                data = wot_api_client.models.tanks_mastery_data.tanks_mastery_data(
                     distribution = {
                         'key' : {
                             'key' : 56
                             }
                         }, 
                     updated_at = 56, ),
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 

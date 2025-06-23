@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** |  | 
-**meta** | [**GetAccountList200ResponseOneOfMeta**](GetAccountList200ResponseOneOfMeta.md) |  | 
-**data** | [**List[GetStrongholdClanreserves200ResponseOneOfDataInner]**](GetStrongholdClanreserves200ResponseOneOfDataInner.md) |  | 
-**error** | [**GetAccountList200ResponseOneOf1Error**](GetAccountList200ResponseOneOf1Error.md) |  | 
+**meta** | [**StrongholdClanreservesMeta**](StrongholdClanreservesMeta.md) |  | 
+**data** | [**List[StrongholdClanreservesDataInner]**](StrongholdClanreservesDataInner.md) |  | 
+**error** | [**StrongholdClanreservesErrorError**](StrongholdClanreservesErrorError.md) |  | 
 
 ## Example
 

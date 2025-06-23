@@ -37,38 +37,30 @@ class TestGetClanratingsTypes200Response(unittest.TestCase):
         if include_optional:
             return GetClanratingsTypes200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clanratings_types_meta.clanratings_types_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_clanratings_types_200_response_one_of_data_value.get_clanratings_types_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.clanratings_types_data_value.clanratings_types_data_value(
                         type = '', 
                         rank_fields = [
                             ''
                             ], )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', )
+                error = wot_api_client.models.error.error()
             )
         else:
             return GetClanratingsTypes200Response(
                 status = 'error',
-                meta = wot_api_client.models.get_account_list_200_response_one_of_meta.get_account_list_200_response_oneOf_meta(
+                meta = wot_api_client.models.clanratings_types_meta.clanratings_types_meta(
                     count = 56, ),
                 data = {
-                    'key' : wot_api_client.models.get_clanratings_types_200_response_one_of_data_value.get_clanratings_types_200_response_oneOf_data_value(
+                    'key' : wot_api_client.models.clanratings_types_data_value.clanratings_types_data_value(
                         type = '', 
                         rank_fields = [
                             ''
                             ], )
                     },
-                error = wot_api_client.models.get_account_list_200_response_one_of_1_error.get_account_list_200_response_oneOf_1_error(
-                    code = 1.337, 
-                    message = '', 
-                    field = '', 
-                    value = '', ),
+                error = wot_api_client.models.error.error(),
         )
         """
 
